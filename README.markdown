@@ -4,6 +4,12 @@ This library is a port of [libqrencode](https://github.com/fukuchi/libqrencode) 
 
 Online demo: http://lymar.github.com/libqrencode-js/
 
+## Latest version
+
+[libqrencode-3.9.0_1.js](https://raw.github.com/lymar/libqrencode-js/master/release/libqrencode-3.9.0_1.js)
+
+[libqrencode-3.9.0_1.min.js](https://raw.github.com/lymar/libqrencode-js/master/release/libqrencode-3.9.0_1.min.js)
+
 ## Usage
 
 ### Constants
@@ -55,6 +61,17 @@ Online demo: http://lymar.github.com/libqrencode-js/
 ### Example
 
 See [example.html](https://github.com/lymar/libqrencode-js/blob/master/release/example.html).
+
+## Build
+
+### Preparations
+
+    * [Emscripten](https://github.com/kripken/emscripten) with [Clang](http://clang.llvm.org/get_started.html) and [V8](http://code.google.com/apis/v8/build.html).
+    * [UglifyJS](https://github.com/mishoo/UglifyJS).
+    
+### Compiling
+
+    make.py
 
 ## Licensing information
 
