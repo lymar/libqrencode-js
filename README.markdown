@@ -8,8 +8,8 @@ http://lymar.github.com/libqrencode-js/
 
 ## Download
 
-[libqrencode-3.9.0_1.js](https://raw.github.com/lymar/libqrencode-js/master/release/libqrencode-3.9.0_1.js)  
-[libqrencode-3.9.0_1.min.js](https://raw.github.com/lymar/libqrencode-js/master/release/libqrencode-3.9.0_1.min.js)
+[libqrencode-3.9.0_2.js](https://raw.github.com/lymar/libqrencode-js/3.9.0_2/release/libqrencode-3.9.0_2.js)  
+[libqrencode-3.9.0_2.min.js](https://raw.github.com/lymar/libqrencode-js/3.9.0_2/release/libqrencode-3.9.0_2.min.js)
 
 ## Usage
 
