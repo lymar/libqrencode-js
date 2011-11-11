@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>libqrencode-js test</title>
+    <script type="text/javascript" 
+            src="libqrencode-latest.min.js"></script> 
+    <script type="text/javascript" 
+            src="unitTest.js"></script> 
+    <script type="text/javascript" 
+            src="testCases.js"></script> 
+
+    <script type="text/javascript">
+        document.write("<pre>\n");
+        var test = new unitTest();
+        test.print = function(s) { document.write(s + "\n"); };        
+        test.run(allTests);
+        document.write("</pre>");
+    </script>
+</head>
+<body>
+</body>
+</html>
+
