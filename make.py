@@ -12,7 +12,7 @@ emmakenPath = os.path.join(toolPath, 'emmaken.py')
 emscriptenPath = os.path.join(EMSCRIPTEN_ROOT, 'emscripten.py')
 
 def loadVersion():
-    f = open('../libqrencode/configure.ac')
+    f = open('libqrencode/configure.ac')
     major = 0
     majorStr = 'MAJOR_VERSION='
     minor = 0
