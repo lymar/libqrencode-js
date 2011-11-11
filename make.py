@@ -33,7 +33,7 @@ assert r == 0, buildFailed
 print 'ok'
 
 showState('compiling to JavaScript')
-jsPipe = subprocess.Popen(emscriptenPath + ' -s INVOKE_RUN=0 libqrencode-js.bc', 
+jsPipe = subprocess.Popen(emscriptenPath + ' -s INVOKE_RUN=0 -s OPTIMIZE=1 -s RELOOP=1 -s FAST_MEMORY=1 libqrencode-js.bc', 
     shell=True, stdout=subprocess.PIPE).stdout
 print 'ok'
 
@@ -72,7 +72,7 @@ tmplVars = {'genCode': jsCode}
 
 tmpl = readAll(open('../libqrencode.tmpl.js'))
 
-def applyTmpl(varName):
+def jsApplyTmpl(varName):
     return tmpl.replace('{{genCode}}', jsCode)\
                .replace('{{varName}}', varName)
 
@@ -81,7 +81,7 @@ os.chdir('../release/')
 jsFileName = 'libqrencode-' + ver + '.js'
 showState('making ' + jsFileName)
 jsFile = open(jsFileName,'w')
-jsFile.write(applyTmpl('var qrencode'))
+jsFile.write(jsApplyTmpl('var qrencode'))
 jsFile.close()
 print 'ok'
 
@@ -92,18 +92,24 @@ r = subprocess.call('uglifyjs %s > %s' % (jsFileName, jsMinFileName),
 assert r == 0, buildFailed
 print 'ok'
 
-jqFileName = 'jquery.libqrencode-' + ver + '.js'
-showState('making ' + jqFileName)
-jqFile = open(jqFileName,'w')
-jqFile.write(applyTmpl('jQuery.qrencode'))
-jqFile.close()
+exampleHtml = "example.html"
+showState('making ' + exampleHtml)
+exampleHtmlText = readAll(open('../example.tmpl.html'))
+open(exampleHtml,"w").write(exampleHtmlText.replace(
+    '{{libqrencode.js}}',jsMinFileName))
 print 'ok'
 
-jqMinFileName = 'jquery.libqrencode-' + ver + '.min.js'
-showState('making ' + jqMinFileName)
-r = subprocess.call('uglifyjs %s > %s' % (jqFileName, jqMinFileName),
-    shell=True)
-assert r == 0, buildFailed
+showState('making symlinks')
+jsLinkName = 'libqrencode-latest.js'
+jsMinLinkName = 'libqrencode-latest.min.js'
+os.chdir('../test/')
+if os.path.exists(jsLinkName):
+    os.remove(jsLinkName)
+if os.path.exists(jsMinLinkName):
+    os.remove(jsMinLinkName)
+os.symlink('../release/' + jsFileName, jsLinkName)
+os.symlink('../release/' + jsMinFileName, jsMinLinkName)
 print 'ok'
 
 print
+

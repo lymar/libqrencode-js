@@ -1,104 +1,99 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <errno.h>
 #include "qrencode.h"
 
-int main(int argc, char** argv)
-{
-    char str[256]; // TODO: size
-    int strPos = 0;
-
-    int t;
-    
-    for ( t = 1; t < argc; t++ )
-    {
-        printf("arg: %s %d\n", argv[t], t);
-    
-        int c = atoi(argv[t]);
-        printf("%d\n",c);
-        
-        if ( c >= 0 && c <= (int)0x7F )
-        {
-            str[strPos++] = (char)c;
-        }
-        if ( c >= (int)0x80 && c <= (int)0x7FF )
-        {
-            str[strPos++] = (int)0xC0 | 
-                            (c >> 6);
-            str[strPos++] = (int)0x80 |
-                            (c & (int)0x3f);
-        }
-        // TODO: Иероглифы http://ru.wikipedia.org/wiki/UTF-8
+static char 
+parseHex(char s) {
+    switch ( s ) {
+        case '0': return 0x0;
+        case '1': return 0x1;
+        case '2': return 0x2;
+        case '3': return 0x3;
+        case '4': return 0x4;
+        case '5': return 0x5;
+        case '6': return 0x6;
+        case '7': return 0x7;
+        case '8': return 0x8;
+        case '9': return 0x9;
+        case 'A': 
+        case 'a': return 0xa;
+        case 'B': 
+        case 'b': return 0xb;
+        case 'C': 
+        case 'c': return 0xc;
+        case 'D': 
+        case 'd': return 0xd;
+        case 'E': 
+        case 'e': return 0xe;
+        case 'F': 
+        case 'f': return 0xf;
+        default: return 0;
     }
-    
-    str[strPos] = 0;
-    printf("string: %s\n", str);
-
-    QRcode* res = QRcode_encodeString(str,0,QR_ECLEVEL_L,QR_MODE_8,1);
-    
-    for ( int i = 0; i < res->width; i++ )
-    {
-        for ( int j = 0; j < res->width; j++ )
-        {
-            if ( res->data[j*res->width + i] & 1 ) 
-                printf("#");
-            else
-                printf(" ");
-        }
-        printf("\n");
-    }
-    
-    printf("\n");
-    
-    QRcode_free(res);
-    
-    return 0;
 }
 
-
-int main2(int argc, char** argv)
+// convert string "<hex num><hex num>..." to C string
+static void 
+covertNumString(char* numStr, char* resStr, int resStrMax)
 {
-    QRcode* res = QRcode_encodeString(argv[1],0,QR_ECLEVEL_L,QR_MODE_8,1);
-    printf("string: %s %d %d\n", argv[1], strlen(argv[1]), argc);
-    printf("width: %d\n", res->width);
-    
-    for ( int i = 0; i < res->width; i++ )
-    {
-        for ( int j = 0; j < res->width; j++ )
-        {
-            if ( res->data[j*res->width + i] & 1 ) 
-                printf("#");
-            else
-                printf(" ");
-        }
-        printf("\n");
-    }
-    
-    printf("\n");
-    
-    QRcode_free(res);
-    
-    
-    return 0;
+    int nsl = strlen(numStr);
+    resStrMax--;    
+    int i;
+
+    for ( i = 0; (2*i+1) < nsl && i < resStrMax; i++ )
+        resStr[i] = parseHex(numStr[2*i]) << 4 | parseHex(numStr[2*i+1]);
+    resStr[i] = 0;
 }
 
-// clang *.c -D HAVE_CONFIG_H
+static int
+func_encodeString(char** argv) {
+    char str[16384];
+    covertNumString(argv[0], str, sizeof(str));
+    
+    int version = atoi(argv[1]);
+    int level = atoi(argv[2]);
+    int hint = atoi(argv[3]);
+    int casesensitive = atoi(argv[4]);
+    
+    QRcode* res = QRcode_encodeString(str,version,level,hint,casesensitive);
+    
+    if ( res ) {
+        printf("OK\n");
+        printf("%d\n", res->width);
+        for ( int i = 0; i < res->width * res->width; i++ )
+            printf("%d", (int)(res->data[i] & 0x1));
+        printf("\n");
+        QRcode_free(res);
+        return 0;
+    }
+    else {
+        printf("error\n");
+        switch ( errno ) {
+            case EINVAL:
+                printf("EINVAL\ninvalid input object\n");
+                break;
+            case ENOMEM:
+                printf("ENOMEM\nunable to allocate memory for input objects\n");
+                break;
+            case ERANGE:
+                printf("ERANGE\ninput data is too large\n");
+                break;
+            default:
+                printf("unknown\nunknown error\n");
+                break;
+        }
+        QRcode_free(res);
+        return errno;
+    }
+}
 
+int 
+main(int argc, char** argv) {
+    if ( argc < 2 )
+        return -1;
 
-// python ~/emscripten/tools/emmaken.py -D HAVE_CONFIG_H *.c
-// llvm-link *.o -o qr.bc
-// python ~/emscripten/emscripten.py -s INVOKE_RUN=0  qr.bc > qr.js
-
-
-// run(["sdcsdcdl;fkvjsdklfvjskldfjvklsjdfvk sdfdfv ljsdc"])
-
-/*
-"йцу".charCodeAt(0)
-1081
-"йцу".charCodeAt(1)
-1094
-"йцу".charCodeAt(2)
-1091
-run(["1081","1094","1091"])
-*/
+    if ( !strcmp(argv[1], "encodeString" ) )
+        return func_encodeString(&argv[2]);
+}
 
