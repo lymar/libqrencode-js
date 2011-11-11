@@ -71,7 +71,12 @@ Install:
 
 * [Emscripten](https://github.com/kripken/emscripten) with [Clang](http://clang.llvm.org/get_started.html) and [V8](http://code.google.com/apis/v8/build.html).
 * [UglifyJS](https://github.com/mishoo/UglifyJS).
-    
+
+### Update libqrencode git submodule
+
+    git submodule init
+    git submodule update
+
 ### Compiling
 
     ./make.py
