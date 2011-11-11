@@ -4,7 +4,7 @@ import os
 import sys
 import subprocess
 
-JS_VER = 1
+JS_VER = 2
 
 exec(open(os.path.expanduser('~/.emscripten'), 'r').read())
 toolPath = os.path.join(EMSCRIPTEN_ROOT, 'tools')

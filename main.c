@@ -96,4 +96,3 @@ main(int argc, char** argv) {
     if ( !strcmp(argv[1], "encodeString" ) )
         return func_encodeString(&argv[2]);
 }
-

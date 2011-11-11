@@ -25,7 +25,7 @@ http://lymar.github.com/libqrencode-js/
     QR_MODE_FNC1FIRST     FNC1, first position
     QR_MODE_FNC1SECOND    FNC1, second position
 
-#### Level
+#### Error correction level
     QR_ECLEVEL_L          lowest
     QR_ECLEVEL_M
     QR_ECLEVEL_Q
@@ -74,7 +74,7 @@ Install:
     
 ### Compiling
 
-    make.py
+    ./make.py
 
 ### Testing
 
