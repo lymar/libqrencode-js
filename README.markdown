@@ -2,12 +2,13 @@
 
 This library is a port of [libqrencode](https://github.com/fukuchi/libqrencode) to JavaScript.
 
-Online demo: http://lymar.github.com/libqrencode-js/
+## Online demo
 
-## Latest version
+http://lymar.github.com/libqrencode-js/
 
-[libqrencode-3.9.0_1.js](https://raw.github.com/lymar/libqrencode-js/master/release/libqrencode-3.9.0_1.js)
+## Download
 
+[libqrencode-3.9.0_1.js](https://raw.github.com/lymar/libqrencode-js/master/release/libqrencode-3.9.0_1.js)  
 [libqrencode-3.9.0_1.min.js](https://raw.github.com/lymar/libqrencode-js/master/release/libqrencode-3.9.0_1.min.js)
 
 ## Usage
@@ -47,11 +48,11 @@ Online demo: http://lymar.github.com/libqrencode-js/
                         
         caseSensitive   case-sensitive or not.
         
-        ---
+        ----
         
         return          2d boolean array which represent QR Code line by line.
         
-        ---
+        ----
         
         exceptions      {'type': 'EINVAL', 'msg': 'invalid input object'}
                         {'type': 'ENOMEM', 'msg': 'unable to allocate memory for input objects'}
@@ -66,12 +67,25 @@ See [example.html](https://github.com/lymar/libqrencode-js/blob/master/release/e
 
 ### Preparations
 
-    * [Emscripten](https://github.com/kripken/emscripten) with [Clang](http://clang.llvm.org/get_started.html) and [V8](http://code.google.com/apis/v8/build.html).
-    * [UglifyJS](https://github.com/mishoo/UglifyJS).
+Install:
+
+* [Emscripten](https://github.com/kripken/emscripten) with [Clang](http://clang.llvm.org/get_started.html) and [V8](http://code.google.com/apis/v8/build.html).
+* [UglifyJS](https://github.com/mishoo/UglifyJS).
     
 ### Compiling
 
     make.py
+
+### Testing
+
+#### With d8
+
+    cd test
+    ./run.sh
+
+#### With Web browser
+
+Open test/run.html
 
 ## Licensing information
 
