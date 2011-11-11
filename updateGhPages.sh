@@ -1,0 +1,2 @@
+./make.py gh-pages
+
