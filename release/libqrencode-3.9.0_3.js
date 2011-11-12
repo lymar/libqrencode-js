@@ -242,9 +242,6 @@ var CorrectionsMonitor = {
   }
 };
 
-function cRound(x) {
-  return x >= 0 ? Math.floor(x) : Math.ceil(x);
-}
 
 
 
@@ -1484,10 +1481,10 @@ var _rslist;
     else if (__label__ == 2) {
   
       var $2=$bstream;
-      var $length=(($2)&4294967295);
+      var $length=$2;
       HEAP[$length]=0;
       var $3=$bstream;
-      var $data=(($3+4)&4294967295);
+      var $data=$3+4;
       HEAP[$data]=0;
       var $4=$bstream;
       $retval=$4;
@@ -1522,7 +1519,7 @@ var _rslist;
     else if (__label__ == 2) {
   
       var $1=$arg_addr;
-      var $length=(($1)&4294967295);
+      var $length=$1;
       var $2=HEAP[$length];
       var $cmp1=((($2))|0)==0;
       if ($cmp1) { __label__ = 3;; } else { __label__ = 4;; }
@@ -1534,7 +1531,7 @@ var _rslist;
       else if (__label__ == 4) {
   
         var $3=$bstream_addr;
-        var $length4=(($3)&4294967295);
+        var $length4=$3;
         var $4=HEAP[$length4];
         var $cmp5=((($4))|0)==0;
         if ($cmp5) { __label__ = 5;; } else { __label__ = 8;; }
@@ -1542,7 +1539,7 @@ var _rslist;
   
           var $5=$bstream_addr;
           var $6=$arg_addr;
-          var $length7=(($6)&4294967295);
+          var $length7=$6;
           var $7=HEAP[$length7];
           var $call=_BitStream_allocate($5, $7);
           var $tobool=((($call))|0)!=0;
@@ -1555,13 +1552,13 @@ var _rslist;
           else if (__label__ == 7) {
   
             var $8=$bstream_addr;
-            var $data10=(($8+4)&4294967295);
+            var $data10=$8+4;
             var $9=HEAP[$data10];
             var $10=$arg_addr;
-            var $data11=(($10+4)&4294967295);
+            var $data11=$10+4;
             var $11=HEAP[$data11];
             var $12=$arg_addr;
-            var $length12=(($12)&4294967295);
+            var $length12=$12;
             var $13=HEAP[$length12];
             assert($13 % 1 === 0, 'memcpy given ' + $13 + ' bytes to copy. Problem with 4=1 corrections perhaps?');for (var $mcpi$ = 0; $mcpi$ < $13; $mcpi$++) {
             HEAP[$9+$mcpi$]=HEAP[$11+$mcpi$]; 
@@ -1573,12 +1570,12 @@ var _rslist;
         else if (__label__ == 8) {
   
           var $14=$bstream_addr;
-          var $length14=(($14)&4294967295);
+          var $length14=$14;
           var $15=HEAP[$length14];
           var $16=$arg_addr;
-          var $length15=(($16)&4294967295);
+          var $length15=$16;
           var $17=HEAP[$length15];
-          var $add=((($15) + ($17))&4294967295);
+          var $add=($15) + ($17);
           var $call16=_malloc($add);
           $data=$call16;
           var $18=$data;
@@ -1593,43 +1590,43 @@ var _rslist;
   
             var $19=$data;
             var $20=$bstream_addr;
-            var $data20=(($20+4)&4294967295);
+            var $data20=$20+4;
             var $21=HEAP[$data20];
             var $22=$bstream_addr;
-            var $length21=(($22)&4294967295);
+            var $length21=$22;
             var $23=HEAP[$length21];
             assert($23 % 1 === 0, 'memcpy given ' + $23 + ' bytes to copy. Problem with 4=1 corrections perhaps?');for (var $mcpi$ = 0; $mcpi$ < $23; $mcpi$++) {
             HEAP[$19+$mcpi$]=HEAP[$21+$mcpi$]; 
             };
             var $24=$data;
             var $25=$bstream_addr;
-            var $length22=(($25)&4294967295);
+            var $length22=$25;
             var $26=HEAP[$length22];
-            var $add_ptr=(($24+$26)&4294967295);
+            var $add_ptr=$24+$26;
             var $27=$arg_addr;
-            var $data23=(($27+4)&4294967295);
+            var $data23=$27+4;
             var $28=HEAP[$data23];
             var $29=$arg_addr;
-            var $length24=(($29)&4294967295);
+            var $length24=$29;
             var $30=HEAP[$length24];
             assert($30 % 1 === 0, 'memcpy given ' + $30 + ' bytes to copy. Problem with 4=1 corrections perhaps?');for (var $mcpi$ = 0; $mcpi$ < $30; $mcpi$++) {
             HEAP[$add_ptr+$mcpi$]=HEAP[$28+$mcpi$]; 
             };
             var $31=$bstream_addr;
-            var $data25=(($31+4)&4294967295);
+            var $data25=$31+4;
             var $32=HEAP[$data25];
             ;
             var $33=$arg_addr;
-            var $length26=(($33)&4294967295);
+            var $length26=$33;
             var $34=HEAP[$length26];
             var $35=$bstream_addr;
-            var $length27=(($35)&4294967295);
+            var $length27=$35;
             var $36=HEAP[$length27];
-            var $add28=((($36) + ($34))&4294967295);
+            var $add28=($36) + ($34);
             HEAP[$length27]=$add28;
             var $37=$data;
             var $38=$bstream_addr;
-            var $data29=(($38+4)&4294967295);
+            var $data29=$38+4;
             HEAP[$data29]=$37;
             $retval=0;
             ;
@@ -1679,14 +1676,14 @@ var _rslist;
       else if (__label__ == 4) {
   
         var $3=$bstream_addr;
-        var $data4=(($3+4)&4294967295);
+        var $data4=$3+4;
         var $4=HEAP[$data4];
         var $tobool=((($4))|0)!=0;
         if ($tobool) { __label__ = 5;; } else { __label__ = 6;; }
         if (__label__ == 5) {
   
           var $5=$bstream_addr;
-          var $data6=(($5+4)&4294967295);
+          var $data6=$5+4;
           var $6=HEAP[$data6];
           ;
           ;
@@ -1694,11 +1691,11 @@ var _rslist;
   
         var $7=$length_addr;
         var $8=$bstream_addr;
-        var $length8=(($8)&4294967295);
+        var $length8=$8;
         HEAP[$length8]=$7;
         var $9=$data;
         var $10=$bstream_addr;
-        var $data9=(($10+4)&4294967295);
+        var $data9=$10+4;
         HEAP[$data9]=$9;
         $retval=0;
         ;
@@ -1808,11 +1805,11 @@ var _rslist;
       else if (__label__ == 4) {
   
         var $4=$bstream;
-        var $data=(($4+4)&4294967295);
+        var $data=$4+4;
         var $5=HEAP[$data];
         $p=$5;
         var $6=$bits_addr;
-        var $sub=((($6) - 1)&4294967295);
+        var $sub=($6) - 1;
         var $shl=1 << ($sub);
         $mask=$shl;
         $i=0;
@@ -1843,7 +1840,7 @@ var _rslist;
           }
   
           var $13=$p;
-          var $incdec_ptr=(($13+1)&4294967295);
+          var $incdec_ptr=$13+1;
           $p=$incdec_ptr;
           var $14=$mask;
           var $shr=($14) >>> 1;
@@ -1851,7 +1848,7 @@ var _rslist;
           ;
   
           var $15=$i;
-          var $inc=((($15) + 1)&4294967295);
+          var $inc=($15) + 1;
           $i=$inc;
           __label__ = 5;continue ;
         }
@@ -1881,7 +1878,7 @@ var _rslist;
     if (__label__ == 1) {
   
       var $1=$bstream_addr;
-      var $data=(($1+4)&4294967295);
+      var $data=$1+4;
       var $2=HEAP[$data];
       ;
       var $3=$bstream_addr;
@@ -1980,7 +1977,7 @@ var _rslist;
   
       var $1=$bstream;
       var $2=$size_addr;
-      var $mul=((($2) * 8)&4294967295);
+      var $mul=($2) * 8;
       var $call1=_BitStream_allocate($1, $mul);
       var $tobool=((($call1))|0)!=0;
       if ($tobool) { __label__ = 3;; } else { __label__ = 4;; }
@@ -1994,7 +1991,7 @@ var _rslist;
       else if (__label__ == 4) {
   
         var $4=$bstream;
-        var $data4=(($4+4)&4294967295);
+        var $data4=$4+4;
         var $5=HEAP[$data4];
         $p=$5;
         $i=0;
@@ -2017,7 +2014,7 @@ var _rslist;
   
             var $9=$i;
             var $10=$data_addr;
-            var $arrayidx=(($10+$9)&4294967295);
+            var $arrayidx=$10+$9;
             var $11=HEAP[$arrayidx];
             var $conv=((($11))&255);
             var $12=$mask;
@@ -2039,7 +2036,7 @@ var _rslist;
             }
   
             var $15=$p;
-            var $incdec_ptr=(($15+1)&4294967295);
+            var $incdec_ptr=$15+1;
             $p=$incdec_ptr;
             var $16=$mask;
             var $conv13=((($16))&255);
@@ -2049,7 +2046,7 @@ var _rslist;
             ;
   
             var $17=$j;
-            var $inc=((($17) + 1)&4294967295);
+            var $inc=($17) + 1;
             $j=$inc;
             __label__ = 7;continue ;
           }
@@ -2057,7 +2054,7 @@ var _rslist;
           ;
   
           var $18=$i;
-          var $inc16=((($18) + 1)&4294967295);
+          var $inc16=($18) + 1;
           $i=$inc16;
           __label__ = 5;continue $for_cond$8;
         }
@@ -2090,7 +2087,7 @@ var _rslist;
     var $p;
     $bstream_addr=$bstream;
     var $0=$bstream_addr;
-    var $length=(($0)&4294967295);
+    var $length=$0;
     var $1=HEAP[$length];
     $size=$1;
     var $2=$size;
@@ -2104,7 +2101,7 @@ var _rslist;
     else if (__label__ == 2) {
   
       var $3=$size;
-      var $add=((($3) + 7)&4294967295);
+      var $add=($3) + 7;
       var $div=((((($add))|0)/8)|0);
       var $call=_malloc($div);
       $data=$call;
@@ -2122,7 +2119,7 @@ var _rslist;
         var $div4=((((($5))|0)/8)|0);
         $bytes=$div4;
         var $6=$bstream_addr;
-        var $data5=(($6+4)&4294967295);
+        var $data5=$6+4;
         var $7=HEAP[$data5];
         $p=$7;
         $i=0;
@@ -2157,12 +2154,12 @@ var _rslist;
             var $conv13=((($or)) & 255);
             $v=$conv13;
             var $15=$p;
-            var $incdec_ptr=(($15+1)&4294967295);
+            var $incdec_ptr=$15+1;
             $p=$incdec_ptr;
             ;
   
             var $16=$j;
-            var $inc=((($16) + 1)&4294967295);
+            var $inc=($16) + 1;
             $j=$inc;
             __label__ = 7;continue ;
           }
@@ -2170,12 +2167,12 @@ var _rslist;
           var $17=$v;
           var $18=$i;
           var $19=$data;
-          var $arrayidx=(($19+$18)&4294967295);
+          var $arrayidx=$19+$18;
           HEAP[$arrayidx]=$17;
           ;
   
           var $20=$i;
-          var $inc15=((($20) + 1)&4294967295);
+          var $inc15=($20) + 1;
           $i=$inc15;
           __label__ = 5;continue $for_cond$8;
         }
@@ -2211,12 +2208,12 @@ var _rslist;
             var $conv29=((($or28)) & 255);
             $v=$conv29;
             var $28=$p;
-            var $incdec_ptr30=(($28+1)&4294967295);
+            var $incdec_ptr30=$28+1;
             $p=$incdec_ptr30;
             ;
   
             var $29=$j;
-            var $inc32=((($29) + 1)&4294967295);
+            var $inc32=($29) + 1;
             $j=$inc32;
             __label__ = 14;continue ;
           }
@@ -2224,7 +2221,7 @@ var _rslist;
           var $30=$v;
           var $31=$bytes;
           var $32=$data;
-          var $arrayidx34=(($32+$31)&4294967295);
+          var $arrayidx34=$32+$31;
           HEAP[$arrayidx34]=$30;
           ;
         }
@@ -2264,14 +2261,14 @@ var _rslist;
       else if (__label__ == 2) {
   
         var $1=$argv_addr;
-        var $arrayidx=(($1+4)&4294967295);
+        var $arrayidx=$1+4;
         var $2=HEAP[$arrayidx];
-        var $call=_strcmp($2, ((__str)&4294967295));
+        var $call=_strcmp($2, __str);
         var $tobool=((($call))|0)!=0;
         if ($tobool) { __label__ = 4;break $if_then$$if_end$2; }
   
         var $3=$argv_addr;
-        var $arrayidx2=(($3+8)&4294967295);
+        var $arrayidx2=$3+8;
         var $call3=_func_encodeString($arrayidx2);
         $retval=$call3;
         ;
@@ -2300,31 +2297,31 @@ var _rslist;
     var $i;
     $argv_addr=$argv;
     var $0=$argv_addr;
-    var $arrayidx=(($0)&4294967295);
+    var $arrayidx=$0;
     var $1=HEAP[$arrayidx];
-    var $arraydecay=(($str)&4294967295);
+    var $arraydecay=$str;
     _covertNumString($1, $arraydecay, 16384);
     var $2=$argv_addr;
-    var $arrayidx1=(($2+4)&4294967295);
+    var $arrayidx1=$2+4;
     var $3=HEAP[$arrayidx1];
     var $call=_atoi($3);
     $version=$call;
     var $4=$argv_addr;
-    var $arrayidx2=(($4+8)&4294967295);
+    var $arrayidx2=$4+8;
     var $5=HEAP[$arrayidx2];
     var $call3=_atoi($5);
     $level=$call3;
     var $6=$argv_addr;
-    var $arrayidx4=(($6+12)&4294967295);
+    var $arrayidx4=$6+12;
     var $7=HEAP[$arrayidx4];
     var $call5=_atoi($7);
     $hint=$call5;
     var $8=$argv_addr;
-    var $arrayidx6=(($8+16)&4294967295);
+    var $arrayidx6=$8+16;
     var $9=HEAP[$arrayidx6];
     var $call7=_atoi($9);
     $casesensitive=$call7;
-    var $arraydecay8=(($str)&4294967295);
+    var $arraydecay8=$str;
     var $10=$version;
     var $11=$level;
     var $12=$hint;
@@ -2336,44 +2333,44 @@ var _rslist;
     if ($tobool) { __label__ = 1;; } else { __label__ = 6;; }
     if (__label__ == 1) {
   
-      var $call10=_printf(((__str1)&4294967295), allocate(1, "i32", ALLOC_STACK));
+      var $call10=_printf(__str1, allocate(1, "i32", ALLOC_STACK));
       var $15=$res;
-      var $width=(($15+4)&4294967295);
+      var $width=$15+4;
       var $16=HEAP[$width];
-      var $call11=_printf(((__str2)&4294967295), allocate([$16,0,0,0], ["i32",0,0,0], ALLOC_STACK));
+      var $call11=_printf(__str2, allocate([$16,0,0,0], ["i32",0,0,0], ALLOC_STACK));
       $i=0;
       ;
       while(1) { 
   
         var $17=$i;
         var $18=$res;
-        var $width12=(($18+4)&4294967295);
+        var $width12=$18+4;
         var $19=HEAP[$width12];
         var $20=$res;
-        var $width13=(($20+4)&4294967295);
+        var $width13=$20+4;
         var $21=HEAP[$width13];
-        var $mul=((($19) * ($21))&4294967295);
+        var $mul=($19) * ($21);
         var $cmp=((($17))|0) < ((($mul))|0);
         if (!($cmp)) { __label__ = 5;break ; }
   
         var $22=$i;
         var $23=$res;
-        var $data=(($23+8)&4294967295);
+        var $data=$23+8;
         var $24=HEAP[$data];
-        var $arrayidx14=(($24+$22)&4294967295);
+        var $arrayidx14=$24+$22;
         var $25=HEAP[$arrayidx14];
         var $conv=((($25))&255);
         var $and=($conv) & 1;
-        var $call15=_printf(((__str3)&4294967295), allocate([$and,0,0,0], ["i32",0,0,0], ALLOC_STACK));
+        var $call15=_printf(__str3, allocate([$and,0,0,0], ["i32",0,0,0], ALLOC_STACK));
         ;
   
         var $26=$i;
-        var $inc=((($26) + 1)&4294967295);
+        var $inc=($26) + 1;
         $i=$inc;
         __label__ = 2;continue ;
       }
   
-      var $call16=_printf(((__str4)&4294967295), allocate(1, "i32", ALLOC_STACK));
+      var $call16=_printf(__str4, allocate(1, "i32", ALLOC_STACK));
       var $27=$res;
       _QRcode_free($27);
       $retval=0;
@@ -2381,7 +2378,7 @@ var _rslist;
     }
     else if (__label__ == 6) {
   
-      var $call17=_printf(((__str5)&4294967295), allocate(1, "i32", ALLOC_STACK));
+      var $call17=_printf(__str5, allocate(1, "i32", ALLOC_STACK));
       var $call18=___errno();
       var $28=HEAP[$call18];
       if ($28 == 22) {
@@ -2399,22 +2396,22 @@ var _rslist;
       
       if (__label__ == 10) {
   
-        var $call24=_printf(((__str9)&4294967295), allocate(1, "i32", ALLOC_STACK));
+        var $call24=_printf(__str9, allocate(1, "i32", ALLOC_STACK));
         ;
       }
       else if (__label__ == 7) {
   
-        var $call19=_printf(((__str6)&4294967295), allocate(1, "i32", ALLOC_STACK));
+        var $call19=_printf(__str6, allocate(1, "i32", ALLOC_STACK));
         ;
       }
       else if (__label__ == 8) {
   
-        var $call21=_printf(((__str7)&4294967295), allocate(1, "i32", ALLOC_STACK));
+        var $call21=_printf(__str7, allocate(1, "i32", ALLOC_STACK));
         ;
       }
       else if (__label__ == 9) {
   
-        var $call23=_printf(((__str8)&4294967295), allocate(1, "i32", ALLOC_STACK));
+        var $call23=_printf(__str8, allocate(1, "i32", ALLOC_STACK));
         ;
       }
   
@@ -2450,15 +2447,15 @@ var _rslist;
     var $call=_strlen($0);
     $nsl=$call;
     var $1=$resStrMax_addr;
-    var $dec=((($1) + -1)&4294967295);
+    var $dec=($1) + -1;
     $resStrMax_addr=$dec;
     $i=0;
     ;
     while(1) { 
   
       var $2=$i;
-      var $mul=((2 * ($2))&4294967295);
-      var $add=((($mul) + 1)&4294967295);
+      var $mul=2 * ($2);
+      var $add=($mul) + 1;
       var $3=$nsl;
       var $cmp=((($add))|0) < ((($3))|0);
       if ($cmp) { __lastLabel__ = 1; __label__ = 2;; } else { __lastLabel__ = 1; __label__ = 3;; }
@@ -2474,18 +2471,18 @@ var _rslist;
       if (!($6)) { __label__ = 6;break ; }
   
       var $7=$i;
-      var $mul2=((2 * ($7))&4294967295);
+      var $mul2=2 * ($7);
       var $8=$numStr_addr;
-      var $arrayidx=(($8+$mul2)&4294967295);
+      var $arrayidx=$8+$mul2;
       var $9=HEAP[$arrayidx];
       var $call3=_parseHex($9);
       var $conv=(tempInt=(($call3)),(tempInt>=128?tempInt-256:tempInt));
       var $shl=($conv) << 4;
       var $10=$i;
-      var $mul4=((2 * ($10))&4294967295);
-      var $add5=((($mul4) + 1)&4294967295);
+      var $mul4=2 * ($10);
+      var $add5=($mul4) + 1;
       var $11=$numStr_addr;
-      var $arrayidx6=(($11+$add5)&4294967295);
+      var $arrayidx6=$11+$add5;
       var $12=HEAP[$arrayidx6];
       var $call7=_parseHex($12);
       var $conv8=(tempInt=(($call7)),(tempInt>=128?tempInt-256:tempInt));
@@ -2493,19 +2490,19 @@ var _rslist;
       var $conv9=((($or)) & 255);
       var $13=$i;
       var $14=$resStr_addr;
-      var $arrayidx10=(($14+$13)&4294967295);
+      var $arrayidx10=$14+$13;
       HEAP[$arrayidx10]=$conv9;
       ;
   
       var $15=$i;
-      var $inc=((($15) + 1)&4294967295);
+      var $inc=($15) + 1;
       $i=$inc;
       __label__ = 1;continue ;
     }
   
     var $16=$i;
     var $17=$resStr_addr;
-    var $arrayidx11=(($17+$16)&4294967295);
+    var $arrayidx11=$17+$16;
     HEAP[$arrayidx11]=0;
     ;
     return;
@@ -2711,7 +2708,7 @@ var _rslist;
   
         var $2=$width_addr;
         var $3=$width_addr;
-        var $mul=((($2) * ($3))&4294967295);
+        var $mul=($2) * ($3);
         var $call2=_malloc($mul);
         $masked=$call2;
         var $4=$masked;
@@ -2725,7 +2722,7 @@ var _rslist;
         else if (__label__ == 5) {
   
           var $5=$mask_addr;
-          var $arrayidx=((_maskMakers+$5*4)&4294967295);
+          var $arrayidx=_maskMakers+$5*4;
           var $6=HEAP[$arrayidx];
           var $7=$width_addr;
           var $8=$frame_addr;
@@ -2793,7 +2790,7 @@ var _rslist;
       if (__label__ == 3) {
   
         var $4=$blacks;
-        var $add=((($4) + 2)&4294967295);
+        var $add=($4) + 2;
         $blacks=$add;
         $v=-123;
         ;
@@ -2806,14 +2803,14 @@ var _rslist;
   
       var $5=$v;
       var $6=$width_addr;
-      var $mul=((($6) * 8)&4294967295);
+      var $mul=($6) * 8;
       var $7=$width_addr;
-      var $add1=((($mul) + ($7))&4294967295);
-      var $sub=((($add1) - 1)&4294967295);
+      var $add1=($mul) + ($7);
+      var $sub=($add1) - 1;
       var $8=$i;
-      var $sub2=((($sub) - ($8))&4294967295);
+      var $sub2=($sub) - ($8);
       var $9=$frame_addr;
-      var $arrayidx=(($9+$sub2)&4294967295);
+      var $arrayidx=$9+$sub2;
       HEAP[$arrayidx]=$5;
       var $10=$i;
       var $cmp3=((($10))|0) < 6;
@@ -2823,10 +2820,10 @@ var _rslist;
         var $11=$v;
         var $12=$width_addr;
         var $13=$i;
-        var $mul5=((($12) * ($13))&4294967295);
-        var $add6=((($mul5) + 8)&4294967295);
+        var $mul5=($12) * ($13);
+        var $add6=($mul5) + 8;
         var $14=$frame_addr;
-        var $arrayidx7=(($14+$add6)&4294967295);
+        var $arrayidx7=$14+$add6;
         HEAP[$arrayidx7]=$11;
         ;
       }
@@ -2835,11 +2832,11 @@ var _rslist;
         var $15=$v;
         var $16=$width_addr;
         var $17=$i;
-        var $add9=((($17) + 1)&4294967295);
-        var $mul10=((($16) * ($add9))&4294967295);
-        var $add11=((($mul10) + 8)&4294967295);
+        var $add9=($17) + 1;
+        var $mul10=($16) * ($add9);
+        var $add11=($mul10) + 8;
         var $18=$frame_addr;
-        var $arrayidx12=(($18+$add11)&4294967295);
+        var $arrayidx12=$18+$add11;
         HEAP[$arrayidx12]=$15;
         ;
       }
@@ -2850,7 +2847,7 @@ var _rslist;
       ;
   
       var $20=$i;
-      var $inc=((($20) + 1)&4294967295);
+      var $inc=($20) + 1;
       $i=$inc;
       __label__ = 1;continue $for_cond$2;
     }
@@ -2870,7 +2867,7 @@ var _rslist;
       if (__label__ == 13) {
   
         var $23=$blacks;
-        var $add20=((($23) + 2)&4294967295);
+        var $add20=($23) + 2;
         $blacks=$add20;
         $v=-123;
         ;
@@ -2884,13 +2881,13 @@ var _rslist;
       var $24=$v;
       var $25=$width_addr;
       var $26=$width_addr;
-      var $sub23=((($26) - 7)&4294967295);
+      var $sub23=($26) - 7;
       var $27=$i;
-      var $add24=((($sub23) + ($27))&4294967295);
-      var $mul25=((($25) * ($add24))&4294967295);
-      var $add26=((($mul25) + 8)&4294967295);
+      var $add24=($sub23) + ($27);
+      var $mul25=($25) * ($add24);
+      var $add26=($mul25) + 8;
       var $28=$frame_addr;
-      var $arrayidx27=(($28+$add26)&4294967295);
+      var $arrayidx27=$28+$add26;
       HEAP[$arrayidx27]=$24;
       var $29=$i;
       var $cmp28=((($29))|0)==0;
@@ -2899,10 +2896,10 @@ var _rslist;
   
         var $30=$v;
         var $31=$width_addr;
-        var $mul30=((($31) * 8)&4294967295);
-        var $add31=((($mul30) + 7)&4294967295);
+        var $mul30=($31) * 8;
+        var $add31=($mul30) + 7;
         var $32=$frame_addr;
-        var $arrayidx32=(($32+$add31)&4294967295);
+        var $arrayidx32=$32+$add31;
         HEAP[$arrayidx32]=$30;
         ;
       }
@@ -2910,12 +2907,12 @@ var _rslist;
   
         var $33=$v;
         var $34=$width_addr;
-        var $mul34=((($34) * 8)&4294967295);
-        var $add35=((($mul34) + 6)&4294967295);
+        var $mul34=($34) * 8;
+        var $add35=($mul34) + 6;
         var $35=$i;
-        var $sub36=((($add35) - ($35))&4294967295);
+        var $sub36=($add35) - ($35);
         var $36=$frame_addr;
-        var $arrayidx37=(($36+$sub36)&4294967295);
+        var $arrayidx37=$36+$sub36;
         HEAP[$arrayidx37]=$33;
         ;
       }
@@ -2926,7 +2923,7 @@ var _rslist;
       ;
   
       var $38=$i;
-      var $inc41=((($38) + 1)&4294967295);
+      var $inc41=($38) + 1;
       $i=$inc41;
       __label__ = 11;continue ;
     }
@@ -2960,7 +2957,7 @@ var _rslist;
     $minDemerit=2147483647;
     var $0=$width_addr;
     var $1=$width_addr;
-    var $mul=((($0) * ($1))&4294967295);
+    var $mul=($0) * ($1);
     $w2=$mul;
     var $2=$w2;
     var $call=_malloc($2);
@@ -2986,7 +2983,7 @@ var _rslist;
   
         $demerit=0;
         var $5=$i;
-        var $arrayidx=((_maskMakers+$5*4)&4294967295);
+        var $arrayidx=_maskMakers+$5*4;
         var $6=HEAP[$arrayidx];
         var $7=$width_addr;
         var $8=$frame_addr;
@@ -2999,27 +2996,27 @@ var _rslist;
         var $13=$level_addr;
         var $call3=_Mask_writeFormatInformation($10, $11, $12, $13);
         var $14=$blacks;
-        var $add=((($14) + ($call3))&4294967295);
+        var $add=($14) + ($call3);
         $blacks=$add;
         var $15=$blacks;
-        var $mul4=((200 * ($15))&4294967295);
+        var $mul4=200 * ($15);
         var $16=$w2;
-        var $add5=((($mul4) + ($16))&4294967295);
+        var $add5=($mul4) + ($16);
         var $17=$w2;
         var $div=((((($add5))|0)/((($17))|0))|0);
         var $div6=((((($div))|0)/2)|0);
         $bratio=$div6;
         var $18=$bratio;
-        var $sub=((($18) - 50)&4294967295);
+        var $sub=($18) - 50;
         var $call7=_abs($sub);
         var $div8=((((($call7))|0)/5)|0);
-        var $mul9=((($div8) * 10)&4294967295);
+        var $mul9=($div8) * 10;
         $demerit=$mul9;
         var $19=$width_addr;
         var $20=$mask;
         var $call10=_Mask_evaluateSymbol($19, $20);
         var $21=$demerit;
-        var $add11=((($21) + ($call10))&4294967295);
+        var $add11=($21) + ($call10);
         $demerit=$add11;
         var $22=$demerit;
         var $23=$minDemerit;
@@ -3046,7 +3043,7 @@ var _rslist;
         ;
   
         var $29=$i;
-        var $inc=((($29) + 1)&4294967295);
+        var $inc=($29) + 1;
         $i=$inc;
         __label__ = 3;continue ;
       }
@@ -3087,7 +3084,7 @@ var _rslist;
     var $1=$frame_addr;
     var $call=_Mask_calcN2($0, $1);
     var $2=$demerit;
-    var $add=((($2) + ($call))&4294967295);
+    var $add=($2) + ($call);
     $demerit=$add;
     $y=0;
     ;
@@ -3102,21 +3099,21 @@ var _rslist;
       var $6=$frame_addr;
       var $7=$y;
       var $8=$width_addr;
-      var $mul=((($7) * ($8))&4294967295);
-      var $add_ptr=(($6+$mul)&4294967295);
-      var $arraydecay=(($runLength)&4294967295);
+      var $mul=($7) * ($8);
+      var $add_ptr=$6+$mul;
+      var $arraydecay=$runLength;
       var $call1=_Mask_calcRunLength($5, $add_ptr, 0, $arraydecay);
       $length=$call1;
       var $9=$length;
-      var $arraydecay2=(($runLength)&4294967295);
+      var $arraydecay2=$runLength;
       var $call3=_Mask_calcN1N3($9, $arraydecay2);
       var $10=$demerit;
-      var $add4=((($10) + ($call3))&4294967295);
+      var $add4=($10) + ($call3);
       $demerit=$add4;
       ;
   
       var $11=$y;
-      var $inc=((($11) + 1)&4294967295);
+      var $inc=($11) + 1;
       $y=$inc;
       __label__ = 1;continue $for_cond$2;
     }
@@ -3133,20 +3130,20 @@ var _rslist;
       var $14=$width_addr;
       var $15=$frame_addr;
       var $16=$x;
-      var $add_ptr8=(($15+$16)&4294967295);
-      var $arraydecay9=(($runLength)&4294967295);
+      var $add_ptr8=$15+$16;
+      var $arraydecay9=$runLength;
       var $call10=_Mask_calcRunLength($14, $add_ptr8, 1, $arraydecay9);
       $length=$call10;
       var $17=$length;
-      var $arraydecay11=(($runLength)&4294967295);
+      var $arraydecay11=$runLength;
       var $call12=_Mask_calcN1N3($17, $arraydecay11);
       var $18=$demerit;
-      var $add13=((($18) + ($call12))&4294967295);
+      var $add13=($18) + ($call12);
       $demerit=$add13;
       ;
   
       var $19=$x;
-      var $inc15=((($19) + 1)&4294967295);
+      var $inc15=($19) + 1;
       $x=$inc15;
       __label__ = 5;continue ;
     }
@@ -3175,8 +3172,8 @@ var _rslist;
     $demerit=0;
     var $0=$frame_addr;
     var $1=$width_addr;
-    var $add_ptr=(($0+$1)&4294967295);
-    var $add_ptr1=(($add_ptr+1)&4294967295);
+    var $add_ptr=$0+$1;
+    var $add_ptr1=$add_ptr+1;
     $p=$add_ptr1;
     $y=1;
     ;
@@ -3197,52 +3194,52 @@ var _rslist;
         if (!($cmp3)) { __label__ = 8;break ; }
   
         var $6=$p;
-        var $arrayidx=(($6)&4294967295);
+        var $arrayidx=$6;
         var $7=HEAP[$arrayidx];
         var $conv=((($7))&255);
         var $8=$p;
-        var $arrayidx5=(($8+-1)&4294967295);
+        var $arrayidx5=$8+-1;
         var $9=HEAP[$arrayidx5];
         var $conv6=((($9))&255);
         var $and=($conv) & ($conv6);
         var $10=$width_addr;
-        var $sub=((0 - ($10))&4294967295);
+        var $sub=0 - ($10);
         var $11=$p;
-        var $arrayidx7=(($11+$sub)&4294967295);
+        var $arrayidx7=$11+$sub;
         var $12=HEAP[$arrayidx7];
         var $conv8=((($12))&255);
         var $and9=($and) & ($conv8);
         var $13=$width_addr;
-        var $sub10=((0 - ($13))&4294967295);
-        var $sub11=((($sub10) - 1)&4294967295);
+        var $sub10=0 - ($13);
+        var $sub11=($sub10) - 1;
         var $14=$p;
-        var $arrayidx12=(($14+$sub11)&4294967295);
+        var $arrayidx12=$14+$sub11;
         var $15=HEAP[$arrayidx12];
         var $conv13=((($15))&255);
         var $and14=($and9) & ($conv13);
         var $conv15=((($and14)) & 255);
         $b22=$conv15;
         var $16=$p;
-        var $arrayidx16=(($16)&4294967295);
+        var $arrayidx16=$16;
         var $17=HEAP[$arrayidx16];
         var $conv17=((($17))&255);
         var $18=$p;
-        var $arrayidx18=(($18+-1)&4294967295);
+        var $arrayidx18=$18+-1;
         var $19=HEAP[$arrayidx18];
         var $conv19=((($19))&255);
         var $or=($conv17) | ($conv19);
         var $20=$width_addr;
-        var $sub20=((0 - ($20))&4294967295);
+        var $sub20=0 - ($20);
         var $21=$p;
-        var $arrayidx21=(($21+$sub20)&4294967295);
+        var $arrayidx21=$21+$sub20;
         var $22=HEAP[$arrayidx21];
         var $conv22=((($22))&255);
         var $or23=($or) | ($conv22);
         var $23=$width_addr;
-        var $sub24=((0 - ($23))&4294967295);
-        var $sub25=((($sub24) - 1)&4294967295);
+        var $sub24=0 - ($23);
+        var $sub25=($sub24) - 1;
         var $24=$p;
-        var $arrayidx26=(($24+$sub25)&4294967295);
+        var $arrayidx26=$24+$sub25;
         var $25=HEAP[$arrayidx26];
         var $conv27=((($25))&255);
         var $or28=($or23) | ($conv27);
@@ -3260,29 +3257,29 @@ var _rslist;
         if (__label__ == 5) {
   
           var $28=$demerit;
-          var $add=((($28) + 3)&4294967295);
+          var $add=($28) + 3;
           $demerit=$add;
           ;
         }
   
         var $29=$p;
-        var $incdec_ptr=(($29+1)&4294967295);
+        var $incdec_ptr=$29+1;
         $p=$incdec_ptr;
         ;
   
         var $30=$x;
-        var $inc=((($30) + 1)&4294967295);
+        var $inc=($30) + 1;
         $x=$inc;
         __label__ = 3;continue ;
       }
   
       var $31=$p;
-      var $incdec_ptr34=(($31+1)&4294967295);
+      var $incdec_ptr34=$31+1;
       $p=$incdec_ptr34;
       ;
   
       var $32=$y;
-      var $inc36=((($32) + 1)&4294967295);
+      var $inc36=($32) + 1;
       $y=$inc36;
       __label__ = 1;continue $for_cond$2;
     }
@@ -3327,7 +3324,7 @@ var _rslist;
     var $cond=__lastLabel__ == 1 ? 1 : ($1);
     $pitch=$cond;
     var $2=$frame_addr;
-    var $arrayidx=(($2)&4294967295);
+    var $arrayidx=$2;
     var $3=HEAP[$arrayidx];
     var $conv=((($3))&255);
     var $and=($conv) & 1;
@@ -3336,7 +3333,7 @@ var _rslist;
     if (__label__ == 4) {
   
       var $4=$runLength_addr;
-      var $arrayidx1=(($4)&4294967295);
+      var $arrayidx1=$4;
       HEAP[$arrayidx1]=-1;
       $head=1;
       ;
@@ -3349,11 +3346,11 @@ var _rslist;
   
     var $5=$head;
     var $6=$runLength_addr;
-    var $arrayidx2=(($6+4*$5)&4294967295);
+    var $arrayidx2=$6+4*$5;
     HEAP[$arrayidx2]=1;
     var $7=$frame_addr;
     var $8=$pitch;
-    var $add_ptr=(($7+$8)&4294967295);
+    var $add_ptr=$7+$8;
     $p=$add_ptr;
     $i=1;
     ;
@@ -3365,13 +3362,13 @@ var _rslist;
       if (!($cmp3)) { __label__ = 13;break ; }
   
       var $11=$p;
-      var $arrayidx5=(($11)&4294967295);
+      var $arrayidx5=$11;
       var $12=HEAP[$arrayidx5];
       var $conv6=((($12))&255);
       var $13=$pitch;
-      var $sub=((0 - ($13))&4294967295);
+      var $sub=0 - ($13);
       var $14=$p;
-      var $arrayidx7=(($14+$sub)&4294967295);
+      var $arrayidx7=$14+$sub;
       var $15=HEAP[$arrayidx7];
       var $conv8=((($15))&255);
       var $xor=($conv6) ^ ($conv8);
@@ -3381,11 +3378,11 @@ var _rslist;
       if (__label__ == 9) {
   
         var $16=$head;
-        var $inc=((($16) + 1)&4294967295);
+        var $inc=($16) + 1;
         $head=$inc;
         var $17=$head;
         var $18=$runLength_addr;
-        var $arrayidx12=(($18+4*$17)&4294967295);
+        var $arrayidx12=$18+4*$17;
         HEAP[$arrayidx12]=1;
         ;
       }
@@ -3393,27 +3390,27 @@ var _rslist;
   
         var $19=$head;
         var $20=$runLength_addr;
-        var $arrayidx14=(($20+4*$19)&4294967295);
+        var $arrayidx14=$20+4*$19;
         var $21=HEAP[$arrayidx14];
-        var $inc15=((($21) + 1)&4294967295);
+        var $inc15=($21) + 1;
         HEAP[$arrayidx14]=$inc15;
         ;
       }
   
       var $22=$pitch;
       var $23=$p;
-      var $add_ptr17=(($23+$22)&4294967295);
+      var $add_ptr17=$23+$22;
       $p=$add_ptr17;
       ;
   
       var $24=$i;
-      var $inc18=((($24) + 1)&4294967295);
+      var $inc18=($24) + 1;
       $i=$inc18;
       __label__ = 7;continue ;
     }
   
     var $25=$head;
-    var $add=((($25) + 1)&4294967295);
+    var $add=($25) + 1;
     ;
     return $add;
     return null;
@@ -3443,7 +3440,7 @@ var _rslist;
   
       var $2=$i;
       var $3=$runLength_addr;
-      var $arrayidx=(($3+4*$2)&4294967295);
+      var $arrayidx=$3+4*$2;
       var $4=HEAP[$arrayidx];
       var $cmp1=((($4))|0) >= 5;
       if ($cmp1) { __label__ = 3;; } else { __label__ = 4;; }
@@ -3451,12 +3448,12 @@ var _rslist;
   
         var $5=$i;
         var $6=$runLength_addr;
-        var $arrayidx2=(($6+4*$5)&4294967295);
+        var $arrayidx2=$6+4*$5;
         var $7=HEAP[$arrayidx2];
-        var $sub=((($7) - 5)&4294967295);
-        var $add=((3 + ($sub))&4294967295);
+        var $sub=($7) - 5;
+        var $add=3 + ($sub);
         var $8=$demerit;
-        var $add3=((($8) + ($add))&4294967295);
+        var $add3=($8) + ($add);
         $demerit=$add3;
         ;
       }
@@ -3475,13 +3472,13 @@ var _rslist;
   
             var $11=$i;
             var $12=$length_addr;
-            var $sub6=((($12) - 2)&4294967295);
+            var $sub6=($12) - 2;
             var $cmp7=((($11))|0) < ((($sub6))|0);
             if (!($cmp7)) { __label__ = 21;break $land_lhs_true$$if_end47$10; }
   
             var $13=$i;
             var $14=$runLength_addr;
-            var $arrayidx9=(($14+4*$13)&4294967295);
+            var $arrayidx9=$14+4*$13;
             var $15=HEAP[$arrayidx9];
             var $rem=((($15))|0) % 3;
             var $cmp10=((($rem))|0)==0;
@@ -3489,14 +3486,14 @@ var _rslist;
   
             var $16=$i;
             var $17=$runLength_addr;
-            var $arrayidx12=(($17+4*$16)&4294967295);
+            var $arrayidx12=$17+4*$16;
             var $18=HEAP[$arrayidx12];
             var $div=((((($18))|0)/3)|0);
             $fact=$div;
             var $19=$i;
-            var $sub13=((($19) - 2)&4294967295);
+            var $sub13=($19) - 2;
             var $20=$runLength_addr;
-            var $arrayidx14=(($20+4*$sub13)&4294967295);
+            var $arrayidx14=$20+4*$sub13;
             var $21=HEAP[$arrayidx14];
             var $22=$fact;
             var $cmp15=((($21))|0)==((($22))|0);
@@ -3505,27 +3502,27 @@ var _rslist;
               if (__label__ == 9) {
   
                 var $23=$i;
-                var $sub17=((($23) - 1)&4294967295);
+                var $sub17=($23) - 1;
                 var $24=$runLength_addr;
-                var $arrayidx18=(($24+4*$sub17)&4294967295);
+                var $arrayidx18=$24+4*$sub17;
                 var $25=HEAP[$arrayidx18];
                 var $26=$fact;
                 var $cmp19=((($25))|0)==((($26))|0);
                 if (!($cmp19)) { __label__ = 20;break $land_lhs_true16$$if_end46$14; }
   
                 var $27=$i;
-                var $add21=((($27) + 1)&4294967295);
+                var $add21=($27) + 1;
                 var $28=$runLength_addr;
-                var $arrayidx22=(($28+4*$add21)&4294967295);
+                var $arrayidx22=$28+4*$add21;
                 var $29=HEAP[$arrayidx22];
                 var $30=$fact;
                 var $cmp23=((($29))|0)==((($30))|0);
                 if (!($cmp23)) { __label__ = 20;break $land_lhs_true16$$if_end46$14; }
   
                 var $31=$i;
-                var $add25=((($31) + 2)&4294967295);
+                var $add25=($31) + 2;
                 var $32=$runLength_addr;
-                var $arrayidx26=(($32+4*$add25)&4294967295);
+                var $arrayidx26=$32+4*$add25;
                 var $33=HEAP[$arrayidx26];
                 var $34=$fact;
                 var $cmp27=((($33))|0)==((($34))|0);
@@ -3538,17 +3535,17 @@ var _rslist;
                   if (__label__ == 13) {
   
                     var $36=$i;
-                    var $sub30=((($36) - 3)&4294967295);
+                    var $sub30=($36) - 3;
                     var $37=$runLength_addr;
-                    var $arrayidx31=(($37+4*$sub30)&4294967295);
+                    var $arrayidx31=$37+4*$sub30;
                     var $38=HEAP[$arrayidx31];
                     var $39=$fact;
-                    var $mul=((4 * ($39))&4294967295);
+                    var $mul=4 * ($39);
                     var $cmp32=((($38))|0) >= ((($mul))|0);
                     if ($cmp32) { __label__ = 14;break $if_then33$$lor_lhs_false$19; }
   
                     var $41=$i;
-                    var $add35=((($41) + 4)&4294967295);
+                    var $add35=($41) + 4;
                     var $42=$length_addr;
                     var $cmp36=((($add35))|0) >= ((($42))|0);
                     if ($cmp36) { __label__ = 17;; } else { __label__ = 16;; }
@@ -3556,12 +3553,12 @@ var _rslist;
                       if (__label__ == 16) {
   
                         var $43=$i;
-                        var $add38=((($43) + 3)&4294967295);
+                        var $add38=($43) + 3;
                         var $44=$runLength_addr;
-                        var $arrayidx39=(($44+4*$add38)&4294967295);
+                        var $arrayidx39=$44+4*$add38;
                         var $45=HEAP[$arrayidx39];
                         var $46=$fact;
-                        var $mul40=((4 * ($46))&4294967295);
+                        var $mul40=4 * ($46);
                         var $cmp41=((($45))|0) >= ((($mul40))|0);
                         if ($cmp41) { __label__ = 17;break $if_then42$$lor_lhs_false37$22; } else { __label__ = 18;break $if_then42$$lor_lhs_false37$22; }
                       }
@@ -3569,7 +3566,7 @@ var _rslist;
                     if (__label__ == 17) {
   
                       var $47=$demerit;
-                      var $add43=((($47) + 40)&4294967295);
+                      var $add43=($47) + 40;
                       $demerit=$add43;
                       ;
                     }
@@ -3580,7 +3577,7 @@ var _rslist;
                 if (__label__ == 14) {
   
                   var $40=$demerit;
-                  var $add34=((($40) + 40)&4294967295);
+                  var $add34=($40) + 40;
                   $demerit=$add34;
                   ;
                 }
@@ -3599,7 +3596,7 @@ var _rslist;
       ;
   
       var $48=$i;
-      var $inc=((($48) + 1)&4294967295);
+      var $inc=($48) + 1;
       $i=$inc;
       __label__ = 1;continue $for_cond$2;
     }
@@ -3664,7 +3661,7 @@ var _rslist;
           var $conv4=((($10))&255);
           var $11=$x;
           var $12=$y;
-          var $add=((($11) + ($12))&4294967295);
+          var $add=($11) + ($12);
           var $and5=($add) & 1;
           var $cmp6=((($and5))|0)==0;
           var $conv7=((($cmp6))&1);
@@ -3680,18 +3677,18 @@ var _rslist;
         var $conv9=((($15))&255);
         var $and10=($conv9) & 1;
         var $16=$b;
-        var $add11=((($16) + ($and10))&4294967295);
+        var $add11=($16) + ($and10);
         $b=$add11;
         var $17=$s_addr;
-        var $incdec_ptr=(($17+1)&4294967295);
+        var $incdec_ptr=$17+1;
         $s_addr=$incdec_ptr;
         var $18=$d_addr;
-        var $incdec_ptr12=(($18+1)&4294967295);
+        var $incdec_ptr12=$18+1;
         $d_addr=$incdec_ptr12;
         ;
   
         var $19=$x;
-        var $inc=((($19) + 1)&4294967295);
+        var $inc=($19) + 1;
         $x=$inc;
         __label__ = 3;continue ;
       }
@@ -3699,7 +3696,7 @@ var _rslist;
       ;
   
       var $20=$y;
-      var $inc14=((($20) + 1)&4294967295);
+      var $inc14=($20) + 1;
       $y=$inc14;
       __label__ = 1;continue $for_cond$2;
     }
@@ -3778,18 +3775,18 @@ var _rslist;
         var $conv9=((($14))&255);
         var $and10=($conv9) & 1;
         var $15=$b;
-        var $add=((($15) + ($and10))&4294967295);
+        var $add=($15) + ($and10);
         $b=$add;
         var $16=$s_addr;
-        var $incdec_ptr=(($16+1)&4294967295);
+        var $incdec_ptr=$16+1;
         $s_addr=$incdec_ptr;
         var $17=$d_addr;
-        var $incdec_ptr11=(($17+1)&4294967295);
+        var $incdec_ptr11=$17+1;
         $d_addr=$incdec_ptr11;
         ;
   
         var $18=$x;
-        var $inc=((($18) + 1)&4294967295);
+        var $inc=($18) + 1;
         $x=$inc;
         __label__ = 3;continue ;
       }
@@ -3797,7 +3794,7 @@ var _rslist;
       ;
   
       var $19=$y;
-      var $inc13=((($19) + 1)&4294967295);
+      var $inc13=($19) + 1;
       $y=$inc13;
       __label__ = 1;continue $for_cond$2;
     }
@@ -3876,18 +3873,18 @@ var _rslist;
         var $conv8=((($14))&255);
         var $and9=($conv8) & 1;
         var $15=$b;
-        var $add=((($15) + ($and9))&4294967295);
+        var $add=($15) + ($and9);
         $b=$add;
         var $16=$s_addr;
-        var $incdec_ptr=(($16+1)&4294967295);
+        var $incdec_ptr=$16+1;
         $s_addr=$incdec_ptr;
         var $17=$d_addr;
-        var $incdec_ptr10=(($17+1)&4294967295);
+        var $incdec_ptr10=$17+1;
         $d_addr=$incdec_ptr10;
         ;
   
         var $18=$x;
-        var $inc=((($18) + 1)&4294967295);
+        var $inc=($18) + 1;
         $x=$inc;
         __label__ = 3;continue ;
       }
@@ -3895,7 +3892,7 @@ var _rslist;
       ;
   
       var $19=$y;
-      var $inc12=((($19) + 1)&4294967295);
+      var $inc12=($19) + 1;
       $y=$inc12;
       __label__ = 1;continue $for_cond$2;
     }
@@ -3960,7 +3957,7 @@ var _rslist;
           var $conv4=((($10))&255);
           var $11=$x;
           var $12=$y;
-          var $add=((($11) + ($12))&4294967295);
+          var $add=($11) + ($12);
           var $rem=((($add))|0) % 3;
           var $cmp5=((($rem))|0)==0;
           var $conv6=((($cmp5))&1);
@@ -3976,18 +3973,18 @@ var _rslist;
         var $conv8=((($15))&255);
         var $and9=($conv8) & 1;
         var $16=$b;
-        var $add10=((($16) + ($and9))&4294967295);
+        var $add10=($16) + ($and9);
         $b=$add10;
         var $17=$s_addr;
-        var $incdec_ptr=(($17+1)&4294967295);
+        var $incdec_ptr=$17+1;
         $s_addr=$incdec_ptr;
         var $18=$d_addr;
-        var $incdec_ptr11=(($18+1)&4294967295);
+        var $incdec_ptr11=$18+1;
         $d_addr=$incdec_ptr11;
         ;
   
         var $19=$x;
-        var $inc=((($19) + 1)&4294967295);
+        var $inc=($19) + 1;
         $x=$inc;
         __label__ = 3;continue ;
       }
@@ -3995,7 +3992,7 @@ var _rslist;
       ;
   
       var $20=$y;
-      var $inc13=((($20) + 1)&4294967295);
+      var $inc13=($20) + 1;
       $y=$inc13;
       __label__ = 1;continue $for_cond$2;
     }
@@ -4062,7 +4059,7 @@ var _rslist;
           var $div=((((($11))|0)/2)|0);
           var $12=$x;
           var $div5=((((($12))|0)/3)|0);
-          var $add=((($div) + ($div5))&4294967295);
+          var $add=($div) + ($div5);
           var $and6=($add) & 1;
           var $cmp7=((($and6))|0)==0;
           var $conv8=((($cmp7))&1);
@@ -4078,18 +4075,18 @@ var _rslist;
         var $conv10=((($15))&255);
         var $and11=($conv10) & 1;
         var $16=$b;
-        var $add12=((($16) + ($and11))&4294967295);
+        var $add12=($16) + ($and11);
         $b=$add12;
         var $17=$s_addr;
-        var $incdec_ptr=(($17+1)&4294967295);
+        var $incdec_ptr=$17+1;
         $s_addr=$incdec_ptr;
         var $18=$d_addr;
-        var $incdec_ptr13=(($18+1)&4294967295);
+        var $incdec_ptr13=$18+1;
         $d_addr=$incdec_ptr13;
         ;
   
         var $19=$x;
-        var $inc=((($19) + 1)&4294967295);
+        var $inc=($19) + 1;
         $x=$inc;
         __label__ = 3;continue ;
       }
@@ -4097,7 +4094,7 @@ var _rslist;
       ;
   
       var $20=$y;
-      var $inc15=((($20) + 1)&4294967295);
+      var $inc15=($20) + 1;
       $y=$inc15;
       __label__ = 1;continue $for_cond$2;
     }
@@ -4162,13 +4159,13 @@ var _rslist;
           var $conv4=((($10))&255);
           var $11=$x;
           var $12=$y;
-          var $mul=((($11) * ($12))&4294967295);
+          var $mul=($11) * ($12);
           var $and5=($mul) & 1;
           var $13=$x;
           var $14=$y;
-          var $mul6=((($13) * ($14))&4294967295);
+          var $mul6=($13) * ($14);
           var $rem=((($mul6))|0) % 3;
-          var $add=((($and5) + ($rem))&4294967295);
+          var $add=($and5) + ($rem);
           var $cmp7=((($add))|0)==0;
           var $conv8=((($cmp7))&1);
           var $xor=($conv4) ^ ($conv8);
@@ -4183,18 +4180,18 @@ var _rslist;
         var $conv10=((($17))&255);
         var $and11=($conv10) & 1;
         var $18=$b;
-        var $add12=((($18) + ($and11))&4294967295);
+        var $add12=($18) + ($and11);
         $b=$add12;
         var $19=$s_addr;
-        var $incdec_ptr=(($19+1)&4294967295);
+        var $incdec_ptr=$19+1;
         $s_addr=$incdec_ptr;
         var $20=$d_addr;
-        var $incdec_ptr13=(($20+1)&4294967295);
+        var $incdec_ptr13=$20+1;
         $d_addr=$incdec_ptr13;
         ;
   
         var $21=$x;
-        var $inc=((($21) + 1)&4294967295);
+        var $inc=($21) + 1;
         $x=$inc;
         __label__ = 3;continue ;
       }
@@ -4202,7 +4199,7 @@ var _rslist;
       ;
   
       var $22=$y;
-      var $inc15=((($22) + 1)&4294967295);
+      var $inc15=($22) + 1;
       $y=$inc15;
       __label__ = 1;continue $for_cond$2;
     }
@@ -4267,13 +4264,13 @@ var _rslist;
           var $conv4=((($10))&255);
           var $11=$x;
           var $12=$y;
-          var $mul=((($11) * ($12))&4294967295);
+          var $mul=($11) * ($12);
           var $and5=($mul) & 1;
           var $13=$x;
           var $14=$y;
-          var $mul6=((($13) * ($14))&4294967295);
+          var $mul6=($13) * ($14);
           var $rem=((($mul6))|0) % 3;
-          var $add=((($and5) + ($rem))&4294967295);
+          var $add=($and5) + ($rem);
           var $and7=($add) & 1;
           var $cmp8=((($and7))|0)==0;
           var $conv9=((($cmp8))&1);
@@ -4289,18 +4286,18 @@ var _rslist;
         var $conv11=((($17))&255);
         var $and12=($conv11) & 1;
         var $18=$b;
-        var $add13=((($18) + ($and12))&4294967295);
+        var $add13=($18) + ($and12);
         $b=$add13;
         var $19=$s_addr;
-        var $incdec_ptr=(($19+1)&4294967295);
+        var $incdec_ptr=$19+1;
         $s_addr=$incdec_ptr;
         var $20=$d_addr;
-        var $incdec_ptr14=(($20+1)&4294967295);
+        var $incdec_ptr14=$20+1;
         $d_addr=$incdec_ptr14;
         ;
   
         var $21=$x;
-        var $inc=((($21) + 1)&4294967295);
+        var $inc=($21) + 1;
         $x=$inc;
         __label__ = 3;continue ;
       }
@@ -4308,7 +4305,7 @@ var _rslist;
       ;
   
       var $22=$y;
-      var $inc16=((($22) + 1)&4294967295);
+      var $inc16=($22) + 1;
       $y=$inc16;
       __label__ = 1;continue $for_cond$2;
     }
@@ -4373,13 +4370,13 @@ var _rslist;
           var $conv4=((($10))&255);
           var $11=$x;
           var $12=$y;
-          var $mul=((($11) * ($12))&4294967295);
+          var $mul=($11) * ($12);
           var $rem=((($mul))|0) % 3;
           var $13=$x;
           var $14=$y;
-          var $add=((($13) + ($14))&4294967295);
+          var $add=($13) + ($14);
           var $and5=($add) & 1;
-          var $add6=((($rem) + ($and5))&4294967295);
+          var $add6=($rem) + ($and5);
           var $and7=($add6) & 1;
           var $cmp8=((($and7))|0)==0;
           var $conv9=((($cmp8))&1);
@@ -4395,18 +4392,18 @@ var _rslist;
         var $conv11=((($17))&255);
         var $and12=($conv11) & 1;
         var $18=$b;
-        var $add13=((($18) + ($and12))&4294967295);
+        var $add13=($18) + ($and12);
         $b=$add13;
         var $19=$s_addr;
-        var $incdec_ptr=(($19+1)&4294967295);
+        var $incdec_ptr=$19+1;
         $s_addr=$incdec_ptr;
         var $20=$d_addr;
-        var $incdec_ptr14=(($20+1)&4294967295);
+        var $incdec_ptr14=$20+1;
         $d_addr=$incdec_ptr14;
         ;
   
         var $21=$x;
-        var $inc=((($21) + 1)&4294967295);
+        var $inc=($21) + 1;
         $x=$inc;
         __label__ = 3;continue ;
       }
@@ -4414,7 +4411,7 @@ var _rslist;
       ;
   
       var $22=$y;
-      var $inc16=((($22) + 1)&4294967295);
+      var $inc16=($22) + 1;
       $y=$inc16;
       __label__ = 1;continue $for_cond$2;
     }
@@ -4456,7 +4453,7 @@ var _rslist;
         $width=$call2;
         var $3=$width;
         var $4=$width;
-        var $mul=((($3) * ($4))&4294967295);
+        var $mul=($3) * ($4);
         var $call3=_malloc($mul);
         $masked=$call3;
         var $5=$masked;
@@ -4470,7 +4467,7 @@ var _rslist;
         else if (__label__ == 5) {
   
           var $6=$mask_addr;
-          var $arrayidx=((_maskMakers1+$6*4)&4294967295);
+          var $arrayidx=_maskMakers1+$6*4;
           var $7=HEAP[$arrayidx];
           var $8=$width;
           var $9=$frame_addr;
@@ -4541,11 +4538,11 @@ var _rslist;
       var $5=$v;
       var $6=$width_addr;
       var $7=$i;
-      var $add=((($7) + 1)&4294967295);
-      var $mul=((($6) * ($add))&4294967295);
-      var $add1=((($mul) + 8)&4294967295);
+      var $add=($7) + 1;
+      var $mul=($6) * ($add);
+      var $add1=($mul) + 8;
       var $8=$frame_addr;
-      var $arrayidx=(($8+$add1)&4294967295);
+      var $arrayidx=$8+$add1;
       HEAP[$arrayidx]=$5;
       var $9=$format;
       var $shr=($9) >>> 1;
@@ -4553,7 +4550,7 @@ var _rslist;
       ;
   
       var $10=$i;
-      var $inc=((($10) + 1)&4294967295);
+      var $inc=($10) + 1;
       $i=$inc;
       __label__ = 1;continue $for_cond$2;
     }
@@ -4573,12 +4570,12 @@ var _rslist;
       $v=$conv8;
       var $13=$v;
       var $14=$width_addr;
-      var $mul9=((($14) * 8)&4294967295);
-      var $add10=((($mul9) + 7)&4294967295);
+      var $mul9=($14) * 8;
+      var $add10=($mul9) + 7;
       var $15=$i;
-      var $sub=((($add10) - ($15))&4294967295);
+      var $sub=($add10) - ($15);
       var $16=$frame_addr;
-      var $arrayidx11=(($16+$sub)&4294967295);
+      var $arrayidx11=$16+$sub;
       HEAP[$arrayidx11]=$13;
       var $17=$format;
       var $shr12=($17) >>> 1;
@@ -4586,7 +4583,7 @@ var _rslist;
       ;
   
       var $18=$i;
-      var $inc14=((($18) + 1)&4294967295);
+      var $inc14=($18) + 1;
       $i=$inc14;
       __label__ = 5;continue ;
     }
@@ -4620,7 +4617,7 @@ var _rslist;
     $width=$call;
     var $1=$width;
     var $2=$width;
-    var $mul=((($1) * ($2))&4294967295);
+    var $mul=($1) * ($2);
     var $call1=_malloc($mul);
     $mask=$call1;
     var $3=$mask;
@@ -4644,7 +4641,7 @@ var _rslist;
   
         $score=0;
         var $5=$i;
-        var $arrayidx=((_maskMakers1+$5*4)&4294967295);
+        var $arrayidx=_maskMakers1+$5*4;
         var $6=HEAP[$arrayidx];
         var $7=$width;
         var $8=$frame_addr;
@@ -4674,7 +4671,7 @@ var _rslist;
           $bestMask=$21;
           var $22=$width;
           var $23=$width;
-          var $mul6=((($22) * ($23))&4294967295);
+          var $mul6=($22) * ($23);
           var $call7=_malloc($mul6);
           $mask=$call7;
           var $24=$mask;
@@ -4687,7 +4684,7 @@ var _rslist;
         ;
   
         var $25=$i;
-        var $inc=((($25) + 1)&4294967295);
+        var $inc=($25) + 1;
         $i=$inc;
         __label__ = 3;continue ;
       }
@@ -4729,9 +4726,9 @@ var _rslist;
     var $0=$frame_addr;
     var $1=$width_addr;
     var $2=$width_addr;
-    var $sub=((($2) - 1)&4294967295);
-    var $mul=((($1) * ($sub))&4294967295);
-    var $add_ptr=(($0+$mul)&4294967295);
+    var $sub=($2) - 1;
+    var $mul=($1) * ($sub);
+    var $add_ptr=$0+$mul;
     $p=$add_ptr;
     $x=0;
     ;
@@ -4744,25 +4741,25 @@ var _rslist;
   
       var $5=$x;
       var $6=$p;
-      var $arrayidx=(($6+$5)&4294967295);
+      var $arrayidx=$6+$5;
       var $7=HEAP[$arrayidx];
       var $conv=((($7))&255);
       var $and=($conv) & 1;
       var $8=$sum1;
-      var $add=((($8) + ($and))&4294967295);
+      var $add=($8) + ($and);
       $sum1=$add;
       ;
   
       var $9=$x;
-      var $inc=((($9) + 1)&4294967295);
+      var $inc=($9) + 1;
       $x=$inc;
       __label__ = 1;continue $for_cond$2;
     }
   
     var $10=$frame_addr;
     var $11=$width_addr;
-    var $add_ptr1=(($10+$11)&4294967295);
-    var $add_ptr2=(($add_ptr1+-1)&4294967295);
+    var $add_ptr1=$10+$11;
+    var $add_ptr2=$add_ptr1+-1;
     $p=$add_ptr2;
     $y=0;
     ;
@@ -4778,16 +4775,16 @@ var _rslist;
       var $conv7=((($15))&255);
       var $and8=($conv7) & 1;
       var $16=$sum2;
-      var $add9=((($16) + ($and8))&4294967295);
+      var $add9=($16) + ($and8);
       $sum2=$add9;
       var $17=$width_addr;
       var $18=$p;
-      var $add_ptr10=(($18+$17)&4294967295);
+      var $add_ptr10=$18+$17;
       $p=$add_ptr10;
       ;
   
       var $19=$y;
-      var $inc12=((($19) + 1)&4294967295);
+      var $inc12=($19) + 1;
       $y=$inc12;
       __label__ = 5;continue ;
     }
@@ -4799,17 +4796,17 @@ var _rslist;
     if (__label__ == 9) {
   
       var $22=$sum1;
-      var $mul16=((($22) * 16)&4294967295);
+      var $mul16=($22) * 16;
       var $23=$sum2;
-      var $add17=((($mul16) + ($23))&4294967295);
+      var $add17=($mul16) + ($23);
       __lastLabel__ = 9; ;
     }
     else if (__label__ == 10) {
   
       var $24=$sum2;
-      var $mul18=((($24) * 16)&4294967295);
+      var $mul18=($24) * 16;
       var $25=$sum1;
-      var $add19=((($mul18) + ($25))&4294967295);
+      var $add19=($mul18) + ($25);
       __lastLabel__ = 10; ;
     }
   
@@ -4881,15 +4878,15 @@ var _rslist;
         }
   
         var $13=$s_addr;
-        var $incdec_ptr=(($13+1)&4294967295);
+        var $incdec_ptr=$13+1;
         $s_addr=$incdec_ptr;
         var $14=$d_addr;
-        var $incdec_ptr9=(($14+1)&4294967295);
+        var $incdec_ptr9=$14+1;
         $d_addr=$incdec_ptr9;
         ;
   
         var $15=$x;
-        var $inc=((($15) + 1)&4294967295);
+        var $inc=($15) + 1;
         $x=$inc;
         __label__ = 3;continue ;
       }
@@ -4897,7 +4894,7 @@ var _rslist;
       ;
   
       var $16=$y;
-      var $inc11=((($16) + 1)&4294967295);
+      var $inc11=($16) + 1;
       $y=$inc11;
       __label__ = 1;continue $for_cond$2;
     }
@@ -4961,7 +4958,7 @@ var _rslist;
           var $div=((((($11))|0)/2)|0);
           var $12=$x;
           var $div5=((((($12))|0)/3)|0);
-          var $add=((($div) + ($div5))&4294967295);
+          var $add=($div) + ($div5);
           var $and6=($add) & 1;
           var $cmp7=((($and6))|0)==0;
           var $conv8=((($cmp7))&1);
@@ -4973,15 +4970,15 @@ var _rslist;
         }
   
         var $14=$s_addr;
-        var $incdec_ptr=(($14+1)&4294967295);
+        var $incdec_ptr=$14+1;
         $s_addr=$incdec_ptr;
         var $15=$d_addr;
-        var $incdec_ptr10=(($15+1)&4294967295);
+        var $incdec_ptr10=$15+1;
         $d_addr=$incdec_ptr10;
         ;
   
         var $16=$x;
-        var $inc=((($16) + 1)&4294967295);
+        var $inc=($16) + 1;
         $x=$inc;
         __label__ = 3;continue ;
       }
@@ -4989,7 +4986,7 @@ var _rslist;
       ;
   
       var $17=$y;
-      var $inc12=((($17) + 1)&4294967295);
+      var $inc12=($17) + 1;
       $y=$inc12;
       __label__ = 1;continue $for_cond$2;
     }
@@ -5051,13 +5048,13 @@ var _rslist;
           var $conv4=((($10))&255);
           var $11=$x;
           var $12=$y;
-          var $mul=((($11) * ($12))&4294967295);
+          var $mul=($11) * ($12);
           var $and5=($mul) & 1;
           var $13=$x;
           var $14=$y;
-          var $mul6=((($13) * ($14))&4294967295);
+          var $mul6=($13) * ($14);
           var $rem=((($mul6))|0) % 3;
-          var $add=((($and5) + ($rem))&4294967295);
+          var $add=($and5) + ($rem);
           var $and7=($add) & 1;
           var $cmp8=((($and7))|0)==0;
           var $conv9=((($cmp8))&1);
@@ -5069,15 +5066,15 @@ var _rslist;
         }
   
         var $16=$s_addr;
-        var $incdec_ptr=(($16+1)&4294967295);
+        var $incdec_ptr=$16+1;
         $s_addr=$incdec_ptr;
         var $17=$d_addr;
-        var $incdec_ptr11=(($17+1)&4294967295);
+        var $incdec_ptr11=$17+1;
         $d_addr=$incdec_ptr11;
         ;
   
         var $18=$x;
-        var $inc=((($18) + 1)&4294967295);
+        var $inc=($18) + 1;
         $x=$inc;
         __label__ = 3;continue ;
       }
@@ -5085,7 +5082,7 @@ var _rslist;
       ;
   
       var $19=$y;
-      var $inc13=((($19) + 1)&4294967295);
+      var $inc13=($19) + 1;
       $y=$inc13;
       __label__ = 1;continue $for_cond$2;
     }
@@ -5147,13 +5144,13 @@ var _rslist;
           var $conv4=((($10))&255);
           var $11=$x;
           var $12=$y;
-          var $add=((($11) + ($12))&4294967295);
+          var $add=($11) + ($12);
           var $and5=($add) & 1;
           var $13=$x;
           var $14=$y;
-          var $mul=((($13) * ($14))&4294967295);
+          var $mul=($13) * ($14);
           var $rem=((($mul))|0) % 3;
-          var $add6=((($and5) + ($rem))&4294967295);
+          var $add6=($and5) + ($rem);
           var $and7=($add6) & 1;
           var $cmp8=((($and7))|0)==0;
           var $conv9=((($cmp8))&1);
@@ -5165,15 +5162,15 @@ var _rslist;
         }
   
         var $16=$s_addr;
-        var $incdec_ptr=(($16+1)&4294967295);
+        var $incdec_ptr=$16+1;
         $s_addr=$incdec_ptr;
         var $17=$d_addr;
-        var $incdec_ptr11=(($17+1)&4294967295);
+        var $incdec_ptr11=$17+1;
         $d_addr=$incdec_ptr11;
         ;
   
         var $18=$x;
-        var $inc=((($18) + 1)&4294967295);
+        var $inc=($18) + 1;
         $x=$inc;
         __label__ = 3;continue ;
       }
@@ -5181,7 +5178,7 @@ var _rslist;
       ;
   
       var $19=$y;
-      var $inc13=((($19) + 1)&4294967295);
+      var $inc13=($19) + 1;
       $y=$inc13;
       __label__ = 1;continue $for_cond$2;
     }
@@ -5204,16 +5201,16 @@ var _rslist;
     $version_addr=$version;
     $level_addr=$level;
     var $0=$version_addr;
-    var $arrayidx=((_mqrspecCapacity+$0*20)&4294967295);
-    var $width=(($arrayidx)&4294967295);
+    var $arrayidx=_mqrspecCapacity+$0*20;
+    var $width=$arrayidx;
     var $1=HEAP[$width];
-    var $sub=((($1) - 1)&4294967295);
+    var $sub=($1) - 1;
     $w=$sub;
     var $2=$level_addr;
     var $3=$version_addr;
-    var $arrayidx1=((_mqrspecCapacity+$3*20)&4294967295);
-    var $ec=(($arrayidx1+4)&4294967295);
-    var $arrayidx2=(($ec+$2*4)&4294967295);
+    var $arrayidx1=_mqrspecCapacity+$3*20;
+    var $ec=$arrayidx1+4;
+    var $arrayidx2=$ec+$2*4;
     var $4=HEAP[$arrayidx2];
     $ecc=$4;
     var $5=$ecc;
@@ -5228,11 +5225,11 @@ var _rslist;
   
       var $6=$w;
       var $7=$w;
-      var $mul=((($6) * ($7))&4294967295);
-      var $sub3=((($mul) - 64)&4294967295);
+      var $mul=($6) * ($7);
+      var $sub3=($mul) - 64;
       var $8=$ecc;
-      var $mul4=((($8) * 8)&4294967295);
-      var $sub5=((($sub3) - ($mul4))&4294967295);
+      var $mul4=($8) * 8;
+      var $sub5=($sub3) - ($mul4);
       $retval=$sub5;
       ;
     }
@@ -5255,7 +5252,7 @@ var _rslist;
     var $0=$version_addr;
     var $1=$level_addr;
     var $call=_MQRspec_getDataLengthBit($0, $1);
-    var $add=((($call) + 4)&4294967295);
+    var $add=($call) + 4;
     var $div=((((($add))|0)/8)|0);
     ;
     return $div;
@@ -5273,9 +5270,9 @@ var _rslist;
     $level_addr=$level;
     var $0=$level_addr;
     var $1=$version_addr;
-    var $arrayidx=((_mqrspecCapacity+$1*20)&4294967295);
-    var $ec=(($arrayidx+4)&4294967295);
-    var $arrayidx1=(($ec+$0*4)&4294967295);
+    var $arrayidx=_mqrspecCapacity+$1*20;
+    var $ec=$arrayidx+4;
+    var $arrayidx1=$ec+$0*4;
     var $2=HEAP[$arrayidx1];
     ;
     return $2;
@@ -5290,8 +5287,8 @@ var _rslist;
     var $version_addr;
     $version_addr=$version;
     var $0=$version_addr;
-    var $arrayidx=((_mqrspecCapacity+$0*20)&4294967295);
-    var $width=(($arrayidx)&4294967295);
+    var $arrayidx=_mqrspecCapacity+$0*20;
+    var $width=$arrayidx;
     var $1=HEAP[$width];
     ;
     return $1;
@@ -5308,10 +5305,10 @@ var _rslist;
     $mode_addr=$mode;
     $version_addr=$version;
     var $0=$version_addr;
-    var $sub=((($0) - 1)&4294967295);
+    var $sub=($0) - 1;
     var $1=$mode_addr;
-    var $arrayidx=((_lengthTableBits+$1*16)&4294967295);
-    var $arrayidx1=(($arrayidx+$sub*4)&4294967295);
+    var $arrayidx=_lengthTableBits+$1*16;
+    var $arrayidx1=$arrayidx+$sub*4;
     var $2=HEAP[$arrayidx1];
     ;
     return $2;
@@ -5330,15 +5327,15 @@ var _rslist;
     $mode_addr=$mode;
     $version_addr=$version;
     var $0=$version_addr;
-    var $sub=((($0) - 1)&4294967295);
+    var $sub=($0) - 1;
     var $1=$mode_addr;
-    var $arrayidx=((_lengthTableBits+$1*16)&4294967295);
-    var $arrayidx1=(($arrayidx+$sub*4)&4294967295);
+    var $arrayidx=_lengthTableBits+$1*16;
+    var $arrayidx1=$arrayidx+$sub*4;
     var $2=HEAP[$arrayidx1];
     $bits=$2;
     var $3=$bits;
     var $shl=1 << ($3);
-    var $sub2=((($shl) - 1)&4294967295);
+    var $sub2=($shl) - 1;
     $words=$sub2;
     var $4=$mode_addr;
     var $cmp=((($4))|0)==3;
@@ -5346,7 +5343,7 @@ var _rslist;
     if (__label__ == 1) {
   
       var $5=$words;
-      var $mul=((($5) * 2)&4294967295);
+      var $mul=($5) * 2;
       $words=$mul;
       ;
     }
@@ -5402,8 +5399,8 @@ var _rslist;
   
               var $5=$level_addr;
               var $6=$version_addr;
-              var $arrayidx=((_typeTable+$6*12)&4294967295);
-              var $arrayidx10=(($arrayidx+$5*4)&4294967295);
+              var $arrayidx=_typeTable+$6*12;
+              var $arrayidx10=$arrayidx+$5*4;
               var $7=HEAP[$arrayidx10];
               $type=$7;
               var $8=$type;
@@ -5418,8 +5415,8 @@ var _rslist;
   
                 var $9=$type;
                 var $10=$mask_addr;
-                var $arrayidx14=((_formatInfo+$10*32)&4294967295);
-                var $arrayidx15=(($arrayidx14+$9*4)&4294967295);
+                var $arrayidx14=_formatInfo+$10*32;
+                var $arrayidx15=$arrayidx14+$9*4;
                 var $11=HEAP[$arrayidx15];
                 $retval=$11;
                 __label__ = 11;break $if_then$$lor_lhs_false$2;
@@ -5465,7 +5462,7 @@ var _rslist;
         if ($cmp1) { __label__ = 2;break $if_then$$lor_lhs_false$2; }
   
         var $2=$version_addr;
-        var $arrayidx=((_frames+$2*4)&4294967295);
+        var $arrayidx=_frames+$2*4;
         var $3=HEAP[$arrayidx];
         var $cmp2=((($3))|0)==0;
         if ($cmp2) { __label__ = 4;; } else { __label__ = 5;; }
@@ -5474,13 +5471,13 @@ var _rslist;
           var $4=$version_addr;
           var $call=_MQRspec_createFrame($4);
           var $5=$version_addr;
-          var $arrayidx4=((_frames+$5*4)&4294967295);
+          var $arrayidx4=_frames+$5*4;
           HEAP[$arrayidx4]=$call;
           ;
         }
   
         var $6=$version_addr;
-        var $arrayidx6=((_frames+$6*4)&4294967295);
+        var $arrayidx6=_frames+$6*4;
         var $7=HEAP[$arrayidx6];
         var $cmp7=((($7))|0)==0;
         if ($cmp7) { __label__ = 6;; } else { __label__ = 7;; }
@@ -5492,13 +5489,13 @@ var _rslist;
         else if (__label__ == 7) {
   
           var $8=$version_addr;
-          var $arrayidx10=((_mqrspecCapacity+$8*20)&4294967295);
-          var $width11=(($arrayidx10)&4294967295);
+          var $arrayidx10=_mqrspecCapacity+$8*20;
+          var $width11=$arrayidx10;
           var $9=HEAP[$width11];
           $width=$9;
           var $10=$width;
           var $11=$width;
-          var $mul=((($10) * ($11))&4294967295);
+          var $mul=($10) * ($11);
           var $call12=_malloc($mul);
           $frame=$call12;
           var $12=$frame;
@@ -5513,11 +5510,11 @@ var _rslist;
   
             var $13=$frame;
             var $14=$version_addr;
-            var $arrayidx16=((_frames+$14*4)&4294967295);
+            var $arrayidx16=_frames+$14*4;
             var $15=HEAP[$arrayidx16];
             var $16=$width;
             var $17=$width;
-            var $mul17=((($16) * ($17))&4294967295);
+            var $mul17=($16) * ($17);
             assert($mul17 % 1 === 0, 'memcpy given ' + $mul17 + ' bytes to copy. Problem with 4=1 corrections perhaps?');for (var $mcpi$ = 0; $mcpi$ < $mul17; $mcpi$++) {
             HEAP[$13+$mcpi$]=HEAP[$15+$mcpi$]; 
             };
@@ -5555,13 +5552,13 @@ var _rslist;
     var $y;
     $version_addr=$version;
     var $0=$version_addr;
-    var $arrayidx=((_mqrspecCapacity+$0*20)&4294967295);
-    var $width1=(($arrayidx)&4294967295);
+    var $arrayidx=_mqrspecCapacity+$0*20;
+    var $width1=$arrayidx;
     var $1=HEAP[$width1];
     $width=$1;
     var $2=$width;
     var $3=$width;
-    var $mul=((($2) * ($3))&4294967295);
+    var $mul=($2) * ($3);
     var $call=_malloc($mul);
     $frame=$call;
     var $4=$frame;
@@ -5577,7 +5574,7 @@ var _rslist;
       var $5=$frame;
       var $6=$width;
       var $7=$width;
-      var $mul2=((($6) * ($7))&4294967295);
+      var $mul2=($6) * ($7);
       for (var $mspi$ = 0; $mspi$ < $mul2; $mspi$++) {
       HEAP[$5+$mspi$]=0;
       };
@@ -5595,39 +5592,39 @@ var _rslist;
         if (!($cmp3)) { __label__ = 6;break $for_cond$5; }
   
         var $12=$p;
-        var $arrayidx4=(($12+7)&4294967295);
+        var $arrayidx4=$12+7;
         HEAP[$arrayidx4]=-64;
         var $13=$width;
         var $14=$p;
-        var $add_ptr=(($14+$13)&4294967295);
+        var $add_ptr=$14+$13;
         $p=$add_ptr;
         ;
   
         var $15=$y;
-        var $inc=((($15) + 1)&4294967295);
+        var $inc=($15) + 1;
         $y=$inc;
         __label__ = 3;continue $for_cond$5;
       }
   
       var $16=$frame;
       var $17=$width;
-      var $mul5=((($17) * 7)&4294967295);
-      var $add_ptr6=(($16+$mul5)&4294967295);
+      var $mul5=($17) * 7;
+      var $add_ptr6=$16+$mul5;
       for (var $mspi$ = 0; $mspi$ < 8; $mspi$++) {
       HEAP[$add_ptr6+$mspi$]=-64;
       };
       var $18=$frame;
       var $19=$width;
-      var $mul7=((($19) * 8)&4294967295);
-      var $add_ptr8=(($18+$mul7)&4294967295);
-      var $add_ptr9=(($add_ptr8+1)&4294967295);
+      var $mul7=($19) * 8;
+      var $add_ptr8=$18+$mul7;
+      var $add_ptr9=$add_ptr8+1;
       for (var $mspi$ = 0; $mspi$ < 8; $mspi$++) {
       HEAP[$add_ptr9+$mspi$]=-124;
       };
       var $20=$frame;
       var $21=$width;
-      var $add_ptr10=(($20+$21)&4294967295);
-      var $add_ptr11=(($add_ptr10+8)&4294967295);
+      var $add_ptr10=$20+$21;
+      var $add_ptr11=$add_ptr10+8;
       $p=$add_ptr11;
       $y=0;
       ;
@@ -5641,23 +5638,23 @@ var _rslist;
         HEAP[$23]=-124;
         var $24=$width;
         var $25=$p;
-        var $add_ptr15=(($25+$24)&4294967295);
+        var $add_ptr15=$25+$24;
         $p=$add_ptr15;
         ;
   
         var $26=$y;
-        var $inc17=((($26) + 1)&4294967295);
+        var $inc17=($26) + 1;
         $y=$inc17;
         __label__ = 7;continue $for_cond12$10;
       }
   
       var $27=$frame;
-      var $add_ptr19=(($27+8)&4294967295);
+      var $add_ptr19=$27+8;
       $p=$add_ptr19;
       var $28=$frame;
       var $29=$width;
-      var $mul20=((($29) * 8)&4294967295);
-      var $add_ptr21=(($28+$mul20)&4294967295);
+      var $mul20=($29) * 8;
+      var $add_ptr21=$28+$mul20;
       $q=$add_ptr21;
       $x=1;
       ;
@@ -5665,7 +5662,7 @@ var _rslist;
   
         var $30=$x;
         var $31=$width;
-        var $sub=((($31) - 7)&4294967295);
+        var $sub=($31) - 7;
         var $cmp23=((($30))|0) < ((($sub))|0);
         if (!($cmp23)) { __label__ = 14;break ; }
   
@@ -5682,16 +5679,16 @@ var _rslist;
         var $35=$q;
         HEAP[$35]=$conv27;
         var $36=$p;
-        var $incdec_ptr=(($36+1)&4294967295);
+        var $incdec_ptr=$36+1;
         $p=$incdec_ptr;
         var $37=$width;
         var $38=$q;
-        var $add_ptr28=(($38+$37)&4294967295);
+        var $add_ptr28=$38+$37;
         $q=$add_ptr28;
         ;
   
         var $39=$x;
-        var $inc30=((($39) + 1)&4294967295);
+        var $inc30=($39) + 1;
         $x=$inc30;
         __label__ = 11;continue ;
       }
@@ -5722,16 +5719,16 @@ var _rslist;
       if (!($cmp)) { __label__ = 4;break ; }
   
       var $1=$i;
-      var $arrayidx=((_frames+$1*4)&4294967295);
+      var $arrayidx=_frames+$1*4;
       var $2=HEAP[$arrayidx];
       ;
       var $3=$i;
-      var $arrayidx1=((_frames+$3*4)&4294967295);
+      var $arrayidx1=_frames+$3*4;
       HEAP[$arrayidx1]=0;
       ;
   
       var $4=$i;
-      var $inc=((($4) + 1)&4294967295);
+      var $inc=($4) + 1;
       $i=$inc;
       __label__ = 1;continue ;
     }
@@ -5759,13 +5756,13 @@ var _rslist;
     $oy_addr=$oy;
     var $0=$oy_addr;
     var $1=$width_addr;
-    var $mul=((($0) * ($1))&4294967295);
+    var $mul=($0) * ($1);
     var $2=$ox_addr;
-    var $add=((($mul) + ($2))&4294967295);
+    var $add=($mul) + ($2);
     var $3=$frame_addr;
-    var $add_ptr=(($3+$add)&4294967295);
+    var $add_ptr=$3+$add;
     $frame_addr=$add_ptr;
-    $s=((_putFinderPattern_finder)&4294967295);
+    $s=_putFinderPattern_finder;
     $y=0;
     ;
     $for_cond$2: while(1) { 
@@ -5784,31 +5781,31 @@ var _rslist;
   
         var $6=$x;
         var $7=$s;
-        var $arrayidx=(($7+$6)&4294967295);
+        var $arrayidx=$7+$6;
         var $8=HEAP[$arrayidx];
         var $9=$x;
         var $10=$frame_addr;
-        var $arrayidx4=(($10+$9)&4294967295);
+        var $arrayidx4=$10+$9;
         HEAP[$arrayidx4]=$8;
         ;
   
         var $11=$x;
-        var $inc=((($11) + 1)&4294967295);
+        var $inc=($11) + 1;
         $x=$inc;
         __label__ = 3;continue ;
       }
   
       var $12=$width_addr;
       var $13=$frame_addr;
-      var $add_ptr5=(($13+$12)&4294967295);
+      var $add_ptr5=$13+$12;
       $frame_addr=$add_ptr5;
       var $14=$s;
-      var $add_ptr6=(($14+7)&4294967295);
+      var $add_ptr6=$14+7;
       $s=$add_ptr6;
       ;
   
       var $15=$y;
-      var $inc8=((($15) + 1)&4294967295);
+      var $inc8=($15) + 1;
       $y=$inc8;
       __label__ = 1;continue $for_cond$2;
     }
@@ -5831,7 +5828,7 @@ var _rslist;
     if (__label__ == 1) {
   
       var $1=$qrcode_addr;
-      var $data=(($1+8)&4294967295);
+      var $data=$1+8;
       var $2=HEAP[$data];
       ;
       var $3=$qrcode_addr;
@@ -5854,7 +5851,7 @@ var _rslist;
     var $input_addr;
     $input_addr=$input;
     var $0=$input_addr;
-    var $mqr=(($0+16)&4294967295);
+    var $mqr=$0+16;
     var $1=HEAP[$mqr];
     var $tobool=((($1))|0)!=0;
     if ($tobool) { __label__ = 1;; } else { __label__ = 2;; }
@@ -5903,7 +5900,7 @@ var _rslist;
     $mask_addr=$mask;
     $qrcode=0;
     var $0=$input_addr;
-    var $mqr=(($0+16)&4294967295);
+    var $mqr=$0+16;
     var $1=HEAP[$mqr];
     var $tobool=((($1))|0)!=0;
     if ($tobool) { __label__ = 2;; } else { __label__ = 1;; }
@@ -5911,7 +5908,7 @@ var _rslist;
       if (__label__ == 2) {
   
         var $2=$input_addr;
-        var $version1=(($2)&4294967295);
+        var $version1=$2;
         var $3=HEAP[$version1];
         var $cmp=((($3))|0) <= 0;
         if ($cmp) { __label__ = 4;; } else { __label__ = 3;; }
@@ -5919,13 +5916,13 @@ var _rslist;
           if (__label__ == 3) {
   
             var $4=$input_addr;
-            var $version2=(($4)&4294967295);
+            var $version2=$4;
             var $5=HEAP[$version2];
             var $cmp3=((($5))|0) > 4;
             if ($cmp3) { __label__ = 4;break $if_then4$$lor_lhs_false$4; }
   
             var $6=$input_addr;
-            var $level=(($6+4)&4294967295);
+            var $level=$6+4;
             var $7=HEAP[$level];
             var $cmp7=((($7))>>>0) > 2;
             if ($cmp7) { __label__ = 6;; } else { __label__ = 7;; }
@@ -5952,7 +5949,7 @@ var _rslist;
               else if (__label__ == 9) {
   
                 var $10=$raw;
-                var $version15=(($10)&4294967295);
+                var $version15=$10;
                 var $11=HEAP[$version15];
                 $version=$11;
                 var $12=$version;
@@ -5997,12 +5994,12 @@ var _rslist;
   
                       var $21=$i;
                       var $22=$raw;
-                      var $dataLength=(($22+4)&4294967295);
+                      var $dataLength=$22+4;
                       var $23=HEAP[$dataLength];
                       var $24=$raw;
-                      var $eccLength=(($24+8)&4294967295);
+                      var $eccLength=$24+8;
                       var $25=HEAP[$eccLength];
-                      var $add=((($23) + ($25))&4294967295);
+                      var $add=($23) + ($25);
                       var $cmp25=((($21))|0) < ((($add))|0);
                       if (!($cmp25)) { __label__ = 33;break $for_cond$19; }
   
@@ -6010,7 +6007,7 @@ var _rslist;
                       var $call26=_MQRraw_getCode($26);
                       $code=$call26;
                       var $27=$raw;
-                      var $oddbits=(($27+24)&4294967295);
+                      var $oddbits=$27+24;
                       var $28=HEAP[$oddbits];
                       var $tobool27=((($28))|0)!=0;
                       if ($tobool27) { __label__ = 16;; } else { __label__ = 24;; }
@@ -6019,14 +6016,14 @@ var _rslist;
   
                           var $29=$i;
                           var $30=$raw;
-                          var $dataLength28=(($30+4)&4294967295);
+                          var $dataLength28=$30+4;
                           var $31=HEAP[$dataLength28];
-                          var $sub=((($31) - 1)&4294967295);
+                          var $sub=($31) - 1;
                           var $cmp29=((($29))|0)==((($sub))|0);
                           if (!($cmp29)) { __label__ = 24;break $land_lhs_true$$if_else$22; }
   
                           var $32=$raw;
-                          var $oddbits31=(($32+24)&4294967295);
+                          var $oddbits31=$32+24;
                           var $33=HEAP[$oddbits31];
                           var $shl=1 << ($33);
                           var $conv=((($shl)) & 255);
@@ -6037,7 +6034,7 @@ var _rslist;
   
                             var $34=$j;
                             var $35=$raw;
-                            var $oddbits33=(($35+24)&4294967295);
+                            var $oddbits33=$35+24;
                             var $36=HEAP[$oddbits33];
                             var $cmp34=((($34))|0) < ((($36))|0);
                             if (!($cmp34)) { __label__ = 23;break ; }
@@ -6068,7 +6065,7 @@ var _rslist;
                             ;
   
                             var $43=$j;
-                            var $inc=((($43) + 1)&4294967295);
+                            var $inc=($43) + 1;
                             $j=$inc;
                             __label__ = 18;continue ;
                           }
@@ -6113,7 +6110,7 @@ var _rslist;
                           ;
   
                           var $51=$j;
-                          var $inc69=((($51) + 1)&4294967295);
+                          var $inc69=($51) + 1;
                           $j=$inc69;
                           __label__ = 25;continue ;
                         }
@@ -6124,7 +6121,7 @@ var _rslist;
                       ;
   
                       var $52=$i;
-                      var $inc73=((($52) + 1)&4294967295);
+                      var $inc73=($52) + 1;
                       $i=$inc73;
                       __label__ = 14;continue $for_cond$19;
                     }
@@ -6141,7 +6138,7 @@ var _rslist;
                         var $55=$version;
                         var $56=$frame;
                         var $57=$input_addr;
-                        var $level78=(($57+4)&4294967295);
+                        var $level78=$57+4;
                         var $58=HEAP[$level78];
                         var $call79=_MMask_mask($55, $56, $58);
                         $masked=$call79;
@@ -6153,7 +6150,7 @@ var _rslist;
                         var $60=$frame;
                         var $61=$mask_addr;
                         var $62=$input_addr;
-                        var $level81=(($62+4)&4294967295);
+                        var $level81=$62+4;
                         var $63=HEAP[$level81];
                         var $call82=_MMask_makeMask($59, $60, $61, $63);
                         $masked=$call82;
@@ -6247,7 +6244,7 @@ var _rslist;
     $mask_addr=$mask;
     $qrcode=0;
     var $0=$input_addr;
-    var $mqr=(($0+16)&4294967295);
+    var $mqr=$0+16;
     var $1=HEAP[$mqr];
     var $tobool=((($1))|0)!=0;
     if ($tobool) { __label__ = 1;; } else { __label__ = 2;; }
@@ -6262,7 +6259,7 @@ var _rslist;
       else if (__label__ == 2) {
   
         var $2=$input_addr;
-        var $version1=(($2)&4294967295);
+        var $version1=$2;
         var $3=HEAP[$version1];
         var $cmp=((($3))|0) < 0;
         if ($cmp) { __label__ = 4;; } else { __label__ = 3;; }
@@ -6270,13 +6267,13 @@ var _rslist;
           if (__label__ == 3) {
   
             var $4=$input_addr;
-            var $version2=(($4)&4294967295);
+            var $version2=$4;
             var $5=HEAP[$version2];
             var $cmp3=((($5))|0) > 40;
             if ($cmp3) { __label__ = 4;break $if_then4$$lor_lhs_false$5; }
   
             var $6=$input_addr;
-            var $level=(($6+4)&4294967295);
+            var $level=$6+4;
             var $7=HEAP[$level];
             var $cmp7=((($7))>>>0) > 3;
             if ($cmp7) { __label__ = 6;; } else { __label__ = 7;; }
@@ -6303,7 +6300,7 @@ var _rslist;
               else if (__label__ == 9) {
   
                 var $10=$raw;
-                var $version15=(($10)&4294967295);
+                var $version15=$10;
                 var $11=HEAP[$version15];
                 $version=$11;
                 var $12=$version;
@@ -6348,12 +6345,12 @@ var _rslist;
   
                       var $21=$i;
                       var $22=$raw;
-                      var $dataLength=(($22+4)&4294967295);
+                      var $dataLength=$22+4;
                       var $23=HEAP[$dataLength];
                       var $24=$raw;
-                      var $eccLength=(($24+8)&4294967295);
+                      var $eccLength=$24+8;
                       var $25=HEAP[$eccLength];
-                      var $add=((($23) + ($25))&4294967295);
+                      var $add=($23) + ($25);
                       var $cmp25=((($21))|0) < ((($add))|0);
                       if (!($cmp25)) { __label__ = 23;break $for_cond$20; }
   
@@ -6395,7 +6392,7 @@ var _rslist;
                         ;
   
                         var $34=$j;
-                        var $inc=((($34) + 1)&4294967295);
+                        var $inc=($34) + 1;
                         $j=$inc;
                         __label__ = 16;continue ;
                       }
@@ -6403,7 +6400,7 @@ var _rslist;
                       ;
   
                       var $35=$i;
-                      var $inc41=((($35) + 1)&4294967295);
+                      var $inc41=($35) + 1;
                       $i=$inc41;
                       __label__ = 14;continue $for_cond$20;
                     }
@@ -6436,7 +6433,7 @@ var _rslist;
                         ;
   
                         var $43=$i;
-                        var $inc54=((($43) + 1)&4294967295);
+                        var $inc54=($43) + 1;
                         $i=$inc54;
                         __label__ = 24;continue ;
                       }
@@ -6449,14 +6446,14 @@ var _rslist;
   
                           var $45=$width;
                           var $46=$width;
-                          var $mul=((($45) * ($46))&4294967295);
+                          var $mul=($45) * ($46);
                           var $call59=_malloc($mul);
                           $masked=$call59;
                           var $47=$masked;
                           var $48=$frame;
                           var $49=$width;
                           var $50=$width;
-                          var $mul60=((($49) * ($50))&4294967295);
+                          var $mul60=($49) * ($50);
                           assert($mul60 % 1 === 0, 'memcpy given ' + $mul60 + ' bytes to copy. Problem with 4=1 corrections perhaps?');for (var $mcpi$ = 0; $mcpi$ < $mul60; $mcpi$++) {
                           HEAP[$47+$mcpi$]=HEAP[$48+$mcpi$]; 
                           };
@@ -6472,7 +6469,7 @@ var _rslist;
                             var $52=$width;
                             var $53=$frame;
                             var $54=$input_addr;
-                            var $level64=(($54+4)&4294967295);
+                            var $level64=$54+4;
                             var $55=HEAP[$level64];
                             var $call65=_Mask_mask($52, $53, $55);
                             $masked=$call65;
@@ -6484,7 +6481,7 @@ var _rslist;
                             var $57=$frame;
                             var $58=$mask_addr;
                             var $59=$input_addr;
-                            var $level67=(($59+4)&4294967295);
+                            var $level67=$59+4;
                             var $60=HEAP[$level67];
                             var $call68=_Mask_makeMask($56, $57, $58, $60);
                             $masked=$call68;
@@ -6968,7 +6965,7 @@ var _rslist;
       if (!($cmp)) { __label__ = 3;break ; }
   
       var $2=$list;
-      var $next1=(($2+4)&4294967295);
+      var $next1=$2+4;
       var $3=HEAP[$next1];
       $next=$3;
       var $4=$list;
@@ -6996,7 +6993,7 @@ var _rslist;
     if (__label__ == 1) {
   
       var $1=$entry_addr;
-      var $code=(($1)&4294967295);
+      var $code=$1;
       var $2=HEAP[$code];
       _QRcode_free($2);
       var $3=$entry_addr;
@@ -7030,10 +7027,10 @@ var _rslist;
       if (!($cmp)) { __label__ = 3;break ; }
   
       var $2=$size;
-      var $inc=((($2) + 1)&4294967295);
+      var $inc=($2) + 1;
       $size=$inc;
       var $3=$list;
-      var $next=(($3+4)&4294967295);
+      var $next=$3+4;
       var $4=HEAP[$next];
       $list=$4;
       __label__ = 1;continue ;
@@ -7060,7 +7057,7 @@ var _rslist;
     $head=0;
     $tail=0;
     var $0=$s_addr;
-    var $head2=(($0+8)&4294967295);
+    var $head2=$0+8;
     var $1=HEAP[$head2];
     $list=$1;
     ;
@@ -7097,30 +7094,30 @@ var _rslist;
   
         var $8=$entry1;
         var $9=$tail;
-        var $next=(($9+4)&4294967295);
+        var $next=$9+4;
         HEAP[$next]=$8;
         var $10=$tail;
-        var $next10=(($10+4)&4294967295);
+        var $next10=$10+4;
         var $11=HEAP[$next10];
         $tail=$11;
         ;
       }
   
       var $12=$list;
-      var $input=(($12)&4294967295);
+      var $input=$12;
       var $13=HEAP[$input];
       var $call12=_QRcode_encodeInput($13);
       var $14=$tail;
-      var $code=(($14)&4294967295);
+      var $code=$14;
       HEAP[$code]=$call12;
       var $15=$tail;
-      var $code13=(($15)&4294967295);
+      var $code13=$15;
       var $16=HEAP[$code13];
       var $cmp14=((($16))|0)==0;
       if ($cmp14) { __label__ = 10;break $while_cond$2; }
   
       var $17=$list;
-      var $next17=(($17+4)&4294967295);
+      var $next17=$17+4;
       var $18=HEAP[$next17];
       $list=$18;
       __label__ = 1;continue $while_cond$2;
@@ -7180,10 +7177,10 @@ var _rslist;
     else if (__label__ == 2) {
   
       var $2=$entry1;
-      var $next=(($2+4)&4294967295);
+      var $next=$2+4;
       HEAP[$next]=0;
       var $3=$entry1;
-      var $code=(($3)&4294967295);
+      var $code=$3;
       HEAP[$code]=0;
       var $4=$entry1;
       $retval=$4;
@@ -7509,10 +7506,10 @@ var _rslist;
       var $2=$input_addr;
       var $call1=_QRinput_getByteStream($2);
       var $3=$raw;
-      var $datacode=(($3+12)&4294967295);
+      var $datacode=$3+12;
       HEAP[$datacode]=$call1;
       var $4=$raw;
-      var $datacode2=(($4+12)&4294967295);
+      var $datacode2=$4+12;
       var $5=HEAP[$datacode2];
       var $cmp3=((($5))|0)==0;
       if ($cmp3) { __label__ = 3;; } else { __label__ = 4;; }
@@ -7527,65 +7524,65 @@ var _rslist;
       else if (__label__ == 4) {
   
         var $8=$input_addr;
-        var $version=(($8)&4294967295);
+        var $version=$8;
         var $9=HEAP[$version];
         var $10=$input_addr;
-        var $level=(($10+4)&4294967295);
+        var $level=$10+4;
         var $11=HEAP[$level];
-        var $arraydecay=(($spec)&4294967295);
+        var $arraydecay=$spec;
         _QRspec_getEccSpec($9, $11, $arraydecay);
         var $12=$input_addr;
-        var $version6=(($12)&4294967295);
+        var $version6=$12;
         var $13=HEAP[$version6];
         var $14=$raw;
-        var $version7=(($14)&4294967295);
+        var $version7=$14;
         HEAP[$version7]=$13;
-        var $arrayidx=(($spec)&4294967295);
+        var $arrayidx=$spec;
         var $15=HEAP[$arrayidx];
         var $16=$raw;
-        var $b1=(($16+20)&4294967295);
+        var $b1=$16+20;
         HEAP[$b1]=$15;
-        var $arrayidx8=(($spec)&4294967295);
+        var $arrayidx8=$spec;
         var $17=HEAP[$arrayidx8];
-        var $arrayidx9=(($spec+4)&4294967295);
+        var $arrayidx9=$spec+4;
         var $18=HEAP[$arrayidx9];
-        var $mul=((($17) * ($18))&4294967295);
-        var $arrayidx10=(($spec+12)&4294967295);
+        var $mul=($17) * ($18);
+        var $arrayidx10=$spec+12;
         var $19=HEAP[$arrayidx10];
-        var $arrayidx11=(($spec+16)&4294967295);
+        var $arrayidx11=$spec+16;
         var $20=HEAP[$arrayidx11];
-        var $mul12=((($19) * ($20))&4294967295);
-        var $add=((($mul) + ($mul12))&4294967295);
+        var $mul12=($19) * ($20);
+        var $add=($mul) + ($mul12);
         var $21=$raw;
-        var $dataLength=(($21+4)&4294967295);
+        var $dataLength=$21+4;
         HEAP[$dataLength]=$add;
-        var $arrayidx13=(($spec)&4294967295);
+        var $arrayidx13=$spec;
         var $22=HEAP[$arrayidx13];
-        var $arrayidx14=(($spec+12)&4294967295);
+        var $arrayidx14=$spec+12;
         var $23=HEAP[$arrayidx14];
-        var $add15=((($22) + ($23))&4294967295);
-        var $arrayidx16=(($spec+8)&4294967295);
+        var $add15=($22) + ($23);
+        var $arrayidx16=$spec+8;
         var $24=HEAP[$arrayidx16];
-        var $mul17=((($add15) * ($24))&4294967295);
+        var $mul17=($add15) * ($24);
         var $25=$raw;
-        var $eccLength=(($25+8)&4294967295);
+        var $eccLength=$25+8;
         HEAP[$eccLength]=$mul17;
         var $26=$raw;
-        var $eccLength18=(($26+8)&4294967295);
+        var $eccLength18=$26+8;
         var $27=HEAP[$eccLength18];
         var $call19=_malloc($27);
         var $28=$raw;
-        var $ecccode=(($28+16)&4294967295);
+        var $ecccode=$28+16;
         HEAP[$ecccode]=$call19;
         var $29=$raw;
-        var $ecccode20=(($29+16)&4294967295);
+        var $ecccode20=$29+16;
         var $30=HEAP[$ecccode20];
         var $cmp21=((($30))|0)==0;
         if ($cmp21) { __label__ = 5;; } else { __label__ = 6;; }
         if (__label__ == 5) {
   
           var $31=$raw;
-          var $datacode23=(($31+12)&4294967295);
+          var $datacode23=$31+12;
           var $32=HEAP[$datacode23];
           ;
           var $33=$raw;
@@ -7596,24 +7593,24 @@ var _rslist;
         }
         else if (__label__ == 6) {
   
-          var $arrayidx25=(($spec)&4294967295);
+          var $arrayidx25=$spec;
           var $35=HEAP[$arrayidx25];
-          var $arrayidx26=(($spec+12)&4294967295);
+          var $arrayidx26=$spec+12;
           var $36=HEAP[$arrayidx26];
-          var $add27=((($35) + ($36))&4294967295);
+          var $add27=($35) + ($36);
           var $37=$raw;
-          var $blocks=(($37+24)&4294967295);
+          var $blocks=$37+24;
           HEAP[$blocks]=$add27;
           var $38=$raw;
-          var $blocks28=(($38+24)&4294967295);
+          var $blocks28=$38+24;
           var $39=HEAP[$blocks28];
           var $call29=_calloc(16, $39);
           var $40=$call29;
           var $41=$raw;
-          var $rsblock=(($41+28)&4294967295);
+          var $rsblock=$41+28;
           HEAP[$rsblock]=$40;
           var $42=$raw;
-          var $rsblock30=(($42+28)&4294967295);
+          var $rsblock30=$42+28;
           var $43=HEAP[$rsblock30];
           var $cmp31=((($43))|0)==0;
           if ($cmp31) { __label__ = 7;; } else { __label__ = 8;; }
@@ -7627,14 +7624,14 @@ var _rslist;
           else if (__label__ == 8) {
   
             var $45=$raw;
-            var $rsblock34=(($45+28)&4294967295);
+            var $rsblock34=$45+28;
             var $46=HEAP[$rsblock34];
-            var $arraydecay35=(($spec)&4294967295);
+            var $arraydecay35=$spec;
             var $47=$raw;
-            var $datacode36=(($47+12)&4294967295);
+            var $datacode36=$47+12;
             var $48=HEAP[$datacode36];
             var $49=$raw;
-            var $ecccode37=(($49+16)&4294967295);
+            var $ecccode37=$49+16;
             var $50=HEAP[$ecccode37];
             var $call38=_RSblock_init($46, $arraydecay35, $48, $50);
             $ret=$call38;
@@ -7651,7 +7648,7 @@ var _rslist;
             else if (__label__ == 10) {
   
               var $53=$raw;
-              var $count=(($53+32)&4294967295);
+              var $count=$53+32;
               HEAP[$count]=0;
               var $54=$raw;
               $retval=$54;
@@ -7681,15 +7678,15 @@ var _rslist;
     if (__label__ == 1) {
   
       var $1=$raw_addr;
-      var $datacode=(($1+12)&4294967295);
+      var $datacode=$1+12;
       var $2=HEAP[$datacode];
       ;
       var $3=$raw_addr;
-      var $ecccode=(($3+16)&4294967295);
+      var $ecccode=$3+16;
       var $4=HEAP[$ecccode];
       ;
       var $5=$raw_addr;
-      var $rsblock=(($5+28)&4294967295);
+      var $rsblock=$5+28;
       var $6=HEAP[$rsblock];
       var $7=$6;
       ;
@@ -7732,31 +7729,31 @@ var _rslist;
   
       var $2=$width_addr;
       var $3=$filler;
-      var $width1=(($3)&4294967295);
+      var $width1=$3;
       HEAP[$width1]=$2;
       var $4=$frame_addr;
       var $5=$filler;
-      var $frame2=(($5+4)&4294967295);
+      var $frame2=$5+4;
       HEAP[$frame2]=$4;
       var $6=$width_addr;
-      var $sub=((($6) - 1)&4294967295);
+      var $sub=($6) - 1;
       var $7=$filler;
-      var $x=(($7+8)&4294967295);
+      var $x=$7+8;
       HEAP[$x]=$sub;
       var $8=$width_addr;
-      var $sub3=((($8) - 1)&4294967295);
+      var $sub3=($8) - 1;
       var $9=$filler;
-      var $y=(($9+12)&4294967295);
+      var $y=$9+12;
       HEAP[$y]=$sub3;
       var $10=$filler;
-      var $dir=(($10+16)&4294967295);
+      var $dir=$10+16;
       HEAP[$dir]=-1;
       var $11=$filler;
-      var $bit=(($11+20)&4294967295);
+      var $bit=$11+20;
       HEAP[$bit]=-1;
       var $12=$mqr_addr;
       var $13=$filler;
-      var $mqr4=(($13+24)&4294967295);
+      var $mqr4=$13+24;
       HEAP[$mqr4]=$12;
       var $14=$filler;
       $retval=$14;
@@ -7781,10 +7778,10 @@ var _rslist;
     var $ret;
     $raw_addr=$raw;
     var $0=$raw_addr;
-    var $count=(($0+32)&4294967295);
+    var $count=$0+32;
     var $1=HEAP[$count];
     var $2=$raw_addr;
-    var $dataLength=(($2+4)&4294967295);
+    var $dataLength=$2+4;
     var $3=HEAP[$dataLength];
     var $cmp=((($1))|0) < ((($3))|0);
     if ($cmp) { __label__ = 1;; } else { __label__ = 4;; }
@@ -7792,37 +7789,37 @@ var _rslist;
       if (__label__ == 1) {
   
         var $4=$raw_addr;
-        var $count1=(($4+32)&4294967295);
+        var $count1=$4+32;
         var $5=HEAP[$count1];
         var $6=$raw_addr;
-        var $blocks=(($6+24)&4294967295);
+        var $blocks=$6+24;
         var $7=HEAP[$blocks];
         var $rem=((($5))|0) % ((($7))|0);
         $row=$rem;
         var $8=$raw_addr;
-        var $count2=(($8+32)&4294967295);
+        var $count2=$8+32;
         var $9=HEAP[$count2];
         var $10=$raw_addr;
-        var $blocks3=(($10+24)&4294967295);
+        var $blocks3=$10+24;
         var $11=HEAP[$blocks3];
         var $div=((((($9))|0)/((($11))|0))|0);
         $col=$div;
         var $12=$col;
         var $13=$raw_addr;
-        var $rsblock=(($13+28)&4294967295);
+        var $rsblock=$13+28;
         var $14=HEAP[$rsblock];
-        var $arrayidx=(($14)&4294967295);
-        var $dataLength4=(($arrayidx)&4294967295);
+        var $arrayidx=$14;
+        var $dataLength4=$arrayidx;
         var $15=HEAP[$dataLength4];
         var $cmp5=((($12))|0) >= ((($15))|0);
         if ($cmp5) { __label__ = 2;; } else { __label__ = 3;; }
         if (__label__ == 2) {
   
           var $16=$raw_addr;
-          var $b1=(($16+20)&4294967295);
+          var $b1=$16+20;
           var $17=HEAP[$b1];
           var $18=$row;
-          var $add=((($18) + ($17))&4294967295);
+          var $add=($18) + ($17);
           $row=$add;
           ;
         }
@@ -7830,12 +7827,12 @@ var _rslist;
         var $19=$col;
         var $20=$row;
         var $21=$raw_addr;
-        var $rsblock7=(($21+28)&4294967295);
+        var $rsblock7=$21+28;
         var $22=HEAP[$rsblock7];
-        var $arrayidx8=(($22+16*$20)&4294967295);
-        var $data=(($arrayidx8+4)&4294967295);
+        var $arrayidx8=$22+16*$20;
+        var $data=$arrayidx8+4;
         var $23=HEAP[$data];
-        var $arrayidx9=(($23+$19)&4294967295);
+        var $arrayidx9=$23+$19;
         var $24=HEAP[$arrayidx9];
         $ret=$24;
         __label__ = 8;break $if_then$$if_else$2;
@@ -7843,52 +7840,52 @@ var _rslist;
       else if (__label__ == 4) {
   
         var $25=$raw_addr;
-        var $count10=(($25+32)&4294967295);
+        var $count10=$25+32;
         var $26=HEAP[$count10];
         var $27=$raw_addr;
-        var $dataLength11=(($27+4)&4294967295);
+        var $dataLength11=$27+4;
         var $28=HEAP[$dataLength11];
         var $29=$raw_addr;
-        var $eccLength=(($29+8)&4294967295);
+        var $eccLength=$29+8;
         var $30=HEAP[$eccLength];
-        var $add12=((($28) + ($30))&4294967295);
+        var $add12=($28) + ($30);
         var $cmp13=((($26))|0) < ((($add12))|0);
         if ($cmp13) { __label__ = 5;; } else { __label__ = 6;; }
         if (__label__ == 5) {
   
           var $31=$raw_addr;
-          var $count15=(($31+32)&4294967295);
+          var $count15=$31+32;
           var $32=HEAP[$count15];
           var $33=$raw_addr;
-          var $dataLength16=(($33+4)&4294967295);
+          var $dataLength16=$33+4;
           var $34=HEAP[$dataLength16];
-          var $sub=((($32) - ($34))&4294967295);
+          var $sub=($32) - ($34);
           var $35=$raw_addr;
-          var $blocks17=(($35+24)&4294967295);
+          var $blocks17=$35+24;
           var $36=HEAP[$blocks17];
           var $rem18=((($sub))|0) % ((($36))|0);
           $row=$rem18;
           var $37=$raw_addr;
-          var $count19=(($37+32)&4294967295);
+          var $count19=$37+32;
           var $38=HEAP[$count19];
           var $39=$raw_addr;
-          var $dataLength20=(($39+4)&4294967295);
+          var $dataLength20=$39+4;
           var $40=HEAP[$dataLength20];
-          var $sub21=((($38) - ($40))&4294967295);
+          var $sub21=($38) - ($40);
           var $41=$raw_addr;
-          var $blocks22=(($41+24)&4294967295);
+          var $blocks22=$41+24;
           var $42=HEAP[$blocks22];
           var $div23=((((($sub21))|0)/((($42))|0))|0);
           $col=$div23;
           var $43=$col;
           var $44=$row;
           var $45=$raw_addr;
-          var $rsblock24=(($45+28)&4294967295);
+          var $rsblock24=$45+28;
           var $46=HEAP[$rsblock24];
-          var $arrayidx25=(($46+16*$44)&4294967295);
-          var $ecc=(($arrayidx25+12)&4294967295);
+          var $arrayidx25=$46+16*$44;
+          var $ecc=$arrayidx25+12;
           var $47=HEAP[$ecc];
-          var $arrayidx26=(($47+$43)&4294967295);
+          var $arrayidx26=$47+$43;
           var $48=HEAP[$arrayidx26];
           $ret=$48;
           ;
@@ -7905,9 +7902,9 @@ var _rslist;
     if (__label__ == 8) {
   
       var $49=$raw_addr;
-      var $count30=(($49+32)&4294967295);
+      var $count30=$49+32;
       var $50=HEAP[$count30];
-      var $inc=((($50) + 1)&4294967295);
+      var $inc=($50) + 1;
       HEAP[$count30]=$inc;
       var $51=$ret;
       $retval=$51;
@@ -7933,7 +7930,7 @@ var _rslist;
     var $w;
     $filler_addr=$filler;
     var $0=$filler_addr;
-    var $bit=(($0+20)&4294967295);
+    var $bit=$0+20;
     var $1=HEAP[$bit];
     var $cmp=((($1))|0)==-1;
     if ($cmp) { __label__ = 1;; } else { __label__ = 2;; }
@@ -7941,82 +7938,82 @@ var _rslist;
       if (__label__ == 1) {
   
         var $2=$filler_addr;
-        var $bit1=(($2+20)&4294967295);
+        var $bit1=$2+20;
         HEAP[$bit1]=0;
         var $3=$filler_addr;
-        var $frame=(($3+4)&4294967295);
+        var $frame=$3+4;
         var $4=HEAP[$frame];
         var $5=$filler_addr;
-        var $y2=(($5+12)&4294967295);
+        var $y2=$5+12;
         var $6=HEAP[$y2];
         var $7=$filler_addr;
-        var $width=(($7)&4294967295);
+        var $width=$7;
         var $8=HEAP[$width];
-        var $mul=((($6) * ($8))&4294967295);
-        var $add_ptr=(($4+$mul)&4294967295);
+        var $mul=($6) * ($8);
+        var $add_ptr=$4+$mul;
         var $9=$filler_addr;
-        var $x3=(($9+8)&4294967295);
+        var $x3=$9+8;
         var $10=HEAP[$x3];
-        var $add_ptr4=(($add_ptr+$10)&4294967295);
+        var $add_ptr4=$add_ptr+$10;
         $retval=$add_ptr4;
         ;
       }
       else if (__label__ == 2) {
   
         var $11=$filler_addr;
-        var $x5=(($11+8)&4294967295);
+        var $x5=$11+8;
         var $12=HEAP[$x5];
         $x=$12;
         var $13=$filler_addr;
-        var $y6=(($13+12)&4294967295);
+        var $y6=$13+12;
         var $14=HEAP[$y6];
         $y=$14;
         var $15=$filler_addr;
-        var $frame7=(($15+4)&4294967295);
+        var $frame7=$15+4;
         var $16=HEAP[$frame7];
         $p=$16;
         var $17=$filler_addr;
-        var $width8=(($17)&4294967295);
+        var $width8=$17;
         var $18=HEAP[$width8];
         $w=$18;
         var $19=$filler_addr;
-        var $bit9=(($19+20)&4294967295);
+        var $bit9=$19+20;
         var $20=HEAP[$bit9];
         var $cmp10=((($20))|0)==0;
         if ($cmp10) { __label__ = 3;; } else { __label__ = 4;; }
         if (__label__ == 3) {
   
           var $21=$x;
-          var $dec=((($21) + -1)&4294967295);
+          var $dec=($21) + -1;
           $x=$dec;
           var $22=$filler_addr;
-          var $bit12=(($22+20)&4294967295);
+          var $bit12=$22+20;
           var $23=HEAP[$bit12];
-          var $inc=((($23) + 1)&4294967295);
+          var $inc=($23) + 1;
           HEAP[$bit12]=$inc;
           ;
         }
         else if (__label__ == 4) {
   
           var $24=$x;
-          var $inc13=((($24) + 1)&4294967295);
+          var $inc13=($24) + 1;
           $x=$inc13;
           var $25=$filler_addr;
-          var $dir=(($25+16)&4294967295);
+          var $dir=$25+16;
           var $26=HEAP[$dir];
           var $27=$y;
-          var $add=((($27) + ($26))&4294967295);
+          var $add=($27) + ($26);
           $y=$add;
           var $28=$filler_addr;
-          var $bit14=(($28+20)&4294967295);
+          var $bit14=$28+20;
           var $29=HEAP[$bit14];
-          var $dec15=((($29) + -1)&4294967295);
+          var $dec15=($29) + -1;
           HEAP[$bit14]=$dec15;
           ;
         }
   
         var $30=$filler_addr;
-        var $dir17=(($30+16)&4294967295);
+        var $dir17=$30+16;
         var $31=HEAP[$dir17];
         var $cmp18=((($31))|0) < 0;
         if ($cmp18) { __label__ = 6;; } else { __label__ = 12;; }
@@ -8029,13 +8026,13 @@ var _rslist;
   
             $y=0;
             var $33=$x;
-            var $sub=((($33) - 2)&4294967295);
+            var $sub=($33) - 2;
             $x=$sub;
             var $34=$filler_addr;
-            var $dir22=(($34+16)&4294967295);
+            var $dir22=$34+16;
             HEAP[$dir22]=1;
             var $35=$filler_addr;
-            var $mqr=(($35+24)&4294967295);
+            var $mqr=$35+24;
             var $36=HEAP[$mqr];
             var $tobool=((($36))|0)!=0;
             if ($tobool) { __label__ = 10;; } else { __label__ = 8;; }
@@ -8047,7 +8044,7 @@ var _rslist;
                 if (!($cmp23)) { __label__ = 10;break $if_end26$$land_lhs_true$13; }
   
                 var $38=$x;
-                var $dec25=((($38) + -1)&4294967295);
+                var $dec25=($38) + -1;
                 $x=$dec25;
                 $y=9;
                 ;
@@ -8068,16 +8065,16 @@ var _rslist;
           if (__label__ == 13) {
   
             var $41=$w;
-            var $sub31=((($41) - 1)&4294967295);
+            var $sub31=($41) - 1;
             $y=$sub31;
             var $42=$x;
-            var $sub32=((($42) - 2)&4294967295);
+            var $sub32=($42) - 2;
             $x=$sub32;
             var $43=$filler_addr;
-            var $dir33=(($43+16)&4294967295);
+            var $dir33=$43+16;
             HEAP[$dir33]=-1;
             var $44=$filler_addr;
-            var $mqr34=(($44+24)&4294967295);
+            var $mqr34=$44+24;
             var $45=HEAP[$mqr34];
             var $tobool35=((($45))|0)!=0;
             if ($tobool35) { __label__ = 16;; } else { __label__ = 14;; }
@@ -8089,10 +8086,10 @@ var _rslist;
                 if (!($cmp37)) { __label__ = 16;break $if_end41$$land_lhs_true36$21; }
   
                 var $47=$x;
-                var $dec39=((($47) + -1)&4294967295);
+                var $dec39=($47) + -1;
                 $x=$dec39;
                 var $48=$y;
-                var $sub40=((($48) - 8)&4294967295);
+                var $sub40=($48) - 8;
                 $y=$sub40;
                 ;
               }
@@ -8116,19 +8113,19 @@ var _rslist;
   
             var $51=$x;
             var $52=$filler_addr;
-            var $x48=(($52+8)&4294967295);
+            var $x48=$52+8;
             HEAP[$x48]=$51;
             var $53=$y;
             var $54=$filler_addr;
-            var $y49=(($54+12)&4294967295);
+            var $y49=$54+12;
             HEAP[$y49]=$53;
             var $55=$y;
             var $56=$w;
-            var $mul50=((($55) * ($56))&4294967295);
+            var $mul50=($55) * ($56);
             var $57=$x;
-            var $add51=((($mul50) + ($57))&4294967295);
+            var $add51=($mul50) + ($57);
             var $58=$p;
-            var $arrayidx=(($58+$add51)&4294967295);
+            var $arrayidx=$58+$add51;
             var $59=HEAP[$arrayidx];
             var $conv=((($59))&255);
             var $and=($conv) & 128;
@@ -8145,11 +8142,11 @@ var _rslist;
   
               var $61=$y;
               var $62=$w;
-              var $mul55=((($61) * ($62))&4294967295);
+              var $mul55=($61) * ($62);
               var $63=$x;
-              var $add56=((($mul55) + ($63))&4294967295);
+              var $add56=($mul55) + ($63);
               var $64=$p;
-              var $arrayidx57=(($64+$add56)&4294967295);
+              var $arrayidx57=$64+$add56;
               $retval=$arrayidx57;
               __label__ = 24;break $if_then$$if_end$2;
             }
@@ -8195,15 +8192,15 @@ var _rslist;
   
       var $2=$version_addr;
       var $3=$qrcode;
-      var $version1=(($3)&4294967295);
+      var $version1=$3;
       HEAP[$version1]=$2;
       var $4=$width_addr;
       var $5=$qrcode;
-      var $width2=(($5+4)&4294967295);
+      var $width2=$5+4;
       HEAP[$width2]=$4;
       var $6=$data_addr;
       var $7=$qrcode;
-      var $data3=(($7+8)&4294967295);
+      var $data3=$7+8;
       HEAP[$data3]=$6;
       var $8=$qrcode;
       $retval=$8;
@@ -8238,18 +8235,18 @@ var _rslist;
     $data_addr=$data;
     $ecc_addr=$ecc;
     var $0=$spec_addr;
-    var $arrayidx=(($0+4)&4294967295);
+    var $arrayidx=$0+4;
     var $1=HEAP[$arrayidx];
     $dl=$1;
     var $2=$spec_addr;
-    var $arrayidx1=(($2+8)&4294967295);
+    var $arrayidx1=$2+8;
     var $3=HEAP[$arrayidx1];
     $el=$3;
     var $4=$el;
     var $5=$dl;
-    var $sub=((255 - ($5))&4294967295);
+    var $sub=255 - ($5);
     var $6=$el;
-    var $sub2=((($sub) - ($6))&4294967295);
+    var $sub2=($sub) - ($6);
     var $call=_init_rs(8, 285, 0, 1, $4, $sub2);
     $rs=$call;
     var $7=$rs;
@@ -8274,7 +8271,7 @@ var _rslist;
   
         var $11=$i;
         var $12=$spec_addr;
-        var $arrayidx3=(($12)&4294967295);
+        var $arrayidx3=$12;
         var $13=HEAP[$arrayidx3];
         var $cmp4=((($11))|0) < ((($13))|0);
         if (!($cmp4)) { __label__ = 6;break $for_cond$5; }
@@ -8288,25 +8285,25 @@ var _rslist;
         _RSblock_initBlock($14, $15, $16, $17, $18, $19);
         var $20=$dl;
         var $21=$dp;
-        var $add_ptr=(($21+$20)&4294967295);
+        var $add_ptr=$21+$20;
         $dp=$add_ptr;
         var $22=$el;
         var $23=$ep;
-        var $add_ptr5=(($23+$22)&4294967295);
+        var $add_ptr5=$23+$22;
         $ep=$add_ptr5;
         var $24=$block;
-        var $incdec_ptr=(($24+16)&4294967295);
+        var $incdec_ptr=$24+16;
         $block=$incdec_ptr;
         ;
   
         var $25=$i;
-        var $inc=((($25) + 1)&4294967295);
+        var $inc=($25) + 1;
         $i=$inc;
         __label__ = 3;continue $for_cond$5;
       }
   
       var $26=$spec_addr;
-      var $arrayidx6=(($26+12)&4294967295);
+      var $arrayidx6=$26+12;
       var $27=HEAP[$arrayidx6];
       var $cmp7=((($27))|0)==0;
       if ($cmp7) { __label__ = 7;; } else { __label__ = 8;; }
@@ -8318,18 +8315,18 @@ var _rslist;
       else if (__label__ == 8) {
   
         var $28=$spec_addr;
-        var $arrayidx10=(($28+16)&4294967295);
+        var $arrayidx10=$28+16;
         var $29=HEAP[$arrayidx10];
         $dl=$29;
         var $30=$spec_addr;
-        var $arrayidx11=(($30+8)&4294967295);
+        var $arrayidx11=$30+8;
         var $31=HEAP[$arrayidx11];
         $el=$31;
         var $32=$el;
         var $33=$dl;
-        var $sub12=((255 - ($33))&4294967295);
+        var $sub12=255 - ($33);
         var $34=$el;
-        var $sub13=((($sub12) - ($34))&4294967295);
+        var $sub13=($sub12) - ($34);
         var $call14=_init_rs(8, 285, 0, 1, $32, $sub13);
         $rs=$call14;
         var $35=$rs;
@@ -8348,7 +8345,7 @@ var _rslist;
   
             var $36=$i;
             var $37=$spec_addr;
-            var $arrayidx19=(($37+12)&4294967295);
+            var $arrayidx19=$37+12;
             var $38=HEAP[$arrayidx19];
             var $cmp20=((($36))|0) < ((($38))|0);
             if (!($cmp20)) { __label__ = 14;break ; }
@@ -8362,19 +8359,19 @@ var _rslist;
             _RSblock_initBlock($39, $40, $41, $42, $43, $44);
             var $45=$dl;
             var $46=$dp;
-            var $add_ptr22=(($46+$45)&4294967295);
+            var $add_ptr22=$46+$45;
             $dp=$add_ptr22;
             var $47=$el;
             var $48=$ep;
-            var $add_ptr23=(($48+$47)&4294967295);
+            var $add_ptr23=$48+$47;
             $ep=$add_ptr23;
             var $49=$block;
-            var $incdec_ptr24=(($49+16)&4294967295);
+            var $incdec_ptr24=$49+16;
             $block=$incdec_ptr24;
             ;
   
             var $50=$i;
-            var $inc26=((($50) + 1)&4294967295);
+            var $inc26=($50) + 1;
             $i=$inc26;
             __label__ = 11;continue ;
           }
@@ -8410,19 +8407,19 @@ var _rslist;
     $rs_addr=$rs;
     var $0=$dl_addr;
     var $1=$block_addr;
-    var $dataLength=(($1)&4294967295);
+    var $dataLength=$1;
     HEAP[$dataLength]=$0;
     var $2=$data_addr;
     var $3=$block_addr;
-    var $data1=(($3+4)&4294967295);
+    var $data1=$3+4;
     HEAP[$data1]=$2;
     var $4=$el_addr;
     var $5=$block_addr;
-    var $eccLength=(($5+8)&4294967295);
+    var $eccLength=$5+8;
     HEAP[$eccLength]=$4;
     var $6=$ecc_addr;
     var $7=$block_addr;
-    var $ecc2=(($7+12)&4294967295);
+    var $ecc2=$7+12;
     HEAP[$ecc2]=$6;
     var $8=$rs_addr;
     var $9=$data_addr;
@@ -8457,53 +8454,53 @@ var _rslist;
     else if (__label__ == 2) {
   
       var $2=$input_addr;
-      var $version=(($2)&4294967295);
+      var $version=$2;
       var $3=HEAP[$version];
       var $4=$raw;
-      var $version1=(($4)&4294967295);
+      var $version1=$4;
       HEAP[$version1]=$3;
       var $5=$input_addr;
-      var $version2=(($5)&4294967295);
+      var $version2=$5;
       var $6=HEAP[$version2];
       var $7=$input_addr;
-      var $level=(($7+4)&4294967295);
+      var $level=$7+4;
       var $8=HEAP[$level];
       var $call3=_MQRspec_getDataLength($6, $8);
       var $9=$raw;
-      var $dataLength=(($9+4)&4294967295);
+      var $dataLength=$9+4;
       HEAP[$dataLength]=$call3;
       var $10=$input_addr;
-      var $version4=(($10)&4294967295);
+      var $version4=$10;
       var $11=HEAP[$version4];
       var $12=$input_addr;
-      var $level5=(($12+4)&4294967295);
+      var $level5=$12+4;
       var $13=HEAP[$level5];
       var $call6=_MQRspec_getECCLength($11, $13);
       var $14=$raw;
-      var $eccLength=(($14+8)&4294967295);
+      var $eccLength=$14+8;
       HEAP[$eccLength]=$call6;
       var $15=$raw;
-      var $dataLength7=(($15+4)&4294967295);
+      var $dataLength7=$15+4;
       var $16=HEAP[$dataLength7];
-      var $mul=((($16) * 8)&4294967295);
+      var $mul=($16) * 8;
       var $17=$input_addr;
-      var $version8=(($17)&4294967295);
+      var $version8=$17;
       var $18=HEAP[$version8];
       var $19=$input_addr;
-      var $level9=(($19+4)&4294967295);
+      var $level9=$19+4;
       var $20=HEAP[$level9];
       var $call10=_MQRspec_getDataLengthBit($18, $20);
-      var $sub=((($mul) - ($call10))&4294967295);
+      var $sub=($mul) - ($call10);
       var $21=$raw;
-      var $oddbits=(($21+24)&4294967295);
+      var $oddbits=$21+24;
       HEAP[$oddbits]=$sub;
       var $22=$input_addr;
       var $call11=_QRinput_getByteStream($22);
       var $23=$raw;
-      var $datacode=(($23+12)&4294967295);
+      var $datacode=$23+12;
       HEAP[$datacode]=$call11;
       var $24=$raw;
-      var $datacode12=(($24+12)&4294967295);
+      var $datacode12=$24+12;
       var $25=HEAP[$datacode12];
       var $cmp13=((($25))|0)==0;
       if ($cmp13) { __label__ = 3;; } else { __label__ = 4;; }
@@ -8518,21 +8515,21 @@ var _rslist;
       else if (__label__ == 4) {
   
         var $28=$raw;
-        var $eccLength16=(($28+8)&4294967295);
+        var $eccLength16=$28+8;
         var $29=HEAP[$eccLength16];
         var $call17=_malloc($29);
         var $30=$raw;
-        var $ecccode=(($30+16)&4294967295);
+        var $ecccode=$30+16;
         HEAP[$ecccode]=$call17;
         var $31=$raw;
-        var $ecccode18=(($31+16)&4294967295);
+        var $ecccode18=$31+16;
         var $32=HEAP[$ecccode18];
         var $cmp19=((($32))|0)==0;
         if ($cmp19) { __label__ = 5;; } else { __label__ = 6;; }
         if (__label__ == 5) {
   
           var $33=$raw;
-          var $datacode21=(($33+12)&4294967295);
+          var $datacode21=$33+12;
           var $34=HEAP[$datacode21];
           ;
           var $35=$raw;
@@ -8546,10 +8543,10 @@ var _rslist;
           var $call23=_calloc(16, 1);
           var $37=$call23;
           var $38=$raw;
-          var $rsblock=(($38+20)&4294967295);
+          var $rsblock=$38+20;
           HEAP[$rsblock]=$37;
           var $39=$raw;
-          var $rsblock24=(($39+20)&4294967295);
+          var $rsblock24=$39+20;
           var $40=HEAP[$rsblock24];
           var $cmp25=((($40))|0)==0;
           if ($cmp25) { __label__ = 7;; } else { __label__ = 8;; }
@@ -8563,16 +8560,16 @@ var _rslist;
           else if (__label__ == 8) {
   
             var $42=$raw;
-            var $eccLength28=(($42+8)&4294967295);
+            var $eccLength28=$42+8;
             var $43=HEAP[$eccLength28];
             var $44=$raw;
-            var $dataLength29=(($44+4)&4294967295);
+            var $dataLength29=$44+4;
             var $45=HEAP[$dataLength29];
-            var $sub30=((255 - ($45))&4294967295);
+            var $sub30=255 - ($45);
             var $46=$raw;
-            var $eccLength31=(($46+8)&4294967295);
+            var $eccLength31=$46+8;
             var $47=HEAP[$eccLength31];
-            var $sub32=((($sub30) - ($47))&4294967295);
+            var $sub32=($sub30) - ($47);
             var $call33=_init_rs(8, 285, 0, 1, $43, $sub32);
             $rs=$call33;
             var $48=$rs;
@@ -8588,24 +8585,24 @@ var _rslist;
             else if (__label__ == 10) {
   
               var $50=$raw;
-              var $rsblock37=(($50+20)&4294967295);
+              var $rsblock37=$50+20;
               var $51=HEAP[$rsblock37];
               var $52=$raw;
-              var $dataLength38=(($52+4)&4294967295);
+              var $dataLength38=$52+4;
               var $53=HEAP[$dataLength38];
               var $54=$raw;
-              var $datacode39=(($54+12)&4294967295);
+              var $datacode39=$54+12;
               var $55=HEAP[$datacode39];
               var $56=$raw;
-              var $eccLength40=(($56+8)&4294967295);
+              var $eccLength40=$56+8;
               var $57=HEAP[$eccLength40];
               var $58=$raw;
-              var $ecccode41=(($58+16)&4294967295);
+              var $ecccode41=$58+16;
               var $59=HEAP[$ecccode41];
               var $60=$rs;
               _RSblock_initBlock($51, $53, $55, $57, $59, $60);
               var $61=$raw;
-              var $count=(($61+28)&4294967295);
+              var $count=$61+28;
               HEAP[$count]=0;
               var $62=$raw;
               $retval=$62;
@@ -8635,15 +8632,15 @@ var _rslist;
     if (__label__ == 1) {
   
       var $1=$raw_addr;
-      var $datacode=(($1+12)&4294967295);
+      var $datacode=$1+12;
       var $2=HEAP[$datacode];
       ;
       var $3=$raw_addr;
-      var $ecccode=(($3+16)&4294967295);
+      var $ecccode=$3+16;
       var $4=HEAP[$ecccode];
       ;
       var $5=$raw_addr;
-      var $rsblock=(($5+20)&4294967295);
+      var $rsblock=$5+20;
       var $6=HEAP[$rsblock];
       var $7=$6;
       ;
@@ -8668,10 +8665,10 @@ var _rslist;
     var $ret;
     $raw_addr=$raw;
     var $0=$raw_addr;
-    var $count=(($0+28)&4294967295);
+    var $count=$0+28;
     var $1=HEAP[$count];
     var $2=$raw_addr;
-    var $dataLength=(($2+4)&4294967295);
+    var $dataLength=$2+4;
     var $3=HEAP[$dataLength];
     var $cmp=((($1))|0) < ((($3))|0);
     if ($cmp) { __label__ = 1;; } else { __label__ = 2;; }
@@ -8679,12 +8676,12 @@ var _rslist;
       if (__label__ == 1) {
   
         var $4=$raw_addr;
-        var $count1=(($4+28)&4294967295);
+        var $count1=$4+28;
         var $5=HEAP[$count1];
         var $6=$raw_addr;
-        var $datacode=(($6+12)&4294967295);
+        var $datacode=$6+12;
         var $7=HEAP[$datacode];
-        var $arrayidx=(($7+$5)&4294967295);
+        var $arrayidx=$7+$5;
         var $8=HEAP[$arrayidx];
         $ret=$8;
         __label__ = 6;break $if_then$$if_else$2;
@@ -8692,30 +8689,30 @@ var _rslist;
       else if (__label__ == 2) {
   
         var $9=$raw_addr;
-        var $count2=(($9+28)&4294967295);
+        var $count2=$9+28;
         var $10=HEAP[$count2];
         var $11=$raw_addr;
-        var $dataLength3=(($11+4)&4294967295);
+        var $dataLength3=$11+4;
         var $12=HEAP[$dataLength3];
         var $13=$raw_addr;
-        var $eccLength=(($13+8)&4294967295);
+        var $eccLength=$13+8;
         var $14=HEAP[$eccLength];
-        var $add=((($12) + ($14))&4294967295);
+        var $add=($12) + ($14);
         var $cmp4=((($10))|0) < ((($add))|0);
         if ($cmp4) { __label__ = 3;; } else { __label__ = 4;; }
         if (__label__ == 3) {
   
           var $15=$raw_addr;
-          var $count6=(($15+28)&4294967295);
+          var $count6=$15+28;
           var $16=HEAP[$count6];
           var $17=$raw_addr;
-          var $dataLength7=(($17+4)&4294967295);
+          var $dataLength7=$17+4;
           var $18=HEAP[$dataLength7];
-          var $sub=((($16) - ($18))&4294967295);
+          var $sub=($16) - ($18);
           var $19=$raw_addr;
-          var $ecccode=(($19+16)&4294967295);
+          var $ecccode=$19+16;
           var $20=HEAP[$ecccode];
-          var $arrayidx8=(($20+$sub)&4294967295);
+          var $arrayidx8=$20+$sub;
           var $21=HEAP[$arrayidx8];
           $ret=$21;
           ;
@@ -8732,9 +8729,9 @@ var _rslist;
     if (__label__ == 6) {
   
       var $22=$raw_addr;
-      var $count11=(($22+28)&4294967295);
+      var $count11=$22+28;
       var $23=HEAP[$count11];
-      var $inc=((($23) + 1)&4294967295);
+      var $inc=($23) + 1;
       HEAP[$count11]=$inc;
       var $24=$ret;
       $retval=$24;
@@ -8822,24 +8819,24 @@ var _rslist;
         else if (__label__ == 6) {
   
           var $5=$input;
-          var $head=(($5+8)&4294967295);
+          var $head=$5+8;
           HEAP[$head]=0;
           var $6=$input;
-          var $tail=(($6+12)&4294967295);
+          var $tail=$6+12;
           HEAP[$tail]=0;
           var $7=$version_addr;
           var $8=$input;
-          var $version8=(($8)&4294967295);
+          var $version8=$8;
           HEAP[$version8]=$7;
           var $9=$level_addr;
           var $10=$input;
-          var $level9=(($10+4)&4294967295);
+          var $level9=$10+4;
           HEAP[$level9]=$9;
           var $11=$input;
-          var $mqr=(($11+16)&4294967295);
+          var $mqr=$11+16;
           HEAP[$mqr]=0;
           var $12=$input;
-          var $fnc1=(($12+20)&4294967295);
+          var $fnc1=$12+20;
           HEAP[$fnc1]=0;
           var $13=$input;
           $retval=$13;
@@ -8908,7 +8905,7 @@ var _rslist;
           else if (__label__ == 7) {
   
             var $7=$input;
-            var $mqr=(($7+16)&4294967295);
+            var $mqr=$7+16;
             HEAP[$mqr]=1;
             var $8=$input;
             $retval=$8;
@@ -8945,7 +8942,7 @@ var _rslist;
     var $input_addr;
     $input_addr=$input;
     var $0=$input_addr;
-    var $version=(($0)&4294967295);
+    var $version=$0;
     var $1=HEAP[$version];
     ;
     return $1;
@@ -8963,7 +8960,7 @@ var _rslist;
     $input_addr=$input;
     $version_addr=$version;
     var $0=$input_addr;
-    var $mqr=(($0+16)&4294967295);
+    var $mqr=$0+16;
     var $1=HEAP[$mqr];
     var $tobool=((($1))|0)!=0;
     if ($tobool) { __label__ = 3;; } else { __label__ = 1;; }
@@ -8980,7 +8977,7 @@ var _rslist;
   
         var $4=$version_addr;
         var $5=$input_addr;
-        var $version3=(($5)&4294967295);
+        var $version3=$5;
         HEAP[$version3]=$4;
         $retval=0;
         __label__ = 5;break $if_then$$lor_lhs_false$2;
@@ -9008,7 +9005,7 @@ var _rslist;
     var $input_addr;
     $input_addr=$input;
     var $0=$input_addr;
-    var $level=(($0+4)&4294967295);
+    var $level=$0+4;
     var $1=HEAP[$level];
     ;
     return $1;
@@ -9026,7 +9023,7 @@ var _rslist;
     $input_addr=$input;
     $level_addr=$level;
     var $0=$input_addr;
-    var $mqr=(($0+16)&4294967295);
+    var $mqr=$0+16;
     var $1=HEAP[$mqr];
     var $tobool=((($1))|0)!=0;
     if ($tobool) { __label__ = 2;; } else { __label__ = 1;; }
@@ -9039,7 +9036,7 @@ var _rslist;
   
         var $3=$level_addr;
         var $4=$input_addr;
-        var $level1=(($4+4)&4294967295);
+        var $level1=$4+4;
         HEAP[$level1]=$3;
         $retval=0;
         __label__ = 4;break $if_then$$lor_lhs_false$2;
@@ -9072,7 +9069,7 @@ var _rslist;
     $version_addr=$version;
     $level_addr=$level;
     var $0=$input_addr;
-    var $mqr=(($0+16)&4294967295);
+    var $mqr=$0+16;
     var $1=HEAP[$mqr];
     var $tobool=((($1))|0)!=0;
     if ($tobool) { __label__ = 1;; } else { __label__ = 7;; }
@@ -9147,11 +9144,11 @@ var _rslist;
   
       var $9=$version_addr;
       var $10=$input_addr;
-      var $version15=(($10)&4294967295);
+      var $version15=$10;
       HEAP[$version15]=$9;
       var $11=$level_addr;
       var $12=$input_addr;
-      var $level16=(($12+4)&4294967295);
+      var $level16=$12+4;
       HEAP[$level16]=$11;
       $retval=0;
       ;
@@ -9250,11 +9247,11 @@ var _rslist;
   
           var $5=$mode_addr;
           var $6=$entry1;
-          var $mode6=(($6)&4294967295);
+          var $mode6=$6;
           HEAP[$mode6]=$5;
           var $7=$size_addr;
           var $8=$entry1;
-          var $size7=(($8+4)&4294967295);
+          var $size7=$8+4;
           HEAP[$size7]=$7;
           var $9=$size_addr;
           var $cmp8=((($9))|0) > 0;
@@ -9264,10 +9261,10 @@ var _rslist;
             var $10=$size_addr;
             var $call10=_malloc($10);
             var $11=$entry1;
-            var $data11=(($11+8)&4294967295);
+            var $data11=$11+8;
             HEAP[$data11]=$call10;
             var $12=$entry1;
-            var $data12=(($12+8)&4294967295);
+            var $data12=$12+8;
             var $13=HEAP[$data12];
             var $cmp13=((($13))|0)==0;
             if ($cmp13) { __label__ = 6;; } else { __label__ = 7;; }
@@ -9282,7 +9279,7 @@ var _rslist;
             else if (__label__ == 7) {
   
               var $16=$entry1;
-              var $data16=(($16+8)&4294967295);
+              var $data16=$16+8;
               var $17=HEAP[$data16];
               var $18=$data_addr;
               var $19=$size_addr;
@@ -9294,10 +9291,10 @@ var _rslist;
           }
   
           var $20=$entry1;
-          var $bstream=(($20+12)&4294967295);
+          var $bstream=$20+12;
           HEAP[$bstream]=0;
           var $21=$entry1;
-          var $next=(($21+16)&4294967295);
+          var $next=$21+16;
           HEAP[$next]=0;
           var $22=$entry1;
           $retval=$22;
@@ -9322,7 +9319,7 @@ var _rslist;
     $input_addr=$input;
     $entry_addr=$entry1;
     var $0=$input_addr;
-    var $tail=(($0+12)&4294967295);
+    var $tail=$0+12;
     var $1=HEAP[$tail];
     var $cmp=((($1))|0)==0;
     if ($cmp) { __label__ = 1;; } else { __label__ = 2;; }
@@ -9330,11 +9327,11 @@ var _rslist;
   
       var $2=$entry_addr;
       var $3=$input_addr;
-      var $head=(($3+8)&4294967295);
+      var $head=$3+8;
       HEAP[$head]=$2;
       var $4=$entry_addr;
       var $5=$input_addr;
-      var $tail2=(($5+12)&4294967295);
+      var $tail2=$5+12;
       HEAP[$tail2]=$4;
       ;
     }
@@ -9342,19 +9339,19 @@ var _rslist;
   
       var $6=$entry_addr;
       var $7=$input_addr;
-      var $tail3=(($7+12)&4294967295);
+      var $tail3=$7+12;
       var $8=HEAP[$tail3];
-      var $next=(($8+16)&4294967295);
+      var $next=$8+16;
       HEAP[$next]=$6;
       var $9=$entry_addr;
       var $10=$input_addr;
-      var $tail4=(($10+12)&4294967295);
+      var $tail4=$10+12;
       HEAP[$tail4]=$9;
       ;
     }
   
     var $11=$entry_addr;
-    var $next5=(($11+16)&4294967295);
+    var $next5=$11+16;
     HEAP[$next5]=0;
     ;
     return;
@@ -9387,28 +9384,28 @@ var _rslist;
       var $1=$ecinum_addr;
       var $and=($1) & 255;
       var $conv=((($and)) & 255);
-      var $arrayidx=(($data)&4294967295);
+      var $arrayidx=$data;
       HEAP[$arrayidx]=$conv;
       var $2=$ecinum_addr;
       var $shr=($2) >>> 8;
       var $and1=($shr) & 255;
       var $conv2=((($and1)) & 255);
-      var $arrayidx3=(($data+1)&4294967295);
+      var $arrayidx3=$data+1;
       HEAP[$arrayidx3]=$conv2;
       var $3=$ecinum_addr;
       var $shr4=($3) >>> 16;
       var $and5=($shr4) & 255;
       var $conv6=((($and5)) & 255);
-      var $arrayidx7=(($data+2)&4294967295);
+      var $arrayidx7=$data+2;
       HEAP[$arrayidx7]=$conv6;
       var $4=$ecinum_addr;
       var $shr8=($4) >>> 24;
       var $and9=($shr8) & 255;
       var $conv10=((($and9)) & 255);
-      var $arrayidx11=(($data+3)&4294967295);
+      var $arrayidx11=$data+3;
       HEAP[$arrayidx11]=$conv10;
       var $5=$input_addr;
-      var $arraydecay=(($data)&4294967295);
+      var $arraydecay=$data;
       var $call12=_QRinput_append($5, 5, 4, $arraydecay);
       $retval=$call12;
       ;
@@ -9435,7 +9432,7 @@ var _rslist;
     if (__label__ == 1) {
   
       var $1=$input_addr;
-      var $head=(($1+8)&4294967295);
+      var $head=$1+8;
       var $2=HEAP[$head];
       $list=$2;
       ;
@@ -9446,7 +9443,7 @@ var _rslist;
         if (!($cmp1)) { __label__ = 4;break ; }
   
         var $4=$list;
-        var $next2=(($4+16)&4294967295);
+        var $next2=$4+16;
         var $5=HEAP[$next2];
         $next=$5;
         var $6=$list;
@@ -9480,11 +9477,11 @@ var _rslist;
     if (__label__ == 1) {
   
       var $1=$entry_addr;
-      var $data=(($1+8)&4294967295);
+      var $data=$1+8;
       var $2=HEAP[$data];
       ;
       var $3=$entry_addr;
-      var $bstream=(($3+12)&4294967295);
+      var $bstream=$3+12;
       var $4=HEAP[$bstream];
       _BitStream_free($4);
       var $5=$entry_addr;
@@ -9510,17 +9507,17 @@ var _rslist;
     var $e;
     $input_addr=$input;
     var $0=$input_addr;
-    var $mqr=(($0+16)&4294967295);
+    var $mqr=$0+16;
     var $1=HEAP[$mqr];
     var $tobool=((($1))|0)!=0;
     if ($tobool) { __label__ = 1;; } else { __label__ = 2;; }
     if (__label__ == 1) {
   
       var $2=$input_addr;
-      var $version=(($2)&4294967295);
+      var $version=$2;
       var $3=HEAP[$version];
       var $4=$input_addr;
-      var $level=(($4+4)&4294967295);
+      var $level=$4+4;
       var $5=HEAP[$level];
       var $call=_QRinput_newMQR($3, $5);
       $n=$call;
@@ -9529,10 +9526,10 @@ var _rslist;
     else if (__label__ == 2) {
   
       var $6=$input_addr;
-      var $version1=(($6)&4294967295);
+      var $version1=$6;
       var $7=HEAP[$version1];
       var $8=$input_addr;
-      var $level2=(($8+4)&4294967295);
+      var $level2=$8+4;
       var $9=HEAP[$level2];
       var $call3=_QRinput_new2($7, $9);
       $n=$call3;
@@ -9550,7 +9547,7 @@ var _rslist;
     else if (__label__ == 5) {
   
       var $11=$input_addr;
-      var $head=(($11+8)&4294967295);
+      var $head=$11+8;
       var $12=HEAP[$head];
       $list=$12;
       ;
@@ -9571,7 +9568,7 @@ var _rslist;
         var $18=$e;
         _QRinput_appendEntry($17, $18);
         var $19=$list;
-        var $next=(($19+16)&4294967295);
+        var $next=$19+16;
         var $20=HEAP[$next];
         $list=$20;
         __label__ = 6;continue ;
@@ -9620,26 +9617,26 @@ var _rslist;
     else if (__label__ == 2) {
   
       var $2=$entry_addr;
-      var $mode=(($2)&4294967295);
+      var $mode=$2;
       var $3=HEAP[$mode];
       var $4=$n;
-      var $mode2=(($4)&4294967295);
+      var $mode2=$4;
       HEAP[$mode2]=$3;
       var $5=$entry_addr;
-      var $size=(($5+4)&4294967295);
+      var $size=$5+4;
       var $6=HEAP[$size];
       var $7=$n;
-      var $size3=(($7+4)&4294967295);
+      var $size3=$7+4;
       HEAP[$size3]=$6;
       var $8=$n;
-      var $size4=(($8+4)&4294967295);
+      var $size4=$8+4;
       var $9=HEAP[$size4];
       var $call5=_malloc($9);
       var $10=$n;
-      var $data=(($10+8)&4294967295);
+      var $data=$10+8;
       HEAP[$data]=$call5;
       var $11=$n;
-      var $data6=(($11+8)&4294967295);
+      var $data6=$11+8;
       var $12=HEAP[$data6];
       var $cmp7=((($12))|0)==0;
       if ($cmp7) { __label__ = 3;; } else { __label__ = 4;; }
@@ -9654,22 +9651,22 @@ var _rslist;
       else if (__label__ == 4) {
   
         var $15=$n;
-        var $data10=(($15+8)&4294967295);
+        var $data10=$15+8;
         var $16=HEAP[$data10];
         var $17=$entry_addr;
-        var $data11=(($17+8)&4294967295);
+        var $data11=$17+8;
         var $18=HEAP[$data11];
         var $19=$entry_addr;
-        var $size12=(($19+4)&4294967295);
+        var $size12=$19+4;
         var $20=HEAP[$size12];
         assert($20 % 1 === 0, 'memcpy given ' + $20 + ' bytes to copy. Problem with 4=1 corrections perhaps?');for (var $mcpi$ = 0; $mcpi$ < $20; $mcpi$++) {
         HEAP[$16+$mcpi$]=HEAP[$18+$mcpi$]; 
         };
         var $21=$n;
-        var $bstream=(($21+12)&4294967295);
+        var $bstream=$21+12;
         HEAP[$bstream]=0;
         var $22=$n;
-        var $next=(($22+16)&4294967295);
+        var $next=$22+16;
         HEAP[$next]=0;
         var $23=$n;
         $retval=$23;
@@ -9696,12 +9693,12 @@ var _rslist;
     var $div=((((($0))|0)/3)|0);
     $w=$div;
     var $1=$w;
-    var $mul=((($1) * 10)&4294967295);
+    var $mul=($1) * 10;
     $bits=$mul;
     var $2=$size_addr;
     var $3=$w;
-    var $mul1=((($3) * 3)&4294967295);
-    var $sub=((($2) - ($mul1))&4294967295);
+    var $mul1=($3) * 3;
+    var $sub=($2) - ($mul1);
     if ($sub == 1) {
       __label__ = 1;;
     }
@@ -9719,14 +9716,14 @@ var _rslist;
     else if (__label__ == 1) {
   
       var $4=$bits;
-      var $add=((($4) + 4)&4294967295);
+      var $add=($4) + 4;
       $bits=$add;
       ;
     }
     else if (__label__ == 2) {
   
       var $5=$bits;
-      var $add3=((($5) + 7)&4294967295);
+      var $add3=($5) + 7;
       $bits=$add3;
       ;
     }
@@ -9750,7 +9747,7 @@ var _rslist;
     var $div=((((($0))|0)/2)|0);
     $w=$div;
     var $1=$w;
-    var $mul=((($1) * 11)&4294967295);
+    var $mul=($1) * 11;
     $bits=$mul;
     var $2=$size_addr;
     var $and=($2) & 1;
@@ -9759,7 +9756,7 @@ var _rslist;
     if (__label__ == 1) {
   
       var $3=$bits;
-      var $add=((($3) + 6)&4294967295);
+      var $add=($3) + 6;
       $bits=$add;
       ;
     }
@@ -9778,7 +9775,7 @@ var _rslist;
     var $size_addr;
     $size_addr=$size;
     var $0=$size_addr;
-    var $mul=((($0) * 8)&4294967295);
+    var $mul=($0) * 8;
     ;
     return $mul;
     return null;
@@ -9793,7 +9790,7 @@ var _rslist;
     $size_addr=$size;
     var $0=$size_addr;
     var $div=((((($0))|0)/2)|0);
-    var $mul=((($div) * 13)&4294967295);
+    var $mul=($div) * 13;
     ;
     return $mul;
     return null;
@@ -9864,9 +9861,9 @@ var _rslist;
       var $shl=($1) << 8;
       $ecinum=$shl;
       var $2=$i;
-      var $sub=((3 - ($2))&4294967295);
+      var $sub=3 - ($2);
       var $3=$data_addr;
-      var $arrayidx=(($3+$sub)&4294967295);
+      var $arrayidx=$3+$sub;
       var $4=HEAP[$arrayidx];
       var $conv=((($4))&255);
       var $5=$ecinum;
@@ -9875,7 +9872,7 @@ var _rslist;
       ;
   
       var $6=$i;
-      var $inc=((($6) + 1)&4294967295);
+      var $inc=($6) + 1;
       $i=$inc;
       __label__ = 1;continue ;
     }
@@ -10041,7 +10038,7 @@ var _rslist;
   
       var $2=$i;
       var $3=$data_addr;
-      var $arrayidx=(($3+$2)&4294967295);
+      var $arrayidx=$3+$2;
       var $4=HEAP[$arrayidx];
       var $conv=(tempInt=(($4)),(tempInt>=128?tempInt-256:tempInt));
       var $cmp1=((($conv))|0) < 48;
@@ -10049,7 +10046,7 @@ var _rslist;
   
       var $5=$i;
       var $6=$data_addr;
-      var $arrayidx3=(($6+$5)&4294967295);
+      var $arrayidx3=$6+$5;
       var $7=HEAP[$arrayidx3];
       var $conv4=(tempInt=(($7)),(tempInt>=128?tempInt-256:tempInt));
       var $cmp5=((($conv4))|0) > 57;
@@ -10058,7 +10055,7 @@ var _rslist;
       ;
   
       var $8=$i;
-      var $inc=((($8) + 1)&4294967295);
+      var $inc=($8) + 1;
       $i=$inc;
       __label__ = 1;continue ;
     }
@@ -10102,7 +10099,7 @@ var _rslist;
   
       var $2=$i;
       var $3=$data_addr;
-      var $arrayidx=(($3+$2)&4294967295);
+      var $arrayidx=$3+$2;
       var $4=HEAP[$arrayidx];
       var $conv=(tempInt=(($4)),(tempInt>=128?tempInt-256:tempInt));
       var $and=($conv) & 128;
@@ -10116,10 +10113,10 @@ var _rslist;
   
         var $5=$i;
         var $6=$data_addr;
-        var $arrayidx1=(($6+$5)&4294967295);
+        var $arrayidx1=$6+$5;
         var $7=HEAP[$arrayidx1];
         var $conv2=(tempInt=(($7)),(tempInt>=128?tempInt-256:tempInt));
-        var $arrayidx3=((_QRinput_anTable+$conv2)&4294967295);
+        var $arrayidx3=_QRinput_anTable+$conv2;
         var $8=HEAP[$arrayidx3];
         var $conv4=(tempInt=(($8)),(tempInt>=128?tempInt-256:tempInt));
         __lastLabel__ = 4; ;
@@ -10132,7 +10129,7 @@ var _rslist;
       ;
   
       var $9=$i;
-      var $inc=((($9) + 1)&4294967295);
+      var $inc=($9) + 1;
       $i=$inc;
       __label__ = 1;continue ;
     }
@@ -10187,14 +10184,14 @@ var _rslist;
   
         var $3=$i;
         var $4=$data_addr;
-        var $arrayidx=(($4+$3)&4294967295);
+        var $arrayidx=$4+$3;
         var $5=HEAP[$arrayidx];
         var $conv=((($5))&255);
         var $shl=($conv) << 8;
         var $6=$i;
-        var $add=((($6) + 1)&4294967295);
+        var $add=($6) + 1;
         var $7=$data_addr;
-        var $arrayidx1=(($7+$add)&4294967295);
+        var $arrayidx1=$7+$add;
         var $8=HEAP[$arrayidx1];
         var $conv2=((($8))&255);
         var $or=($shl) | ($conv2);
@@ -10220,7 +10217,7 @@ var _rslist;
         ;
   
         var $13=$i;
-        var $add14=((($13) + 2)&4294967295);
+        var $add14=($13) + 2;
         $i=$add14;
         __label__ = 3;continue ;
       }
@@ -10335,7 +10332,7 @@ var _rslist;
     else if (__label__ == 2) {
   
       var $2=$input_addr;
-      var $mqr=(($2+16)&4294967295);
+      var $mqr=$2+16;
       var $3=HEAP[$mqr];
       var $tobool=((($3))|0)!=0;
       if ($tobool) { __label__ = 3;; } else { __label__ = 4;; }
@@ -10401,16 +10398,16 @@ var _rslist;
     else if (__label__ == 2) {
   
       var $2=$s;
-      var $size=(($2)&4294967295);
+      var $size=$2;
       HEAP[$size]=0;
       var $3=$s;
-      var $parity=(($3+4)&4294967295);
+      var $parity=$3+4;
       HEAP[$parity]=-1;
       var $4=$s;
-      var $head=(($4+8)&4294967295);
+      var $head=$4+8;
       HEAP[$head]=0;
       var $5=$s;
-      var $tail=(($5+12)&4294967295);
+      var $tail=$5+12;
       HEAP[$tail]=0;
       var $6=$s;
       $retval=$6;
@@ -10435,7 +10432,7 @@ var _rslist;
     var $0=$parity_addr;
     var $conv=((($0))&255);
     var $1=$s_addr;
-    var $parity1=(($1+4)&4294967295);
+    var $parity1=$1+4;
     HEAP[$parity1]=$conv;
     ;
     return;
@@ -10454,7 +10451,7 @@ var _rslist;
     $s_addr=$s;
     $input_addr=$input;
     var $0=$input_addr;
-    var $mqr=(($0+16)&4294967295);
+    var $mqr=$0+16;
     var $1=HEAP[$mqr];
     var $tobool=((($1))|0)!=0;
     if ($tobool) { __label__ = 1;; } else { __label__ = 2;; }
@@ -10481,12 +10478,12 @@ var _rslist;
       else if (__label__ == 4) {
   
         var $4=$s_addr;
-        var $size=(($4)&4294967295);
+        var $size=$4;
         var $5=HEAP[$size];
-        var $inc=((($5) + 1)&4294967295);
+        var $inc=($5) + 1;
         HEAP[$size]=$inc;
         var $6=$s_addr;
-        var $tail=(($6+12)&4294967295);
+        var $tail=$6+12;
         var $7=HEAP[$tail];
         var $cmp4=((($7))|0)==0;
         if ($cmp4) { __label__ = 5;; } else { __label__ = 6;; }
@@ -10494,11 +10491,11 @@ var _rslist;
   
           var $8=$e;
           var $9=$s_addr;
-          var $head=(($9+8)&4294967295);
+          var $head=$9+8;
           HEAP[$head]=$8;
           var $10=$e;
           var $11=$s_addr;
-          var $tail6=(($11+12)&4294967295);
+          var $tail6=$11+12;
           HEAP[$tail6]=$10;
           ;
         }
@@ -10506,19 +10503,19 @@ var _rslist;
   
           var $12=$e;
           var $13=$s_addr;
-          var $tail7=(($13+12)&4294967295);
+          var $tail7=$13+12;
           var $14=HEAP[$tail7];
-          var $next=(($14+4)&4294967295);
+          var $next=$14+4;
           HEAP[$next]=$12;
           var $15=$e;
           var $16=$s_addr;
-          var $tail8=(($16+12)&4294967295);
+          var $tail8=$16+12;
           HEAP[$tail8]=$15;
           ;
         }
   
         var $17=$s_addr;
-        var $size10=(($17)&4294967295);
+        var $size10=$17;
         var $18=HEAP[$size10];
         $retval=$18;
         ;
@@ -10555,10 +10552,10 @@ var _rslist;
   
       var $2=$input_addr;
       var $3=$entry1;
-      var $input2=(($3)&4294967295);
+      var $input2=$3;
       HEAP[$input2]=$2;
       var $4=$entry1;
-      var $next=(($4+4)&4294967295);
+      var $next=$4+4;
       HEAP[$next]=0;
       var $5=$entry1;
       $retval=$5;
@@ -10586,7 +10583,7 @@ var _rslist;
     if (__label__ == 1) {
   
       var $1=$s_addr;
-      var $head=(($1+8)&4294967295);
+      var $head=$1+8;
       var $2=HEAP[$head];
       $list=$2;
       ;
@@ -10597,7 +10594,7 @@ var _rslist;
         if (!($cmp1)) { __label__ = 4;break ; }
   
         var $4=$list;
-        var $next2=(($4+4)&4294967295);
+        var $next2=$4+4;
         var $5=HEAP[$next2];
         $next=$5;
         var $6=$list;
@@ -10631,7 +10628,7 @@ var _rslist;
     if (__label__ == 1) {
   
       var $1=$entry_addr;
-      var $input=(($1)&4294967295);
+      var $input=$1;
       var $2=HEAP[$input];
       _QRinput_free($2);
       var $3=$entry_addr;
@@ -10664,7 +10661,7 @@ var _rslist;
     var $prev;
     $input_addr=$input;
     var $0=$input_addr;
-    var $mqr=(($0+16)&4294967295);
+    var $mqr=$0+16;
     var $1=HEAP[$mqr];
     var $tobool=((($1))|0)!=0;
     if ($tobool) { __label__ = 1;; } else { __label__ = 2;; }
@@ -10710,14 +10707,14 @@ var _rslist;
             var $call8=_QRinput_calcParity($7);
             _QRinput_Struct_setParity($6, $call8);
             var $8=$input_addr;
-            var $version=(($8)&4294967295);
+            var $version=$8;
             var $9=HEAP[$version];
             var $10=$input_addr;
-            var $level=(($10+4)&4294967295);
+            var $level=$10+4;
             var $11=HEAP[$level];
             var $call9=_QRspec_getDataLength($9, $11);
-            var $mul=((($call9) * 8)&4294967295);
-            var $sub=((($mul) - 20)&4294967295);
+            var $mul=($call9) * 8;
+            var $sub=($mul) - 20;
             $maxbits=$sub;
             var $12=$maxbits;
             var $cmp10=((($12))|0) <= 0;
@@ -10735,7 +10732,7 @@ var _rslist;
   
               $bits=0;
               var $15=$input_addr;
-              var $head=(($15+8)&4294967295);
+              var $head=$15+8;
               var $16=HEAP[$head];
               $list=$16;
               $prev=0;
@@ -10748,16 +10745,16 @@ var _rslist;
   
                 var $18=$list;
                 var $19=$input_addr;
-                var $version14=(($19)&4294967295);
+                var $version14=$19;
                 var $20=HEAP[$version14];
                 var $21=$input_addr;
-                var $mqr15=(($21+16)&4294967295);
+                var $mqr15=$21+16;
                 var $22=HEAP[$mqr15];
                 var $call16=_QRinput_estimateBitStreamSizeOfEntry($18, $20, $22);
                 $nextbits=$call16;
                 var $23=$bits;
                 var $24=$nextbits;
-                var $add=((($23) + ($24))&4294967295);
+                var $add=($23) + ($24);
                 var $25=$maxbits;
                 var $cmp17=((($add))|0) <= ((($25))|0);
                 if ($cmp17) { __label__ = 11;; } else { __label__ = 14;; }
@@ -10765,10 +10762,10 @@ var _rslist;
   
                   var $26=$list;
                   var $27=$input_addr;
-                  var $version19=(($27)&4294967295);
+                  var $version19=$27;
                   var $28=HEAP[$version19];
                   var $29=$input_addr;
-                  var $mqr20=(($29+16)&4294967295);
+                  var $mqr20=$29+16;
                   var $30=HEAP[$mqr20];
                   var $call21=_QRinput_encodeBitStream($26, $28, $30);
                   $ret=$call21;
@@ -10778,12 +10775,12 @@ var _rslist;
   
                   var $32=$ret;
                   var $33=$bits;
-                  var $add25=((($33) + ($32))&4294967295);
+                  var $add25=($33) + ($32);
                   $bits=$add25;
                   var $34=$list;
                   $prev=$34;
                   var $35=$list;
-                  var $next26=(($35+16)&4294967295);
+                  var $next26=$35+16;
                   var $36=HEAP[$next26];
                   $list=$36;
                   ;
@@ -10791,14 +10788,14 @@ var _rslist;
                 else if (__label__ == 14) {
   
                   var $37=$list;
-                  var $mode=(($37)&4294967295);
+                  var $mode=$37;
                   var $38=HEAP[$mode];
                   var $39=$input_addr;
-                  var $version27=(($39)&4294967295);
+                  var $version27=$39;
                   var $40=HEAP[$version27];
                   var $41=$maxbits;
                   var $42=$bits;
-                  var $sub28=((($41) - ($42))&4294967295);
+                  var $sub28=($41) - ($42);
                   var $call29=_QRinput_lengthOfCode($38, $40, $sub28);
                   $bytes=$call29;
                   var $43=$bytes;
@@ -10815,17 +10812,17 @@ var _rslist;
                     if ($cmp33) { __label__ = 16;break ; }
   
                     var $47=$list;
-                    var $next36=(($47+16)&4294967295);
+                    var $next36=$47+16;
                     var $48=HEAP[$next36];
                     $next=$48;
                     var $49=$list;
-                    var $next37=(($49+16)&4294967295);
+                    var $next37=$49+16;
                     HEAP[$next37]=0;
                     var $50=$input_addr;
-                    var $version38=(($50)&4294967295);
+                    var $version38=$50;
                     var $51=HEAP[$version38];
                     var $52=$input_addr;
-                    var $level39=(($52+4)&4294967295);
+                    var $level39=$52+4;
                     var $53=HEAP[$level39];
                     var $call40=_QRinput_new2($51, $53);
                     $p=$call40;
@@ -10835,17 +10832,17 @@ var _rslist;
   
                     var $55=$next;
                     var $56=$p;
-                    var $head44=(($56+8)&4294967295);
+                    var $head44=$56+8;
                     HEAP[$head44]=$55;
                     var $57=$input_addr;
-                    var $tail=(($57+12)&4294967295);
+                    var $tail=$57+12;
                     var $58=HEAP[$tail];
                     var $59=$p;
-                    var $tail45=(($59+12)&4294967295);
+                    var $tail45=$59+12;
                     HEAP[$tail45]=$58;
                     var $60=$list;
                     var $61=$input_addr;
-                    var $tail46=(($61+12)&4294967295);
+                    var $tail46=$61+12;
                     HEAP[$tail46]=$60;
                     var $62=$list;
                     $prev=$62;
@@ -10856,13 +10853,13 @@ var _rslist;
                   else if (__label__ == 20) {
   
                     var $64=$prev;
-                    var $next48=(($64+16)&4294967295);
+                    var $next48=$64+16;
                     HEAP[$next48]=0;
                     var $65=$input_addr;
-                    var $version49=(($65)&4294967295);
+                    var $version49=$65;
                     var $66=HEAP[$version49];
                     var $67=$input_addr;
-                    var $level50=(($67+4)&4294967295);
+                    var $level50=$67+4;
                     var $68=HEAP[$level50];
                     var $call51=_QRinput_new2($66, $68);
                     $p=$call51;
@@ -10872,17 +10869,17 @@ var _rslist;
   
                     var $70=$list;
                     var $71=$p;
-                    var $head55=(($71+8)&4294967295);
+                    var $head55=$71+8;
                     HEAP[$head55]=$70;
                     var $72=$input_addr;
-                    var $tail56=(($72+12)&4294967295);
+                    var $tail56=$72+12;
                     var $73=HEAP[$tail56];
                     var $74=$p;
-                    var $tail57=(($74+12)&4294967295);
+                    var $tail57=$74+12;
                     HEAP[$tail57]=$73;
                     var $75=$prev;
                     var $76=$input_addr;
-                    var $tail58=(($76+12)&4294967295);
+                    var $tail58=$76+12;
                     HEAP[$tail58]=$75;
                     ;
                   }
@@ -10909,7 +10906,7 @@ var _rslist;
                 var $82=$input_addr;
                 var $call65=_QRinput_Struct_appendInput($81, $82);
                 var $83=$s;
-                var $size=(($83)&4294967295);
+                var $size=$83;
                 var $84=HEAP[$size];
                 var $cmp66=((($84))|0) > 16;
                 if ($cmp66) { __label__ = 28;; } else { __label__ = 29;; }
@@ -10996,7 +10993,7 @@ var _rslist;
     $input_addr=$input;
     $parity=0;
     var $0=$input_addr;
-    var $head=(($0+8)&4294967295);
+    var $head=$0+8;
     var $1=HEAP[$head];
     $list=$1;
     ;
@@ -11007,16 +11004,16 @@ var _rslist;
       if (!($cmp)) { __label__ = 9;break $while_cond$2; }
   
       var $3=$list;
-      var $mode=(($3)&4294967295);
+      var $mode=$3;
       var $4=HEAP[$mode];
       var $cmp1=((($4))|0)!=4;
       if ($cmp1) { __label__ = 3;; } else { __label__ = 8;; }
       if (__label__ == 3) {
   
         var $5=$list;
-        var $size=(($5+4)&4294967295);
+        var $size=$5+4;
         var $6=HEAP[$size];
-        var $sub=((($6) - 1)&4294967295);
+        var $sub=($6) - 1;
         $i=$sub;
         ;
         while(1) { 
@@ -11027,9 +11024,9 @@ var _rslist;
   
           var $8=$i;
           var $9=$list;
-          var $data=(($9+8)&4294967295);
+          var $data=$9+8;
           var $10=HEAP[$data];
-          var $arrayidx=(($10+$8)&4294967295);
+          var $arrayidx=$10+$8;
           var $11=HEAP[$arrayidx];
           var $conv=((($11))&255);
           var $12=$parity;
@@ -11040,7 +11037,7 @@ var _rslist;
           ;
   
           var $13=$i;
-          var $dec=((($13) + -1)&4294967295);
+          var $dec=($13) + -1;
           $i=$dec;
           __label__ = 4;continue ;
         }
@@ -11049,7 +11046,7 @@ var _rslist;
       }
   
       var $14=$list;
-      var $next=(($14+16)&4294967295);
+      var $next=$14+16;
       var $15=HEAP[$next];
       $list=$15;
       __label__ = 1;continue $while_cond$2;
@@ -11088,7 +11085,7 @@ var _rslist;
     }
   
     var $1=$entry_addr;
-    var $mode=(($1)&4294967295);
+    var $mode=$1;
     var $2=HEAP[$mode];
     if ($2 == 0) {
       __label__ = 3;;
@@ -11127,7 +11124,7 @@ var _rslist;
       else if (__label__ == 3) {
   
         var $3=$entry_addr;
-        var $size=(($3+4)&4294967295);
+        var $size=$3+4;
         var $4=HEAP[$size];
         var $call=_QRinput_estimateBitsModeNum($4);
         $bits=$call;
@@ -11136,7 +11133,7 @@ var _rslist;
       else if (__label__ == 4) {
   
         var $5=$entry_addr;
-        var $size3=(($5+4)&4294967295);
+        var $size3=$5+4;
         var $6=HEAP[$size3];
         var $call4=_QRinput_estimateBitsModeAn($6);
         $bits=$call4;
@@ -11145,7 +11142,7 @@ var _rslist;
       else if (__label__ == 5) {
   
         var $7=$entry_addr;
-        var $size6=(($7+4)&4294967295);
+        var $size6=$7+4;
         var $8=HEAP[$size6];
         var $call7=_QRinput_estimateBitsMode8($8);
         $bits=$call7;
@@ -11154,7 +11151,7 @@ var _rslist;
       else if (__label__ == 6) {
   
         var $9=$entry_addr;
-        var $size9=(($9+4)&4294967295);
+        var $size9=$9+4;
         var $10=HEAP[$size9];
         var $call10=_QRinput_estimateBitsModeKanji($10);
         $bits=$call10;
@@ -11168,7 +11165,7 @@ var _rslist;
       else if (__label__ == 8) {
   
         var $11=$entry_addr;
-        var $data=(($11+8)&4294967295);
+        var $data=$11+8;
         var $12=HEAP[$data];
         var $call13=_QRinput_estimateBitsModeECI($12);
         $bits=$call13;
@@ -11193,26 +11190,26 @@ var _rslist;
       if (__label__ == 13) {
   
         var $14=$entry_addr;
-        var $mode17=(($14)&4294967295);
+        var $mode17=$14;
         var $15=HEAP[$mode17];
         var $16=$version_addr;
         var $call18=_QRspec_lengthIndicator($15, $16);
         $l=$call18;
         var $17=$version_addr;
-        var $sub=((($17) - 1)&4294967295);
+        var $sub=($17) - 1;
         $m=$sub;
         var $18=$l;
         var $19=$m;
-        var $add=((($18) + ($19))&4294967295);
+        var $add=($18) + ($19);
         var $20=$bits;
-        var $add19=((($20) + ($add))&4294967295);
+        var $add19=($20) + ($add);
         $bits=$add19;
         ;
       }
       else if (__label__ == 14) {
   
         var $21=$entry_addr;
-        var $mode20=(($21)&4294967295);
+        var $mode20=$21;
         var $22=HEAP[$mode20];
         var $23=$version_addr;
         var $call21=_QRspec_lengthIndicator($22, $23);
@@ -11221,20 +11218,20 @@ var _rslist;
         var $shl=1 << ($24);
         $m=$shl;
         var $25=$entry_addr;
-        var $size22=(($25+4)&4294967295);
+        var $size22=$25+4;
         var $26=HEAP[$size22];
         var $27=$m;
-        var $add23=((($26) + ($27))&4294967295);
-        var $sub24=((($add23) - 1)&4294967295);
+        var $add23=($26) + ($27);
+        var $sub24=($add23) - 1;
         var $28=$m;
         var $div=((((($sub24))|0)/((($28))|0))|0);
         $num=$div;
         var $29=$num;
         var $30=$l;
-        var $add25=((4 + ($30))&4294967295);
-        var $mul=((($29) * ($add25))&4294967295);
+        var $add25=4 + ($30);
+        var $mul=($29) * ($add25);
         var $31=$bits;
-        var $add26=((($31) + ($mul))&4294967295);
+        var $add26=($31) + ($mul);
         $bits=$add26;
         ;
       }
@@ -11269,24 +11266,24 @@ var _rslist;
     $st1=0;
     $st2=0;
     var $0=$entry_addr;
-    var $bstream=(($0+12)&4294967295);
+    var $bstream=$0+12;
     var $1=HEAP[$bstream];
     var $cmp=((($1))|0)!=0;
     if ($cmp) { __label__ = 1;; } else { __label__ = 2;; }
     if (__label__ == 1) {
   
       var $2=$entry_addr;
-      var $bstream2=(($2+12)&4294967295);
+      var $bstream2=$2+12;
       var $3=HEAP[$bstream2];
       _BitStream_free($3);
       var $4=$entry_addr;
-      var $bstream3=(($4+12)&4294967295);
+      var $bstream3=$4+12;
       HEAP[$bstream3]=0;
       ;
     }
   
     var $5=$entry_addr;
-    var $mode=(($5)&4294967295);
+    var $mode=$5;
     var $6=HEAP[$mode];
     var $7=$version_addr;
     var $call=_QRspec_maximumWords($6, $7);
@@ -11298,18 +11295,18 @@ var _rslist;
       if (__label__ == 3) {
   
         var $9=$entry_addr;
-        var $size=(($9+4)&4294967295);
+        var $size=$9+4;
         var $10=HEAP[$size];
         var $11=$words;
         var $cmp5=((($10))|0) > ((($11))|0);
         if (!($cmp5)) { __label__ = 19;break $land_lhs_true$$if_else$5; }
   
         var $12=$entry_addr;
-        var $mode7=(($12)&4294967295);
+        var $mode7=$12;
         var $13=HEAP[$mode7];
         var $14=$words;
         var $15=$entry_addr;
-        var $data=(($15+8)&4294967295);
+        var $data=$15+8;
         var $16=HEAP[$data];
         var $call8=_QRinput_List_newEntry($13, $14, $16);
         $st1=$call8;
@@ -11323,18 +11320,18 @@ var _rslist;
         else if (__label__ == 6) {
   
           var $18=$entry_addr;
-          var $mode12=(($18)&4294967295);
+          var $mode12=$18;
           var $19=HEAP[$mode12];
           var $20=$entry_addr;
-          var $size13=(($20+4)&4294967295);
+          var $size13=$20+4;
           var $21=HEAP[$size13];
           var $22=$words;
-          var $sub=((($21) - ($22))&4294967295);
+          var $sub=($21) - ($22);
           var $23=$words;
           var $24=$entry_addr;
-          var $data14=(($24+8)&4294967295);
+          var $data14=$24+8;
           var $25=HEAP[$data14];
-          var $arrayidx=(($25+$23)&4294967295);
+          var $arrayidx=$25+$23;
           var $call15=_QRinput_List_newEntry($19, $sub, $arrayidx);
           $st2=$call15;
           var $26=$st2;
@@ -11376,10 +11373,10 @@ var _rslist;
   
                 var $call27=_BitStream_new();
                 var $35=$entry_addr;
-                var $bstream28=(($35+12)&4294967295);
+                var $bstream28=$35+12;
                 HEAP[$bstream28]=$call27;
                 var $36=$entry_addr;
-                var $bstream29=(($36+12)&4294967295);
+                var $bstream29=$36+12;
                 var $37=HEAP[$bstream29];
                 var $cmp30=((($37))|0)==0;
                 if ($cmp30) { __label__ = 13;; } else { __label__ = 14;; }
@@ -11390,10 +11387,10 @@ var _rslist;
                 else if (__label__ == 14) {
   
                   var $38=$entry_addr;
-                  var $bstream33=(($38+12)&4294967295);
+                  var $bstream33=$38+12;
                   var $39=HEAP[$bstream33];
                   var $40=$st1;
-                  var $bstream34=(($40+12)&4294967295);
+                  var $bstream34=$40+12;
                   var $41=HEAP[$bstream34];
                   var $call35=_BitStream_append($39, $41);
                   $ret=$call35;
@@ -11407,10 +11404,10 @@ var _rslist;
                   else if (__label__ == 16) {
   
                     var $43=$entry_addr;
-                    var $bstream39=(($43+12)&4294967295);
+                    var $bstream39=$43+12;
                     var $44=HEAP[$bstream39];
                     var $45=$st2;
-                    var $bstream40=(($45+12)&4294967295);
+                    var $bstream40=$45+12;
                     var $46=HEAP[$bstream40];
                     var $call41=_BitStream_append($44, $46);
                     $ret=$call41;
@@ -11449,7 +11446,7 @@ var _rslist;
   
         $ret=0;
         var $50=$entry_addr;
-        var $mode45=(($50)&4294967295);
+        var $mode45=$50;
         var $51=HEAP[$mode45];
         if ($51 == 0) {
           __label__ = 20;;
@@ -11560,9 +11557,9 @@ var _rslist;
     if (__label__ == 31) {
   
       var $71=$entry_addr;
-      var $bstream63=(($71+12)&4294967295);
+      var $bstream63=$71+12;
       var $72=HEAP[$bstream63];
-      var $length=(($72)&4294967295);
+      var $length=$72;
       var $73=HEAP[$length];
       $retval=$73;
       ;
@@ -11591,11 +11588,11 @@ var _rslist;
     $version_addr=$version;
     $bits_addr=$bits;
     var $0=$bits_addr;
-    var $sub=((($0) - 4)&4294967295);
+    var $sub=($0) - 4;
     var $1=$mode_addr;
     var $2=$version_addr;
     var $call=_QRspec_lengthIndicator($1, $2);
-    var $sub1=((($sub) - ($call))&4294967295);
+    var $sub1=($sub) - ($call);
     $payload=$sub1;
     var $3=$mode_addr;
     if ($3 == 0) {
@@ -11629,11 +11626,11 @@ var _rslist;
       $chunks=$div;
       var $5=$payload;
       var $6=$chunks;
-      var $mul=((($6) * 10)&4294967295);
-      var $sub2=((($5) - ($mul))&4294967295);
+      var $mul=($6) * 10;
+      var $sub2=($5) - ($mul);
       $remain=$sub2;
       var $7=$chunks;
-      var $mul3=((($7) * 3)&4294967295);
+      var $mul3=($7) * 3;
       $size=$mul3;
       var $8=$remain;
       var $cmp=((($8))|0) >= 7;
@@ -11641,7 +11638,7 @@ var _rslist;
       if (__label__ == 2) {
   
         var $9=$size;
-        var $add=((($9) + 2)&4294967295);
+        var $add=($9) + 2;
         $size=$add;
         ;
       }
@@ -11653,7 +11650,7 @@ var _rslist;
         if (__label__ == 4) {
   
           var $11=$size;
-          var $add6=((($11) + 1)&4294967295);
+          var $add6=($11) + 1;
           $size=$add6;
           ;
         }
@@ -11670,11 +11667,11 @@ var _rslist;
       $chunks=$div9;
       var $13=$payload;
       var $14=$chunks;
-      var $mul10=((($14) * 11)&4294967295);
-      var $sub11=((($13) - ($mul10))&4294967295);
+      var $mul10=($14) * 11;
+      var $sub11=($13) - ($mul10);
       $remain=$sub11;
       var $15=$chunks;
-      var $mul12=((($15) * 2)&4294967295);
+      var $mul12=($15) * 2;
       $size=$mul12;
       var $16=$remain;
       var $cmp13=((($16))|0) >= 6;
@@ -11682,7 +11679,7 @@ var _rslist;
       if (__label__ == 8) {
   
         var $17=$size;
-        var $inc=((($17) + 1)&4294967295);
+        var $inc=($17) + 1;
         $size=$inc;
         ;
       }
@@ -11700,7 +11697,7 @@ var _rslist;
   
       var $19=$payload;
       var $div19=((((($19))|0)/13)|0);
-      var $mul20=((($div19) * 2)&4294967295);
+      var $mul20=($div19) * 2;
       $size=$mul20;
       ;
     }
@@ -11761,18 +11758,18 @@ var _rslist;
     $entry_addr=$entry1;
     $bytes_addr=$bytes;
     var $0=$entry_addr;
-    var $mode=(($0)&4294967295);
+    var $mode=$0;
     var $1=HEAP[$mode];
     var $2=$entry_addr;
-    var $size=(($2+4)&4294967295);
+    var $size=$2+4;
     var $3=HEAP[$size];
     var $4=$bytes_addr;
-    var $sub=((($3) - ($4))&4294967295);
+    var $sub=($3) - ($4);
     var $5=$entry_addr;
-    var $data=(($5+8)&4294967295);
+    var $data=$5+8;
     var $6=HEAP[$data];
     var $7=$bytes_addr;
-    var $add_ptr=(($6+$7)&4294967295);
+    var $add_ptr=$6+$7;
     var $call=_QRinput_List_newEntry($1, $sub, $add_ptr);
     $e=$call;
     var $8=$e;
@@ -11802,14 +11799,14 @@ var _rslist;
       else if (__label__ == 4) {
   
         var $13=$entry_addr;
-        var $next=(($13+16)&4294967295);
+        var $next=$13+16;
         var $14=HEAP[$next];
         var $15=$e;
-        var $next6=(($15+16)&4294967295);
+        var $next6=$15+16;
         HEAP[$next6]=$14;
         var $16=$e;
         var $17=$entry_addr;
-        var $next7=(($17+16)&4294967295);
+        var $next7=$17+16;
         HEAP[$next7]=$16;
         $retval=0;
         ;
@@ -11834,7 +11831,7 @@ var _rslist;
     var $list;
     $s_addr=$s;
     var $0=$s_addr;
-    var $parity=(($0+4)&4294967295);
+    var $parity=$0+4;
     var $1=HEAP[$parity];
     var $cmp=((($1))|0) < 0;
     if ($cmp) { __label__ = 1;; } else { __label__ = 2;; }
@@ -11847,7 +11844,7 @@ var _rslist;
   
     $num=0;
     var $3=$s_addr;
-    var $head=(($3+8)&4294967295);
+    var $head=$3+8;
     var $4=HEAP[$head];
     $list=$4;
     ;
@@ -11858,10 +11855,10 @@ var _rslist;
       if (!($cmp1)) { __label__ = 5;break $while_cond$5; }
   
       var $6=$num;
-      var $inc=((($6) + 1)&4294967295);
+      var $inc=($6) + 1;
       $num=$inc;
       var $7=$list;
-      var $next=(($7+4)&4294967295);
+      var $next=$7+4;
       var $8=HEAP[$next];
       $list=$8;
       __label__ = 3;continue $while_cond$5;
@@ -11869,7 +11866,7 @@ var _rslist;
   
     $i=1;
     var $9=$s_addr;
-    var $head2=(($9+8)&4294967295);
+    var $head2=$9+8;
     var $10=HEAP[$head2];
     $list=$10;
     ;
@@ -11880,12 +11877,12 @@ var _rslist;
       if (!($cmp4)) { __label__ = 10;break ; }
   
       var $12=$list;
-      var $input=(($12)&4294967295);
+      var $input=$12;
       var $13=HEAP[$input];
       var $14=$num;
       var $15=$i;
       var $16=$s_addr;
-      var $parity6=(($16+4)&4294967295);
+      var $parity6=$16+4;
       var $17=HEAP[$parity6];
       var $conv=((($17)) & 255);
       var $call7=_QRinput_insertStructuredAppendHeader($13, $14, $15, $conv);
@@ -11893,10 +11890,10 @@ var _rslist;
       if ($tobool) { __label__ = 8;break ; }
   
       var $18=$i;
-      var $inc10=((($18) + 1)&4294967295);
+      var $inc10=($18) + 1;
       $i=$inc10;
       var $19=$list;
-      var $next11=(($19+4)&4294967295);
+      var $next11=$19+4;
       var $20=HEAP[$next11];
       $list=$20;
       __label__ = 6;continue ;
@@ -11929,7 +11926,7 @@ var _rslist;
     $s_addr=$s;
     $parity=0;
     var $0=$s_addr;
-    var $head=(($0+8)&4294967295);
+    var $head=$0+8;
     var $1=HEAP[$head];
     $list=$1;
     ;
@@ -11940,7 +11937,7 @@ var _rslist;
       if (!($cmp)) { __label__ = 3;break ; }
   
       var $3=$list;
-      var $input=(($3)&4294967295);
+      var $input=$3;
       var $4=HEAP[$input];
       var $call=_QRinput_calcParity($4);
       var $conv=((($call))&255);
@@ -11950,7 +11947,7 @@ var _rslist;
       var $conv2=((($xor)) & 255);
       $parity=$conv2;
       var $6=$list;
-      var $next=(($6+4)&4294967295);
+      var $next=$6+4;
       var $7=HEAP[$next];
       $list=$7;
       __label__ = 1;continue ;
@@ -12006,16 +12003,16 @@ var _rslist;
   
             var $3=$size_addr;
             var $conv=((($3)) & 255);
-            var $arrayidx=(($buf)&4294967295);
+            var $arrayidx=$buf;
             HEAP[$arrayidx]=$conv;
             var $4=$index_addr;
             var $conv7=((($4)) & 255);
-            var $arrayidx8=(($buf+1)&4294967295);
+            var $arrayidx8=$buf+1;
             HEAP[$arrayidx8]=$conv7;
             var $5=$parity_addr;
-            var $arrayidx9=(($buf+2)&4294967295);
+            var $arrayidx9=$buf+2;
             HEAP[$arrayidx9]=$5;
-            var $arraydecay=(($buf)&4294967295);
+            var $arraydecay=$buf;
             var $call10=_QRinput_List_newEntry(4, 3, $arraydecay);
             $entry1=$call10;
             var $6=$entry1;
@@ -12029,14 +12026,14 @@ var _rslist;
             else if (__label__ == 7) {
   
               var $7=$input_addr;
-              var $head=(($7+8)&4294967295);
+              var $head=$7+8;
               var $8=HEAP[$head];
               var $9=$entry1;
-              var $next=(($9+16)&4294967295);
+              var $next=$9+16;
               HEAP[$next]=$8;
               var $10=$entry1;
               var $11=$input_addr;
-              var $head15=(($11+8)&4294967295);
+              var $head15=$11+8;
               HEAP[$head15]=$10;
               $retval=0;
               __label__ = 8;break $if_then$$if_end$2;
@@ -12066,7 +12063,7 @@ var _rslist;
     var $input_addr;
     $input_addr=$input;
     var $0=$input_addr;
-    var $mqr=(($0+16)&4294967295);
+    var $mqr=$0+16;
     var $1=HEAP[$mqr];
     var $tobool=((($1))|0)!=0;
     if ($tobool) { __label__ = 1;; } else { __label__ = 2;; }
@@ -12080,7 +12077,7 @@ var _rslist;
     else if (__label__ == 2) {
   
       var $2=$input_addr;
-      var $fnc1=(($2+20)&4294967295);
+      var $fnc1=$2+20;
       HEAP[$fnc1]=1;
       $retval=0;
       ;
@@ -12103,7 +12100,7 @@ var _rslist;
     $input_addr=$input;
     $appid_addr=$appid;
     var $0=$input_addr;
-    var $mqr=(($0+16)&4294967295);
+    var $mqr=$0+16;
     var $1=HEAP[$mqr];
     var $tobool=((($1))|0)!=0;
     if ($tobool) { __label__ = 1;; } else { __label__ = 2;; }
@@ -12117,11 +12114,11 @@ var _rslist;
     else if (__label__ == 2) {
   
       var $2=$input_addr;
-      var $fnc1=(($2+20)&4294967295);
+      var $fnc1=$2+20;
       HEAP[$fnc1]=2;
       var $3=$appid_addr;
       var $4=$input_addr;
-      var $appid1=(($4+24)&4294967295);
+      var $appid1=$4+24;
       HEAP[$appid1]=$3;
       $retval=0;
       ;
@@ -12159,23 +12156,23 @@ var _rslist;
   
       var $2=$data;
       var $3=$entry_addr;
-      var $data2=(($3+8)&4294967295);
+      var $data2=$3+8;
       var $4=HEAP[$data2];
       var $5=$bytes_addr;
       assert($5 % 1 === 0, 'memcpy given ' + $5 + ' bytes to copy. Problem with 4=1 corrections perhaps?');for (var $mcpi$ = 0; $mcpi$ < $5; $mcpi$++) {
       HEAP[$2+$mcpi$]=HEAP[$4+$mcpi$]; 
       };
       var $6=$entry_addr;
-      var $data3=(($6+8)&4294967295);
+      var $data3=$6+8;
       var $7=HEAP[$data3];
       ;
       var $8=$data;
       var $9=$entry_addr;
-      var $data4=(($9+8)&4294967295);
+      var $data4=$9+8;
       HEAP[$data4]=$8;
       var $10=$bytes_addr;
       var $11=$entry_addr;
-      var $size=(($11+4)&4294967295);
+      var $size=$11+4;
       HEAP[$size]=$10;
       $retval=0;
       ;
@@ -12205,10 +12202,10 @@ var _rslist;
     $mqr_addr=$mqr;
     var $call=_BitStream_new();
     var $0=$entry_addr;
-    var $bstream=(($0+12)&4294967295);
+    var $bstream=$0+12;
     HEAP[$bstream]=$call;
     var $1=$entry_addr;
-    var $bstream2=(($1+12)&4294967295);
+    var $bstream2=$1+12;
     var $2=HEAP[$bstream2];
     var $cmp=((($2))|0)==0;
     if ($cmp) { __label__ = 1;; } else { __label__ = 2;; }
@@ -12232,10 +12229,10 @@ var _rslist;
             if (__label__ == 4) {
   
               var $5=$entry_addr;
-              var $bstream6=(($5+12)&4294967295);
+              var $bstream6=$5+12;
               var $6=HEAP[$bstream6];
               var $7=$version_addr;
-              var $sub=((($7) - 1)&4294967295);
+              var $sub=($7) - 1;
               var $call7=_BitStream_appendNum($6, $sub, 0);
               $ret=$call7;
               var $8=$ret;
@@ -12252,12 +12249,12 @@ var _rslist;
             }
   
             var $9=$entry_addr;
-            var $bstream12=(($9+12)&4294967295);
+            var $bstream12=$9+12;
             var $10=HEAP[$bstream12];
             var $11=$version_addr;
             var $call13=_MQRspec_lengthIndicator(0, $11);
             var $12=$entry_addr;
-            var $size=(($12+4)&4294967295);
+            var $size=$12+4;
             var $13=HEAP[$size];
             var $call14=_BitStream_appendNum($10, $call13, $13);
             $ret=$call14;
@@ -12276,7 +12273,7 @@ var _rslist;
           else if (__label__ == 10) {
   
             var $15=$entry_addr;
-            var $bstream18=(($15+12)&4294967295);
+            var $bstream18=$15+12;
             var $16=HEAP[$bstream18];
             var $call19=_BitStream_appendNum($16, 4, 1);
             $ret=$call19;
@@ -12290,12 +12287,12 @@ var _rslist;
             else if (__label__ == 12) {
   
               var $18=$entry_addr;
-              var $bstream23=(($18+12)&4294967295);
+              var $bstream23=$18+12;
               var $19=HEAP[$bstream23];
               var $20=$version_addr;
               var $call24=_QRspec_lengthIndicator(0, $20);
               var $21=$entry_addr;
-              var $size25=(($21+4)&4294967295);
+              var $size25=$21+4;
               var $22=HEAP[$size25];
               var $call26=_BitStream_appendNum($19, $call24, $22);
               $ret=$call26;
@@ -12317,7 +12314,7 @@ var _rslist;
           if (__label__ == 15) {
   
             var $24=$entry_addr;
-            var $size31=(($24+4)&4294967295);
+            var $size31=$24+4;
             var $25=HEAP[$size31];
             var $div=((((($25))|0)/3)|0);
             $words=$div;
@@ -12331,45 +12328,45 @@ var _rslist;
               if (!($cmp32)) { __label__ = 21;break ; }
   
               var $28=$i;
-              var $mul=((($28) * 3)&4294967295);
+              var $mul=($28) * 3;
               var $29=$entry_addr;
-              var $data=(($29+8)&4294967295);
+              var $data=$29+8;
               var $30=HEAP[$data];
-              var $arrayidx=(($30+$mul)&4294967295);
+              var $arrayidx=$30+$mul;
               var $31=HEAP[$arrayidx];
               var $conv=((($31))&255);
-              var $sub33=((($conv) - 48)&4294967295);
-              var $mul34=((($sub33) * 100)&4294967295);
+              var $sub33=($conv) - 48;
+              var $mul34=($sub33) * 100;
               $val=$mul34;
               var $32=$i;
-              var $mul35=((($32) * 3)&4294967295);
-              var $add=((($mul35) + 1)&4294967295);
+              var $mul35=($32) * 3;
+              var $add=($mul35) + 1;
               var $33=$entry_addr;
-              var $data36=(($33+8)&4294967295);
+              var $data36=$33+8;
               var $34=HEAP[$data36];
-              var $arrayidx37=(($34+$add)&4294967295);
+              var $arrayidx37=$34+$add;
               var $35=HEAP[$arrayidx37];
               var $conv38=((($35))&255);
-              var $sub39=((($conv38) - 48)&4294967295);
-              var $mul40=((($sub39) * 10)&4294967295);
+              var $sub39=($conv38) - 48;
+              var $mul40=($sub39) * 10;
               var $36=$val;
-              var $add41=((($36) + ($mul40))&4294967295);
+              var $add41=($36) + ($mul40);
               $val=$add41;
               var $37=$i;
-              var $mul42=((($37) * 3)&4294967295);
-              var $add43=((($mul42) + 2)&4294967295);
+              var $mul42=($37) * 3;
+              var $add43=($mul42) + 2;
               var $38=$entry_addr;
-              var $data44=(($38+8)&4294967295);
+              var $data44=$38+8;
               var $39=HEAP[$data44];
-              var $arrayidx45=(($39+$add43)&4294967295);
+              var $arrayidx45=$39+$add43;
               var $40=HEAP[$arrayidx45];
               var $conv46=((($40))&255);
-              var $sub47=((($conv46) - 48)&4294967295);
+              var $sub47=($conv46) - 48;
               var $41=$val;
-              var $add48=((($41) + ($sub47))&4294967295);
+              var $add48=($41) + ($sub47);
               $val=$add48;
               var $42=$entry_addr;
-              var $bstream49=(($42+12)&4294967295);
+              var $bstream49=$42+12;
               var $43=HEAP[$bstream49];
               var $44=$val;
               var $call50=_BitStream_appendNum($43, 10, $44);
@@ -12381,34 +12378,34 @@ var _rslist;
               ;
   
               var $46=$i;
-              var $inc=((($46) + 1)&4294967295);
+              var $inc=($46) + 1;
               $i=$inc;
               __label__ = 16;continue ;
             }
             if (__label__ == 21) {
   
               var $47=$entry_addr;
-              var $size55=(($47+4)&4294967295);
+              var $size55=$47+4;
               var $48=HEAP[$size55];
               var $49=$words;
-              var $mul56=((($49) * 3)&4294967295);
-              var $sub57=((($48) - ($mul56))&4294967295);
+              var $mul56=($49) * 3;
+              var $sub57=($48) - ($mul56);
               var $cmp58=((($sub57))|0)==1;
               if ($cmp58) { __label__ = 22;; } else { __label__ = 25;; }
               if (__label__ == 22) {
   
                 var $50=$words;
-                var $mul61=((($50) * 3)&4294967295);
+                var $mul61=($50) * 3;
                 var $51=$entry_addr;
-                var $data62=(($51+8)&4294967295);
+                var $data62=$51+8;
                 var $52=HEAP[$data62];
-                var $arrayidx63=(($52+$mul61)&4294967295);
+                var $arrayidx63=$52+$mul61;
                 var $53=HEAP[$arrayidx63];
                 var $conv64=((($53))&255);
-                var $sub65=((($conv64) - 48)&4294967295);
+                var $sub65=($conv64) - 48;
                 $val=$sub65;
                 var $54=$entry_addr;
-                var $bstream66=(($54+12)&4294967295);
+                var $bstream66=$54+12;
                 var $55=HEAP[$bstream66];
                 var $56=$val;
                 var $call67=_BitStream_appendNum($55, 4, $56);
@@ -12428,41 +12425,41 @@ var _rslist;
               else if (__label__ == 25) {
   
                 var $58=$entry_addr;
-                var $size73=(($58+4)&4294967295);
+                var $size73=$58+4;
                 var $59=HEAP[$size73];
                 var $60=$words;
-                var $mul74=((($60) * 3)&4294967295);
-                var $sub75=((($59) - ($mul74))&4294967295);
+                var $mul74=($60) * 3;
+                var $sub75=($59) - ($mul74);
                 var $cmp76=((($sub75))|0)==2;
                 if ($cmp76) { __label__ = 26;; } else { __label__ = 29;; }
                 if (__label__ == 26) {
   
                   var $61=$words;
-                  var $mul79=((($61) * 3)&4294967295);
+                  var $mul79=($61) * 3;
                   var $62=$entry_addr;
-                  var $data80=(($62+8)&4294967295);
+                  var $data80=$62+8;
                   var $63=HEAP[$data80];
-                  var $arrayidx81=(($63+$mul79)&4294967295);
+                  var $arrayidx81=$63+$mul79;
                   var $64=HEAP[$arrayidx81];
                   var $conv82=((($64))&255);
-                  var $sub83=((($conv82) - 48)&4294967295);
-                  var $mul84=((($sub83) * 10)&4294967295);
+                  var $sub83=($conv82) - 48;
+                  var $mul84=($sub83) * 10;
                   $val=$mul84;
                   var $65=$words;
-                  var $mul85=((($65) * 3)&4294967295);
-                  var $add86=((($mul85) + 1)&4294967295);
+                  var $mul85=($65) * 3;
+                  var $add86=($mul85) + 1;
                   var $66=$entry_addr;
-                  var $data87=(($66+8)&4294967295);
+                  var $data87=$66+8;
                   var $67=HEAP[$data87];
-                  var $arrayidx88=(($67+$add86)&4294967295);
+                  var $arrayidx88=$67+$add86;
                   var $68=HEAP[$arrayidx88];
                   var $conv89=((($68))&255);
-                  var $sub90=((($conv89) - 48)&4294967295);
+                  var $sub90=($conv89) - 48;
                   var $69=$val;
-                  var $add91=((($69) + ($sub90))&4294967295);
+                  var $add91=($69) + ($sub90);
                   $val=$add91;
                   var $70=$entry_addr;
-                  var $bstream92=(($70+12)&4294967295);
+                  var $bstream92=$70+12;
                   var $71=HEAP[$bstream92];
                   var $72=$val;
                   var $call93=_BitStream_appendNum($71, 7, $72);
@@ -12493,11 +12490,11 @@ var _rslist;
         } while(0);
   
         var $74=$entry_addr;
-        var $bstream100=(($74+12)&4294967295);
+        var $bstream100=$74+12;
         var $75=HEAP[$bstream100];
         _BitStream_free($75);
         var $76=$entry_addr;
-        var $bstream101=(($76+12)&4294967295);
+        var $bstream101=$76+12;
         HEAP[$bstream101]=0;
         $retval=-1;
         ;
@@ -12529,10 +12526,10 @@ var _rslist;
     $mqr_addr=$mqr;
     var $call=_BitStream_new();
     var $0=$entry_addr;
-    var $bstream=(($0+12)&4294967295);
+    var $bstream=$0+12;
     HEAP[$bstream]=$call;
     var $1=$entry_addr;
-    var $bstream2=(($1+12)&4294967295);
+    var $bstream2=$1+12;
     var $2=HEAP[$bstream2];
     var $cmp=((($2))|0)==0;
     if ($cmp) { __label__ = 1;; } else { __label__ = 2;; }
@@ -12562,10 +12559,10 @@ var _rslist;
             else if (__label__ == 5) {
   
               var $5=$entry_addr;
-              var $bstream8=(($5+12)&4294967295);
+              var $bstream8=$5+12;
               var $6=HEAP[$bstream8];
               var $7=$version_addr;
-              var $sub=((($7) - 1)&4294967295);
+              var $sub=($7) - 1;
               var $call9=_BitStream_appendNum($6, $sub, 1);
               $ret=$call9;
               var $8=$ret;
@@ -12578,12 +12575,12 @@ var _rslist;
               else if (__label__ == 7) {
   
                 var $9=$entry_addr;
-                var $bstream13=(($9+12)&4294967295);
+                var $bstream13=$9+12;
                 var $10=HEAP[$bstream13];
                 var $11=$version_addr;
                 var $call14=_MQRspec_lengthIndicator(1, $11);
                 var $12=$entry_addr;
-                var $size=(($12+4)&4294967295);
+                var $size=$12+4;
                 var $13=HEAP[$size];
                 var $call15=_BitStream_appendNum($10, $call14, $13);
                 $ret=$call15;
@@ -12604,7 +12601,7 @@ var _rslist;
           else if (__label__ == 10) {
   
             var $15=$entry_addr;
-            var $bstream19=(($15+12)&4294967295);
+            var $bstream19=$15+12;
             var $16=HEAP[$bstream19];
             var $call20=_BitStream_appendNum($16, 4, 2);
             $ret=$call20;
@@ -12618,12 +12615,12 @@ var _rslist;
             else if (__label__ == 12) {
   
               var $18=$entry_addr;
-              var $bstream24=(($18+12)&4294967295);
+              var $bstream24=$18+12;
               var $19=HEAP[$bstream24];
               var $20=$version_addr;
               var $call25=_QRspec_lengthIndicator(1, $20);
               var $21=$entry_addr;
-              var $size26=(($21+4)&4294967295);
+              var $size26=$21+4;
               var $22=HEAP[$size26];
               var $call27=_BitStream_appendNum($19, $call25, $22);
               $ret=$call27;
@@ -12645,7 +12642,7 @@ var _rslist;
           if (__label__ == 15) {
   
             var $24=$entry_addr;
-            var $size32=(($24+4)&4294967295);
+            var $size32=$24+4;
             var $25=HEAP[$size32];
             var $div=((((($25))|0)/2)|0);
             $words=$div;
@@ -12659,11 +12656,11 @@ var _rslist;
               if (!($cmp33)) { __label__ = 27;break ; }
   
               var $28=$i;
-              var $mul=((($28) * 2)&4294967295);
+              var $mul=($28) * 2;
               var $29=$entry_addr;
-              var $data=(($29+8)&4294967295);
+              var $data=$29+8;
               var $30=HEAP[$data];
-              var $arrayidx=(($30+$mul)&4294967295);
+              var $arrayidx=$30+$mul;
               var $31=HEAP[$arrayidx];
               var $conv=((($31))&255);
               var $and=($conv) & 128;
@@ -12676,29 +12673,29 @@ var _rslist;
               else if (__label__ == 19) {
   
                 var $32=$i;
-                var $mul35=((($32) * 2)&4294967295);
+                var $mul35=($32) * 2;
                 var $33=$entry_addr;
-                var $data36=(($33+8)&4294967295);
+                var $data36=$33+8;
                 var $34=HEAP[$data36];
-                var $arrayidx37=(($34+$mul35)&4294967295);
+                var $arrayidx37=$34+$mul35;
                 var $35=HEAP[$arrayidx37];
                 var $conv38=((($35))&255);
-                var $arrayidx39=((_QRinput_anTable+$conv38)&4294967295);
+                var $arrayidx39=_QRinput_anTable+$conv38;
                 var $36=HEAP[$arrayidx39];
                 var $conv40=(tempInt=(($36)),(tempInt>=128?tempInt-256:tempInt));
                 __lastLabel__ = 19; ;
               }
   
               var $cond=__lastLabel__ == 18 ? -1 : ($conv40);
-              var $mul41=((($cond) * 45)&4294967295);
+              var $mul41=($cond) * 45;
               $val=$mul41;
               var $37=$i;
-              var $mul42=((($37) * 2)&4294967295);
-              var $add=((($mul42) + 1)&4294967295);
+              var $mul42=($37) * 2;
+              var $add=($mul42) + 1;
               var $38=$entry_addr;
-              var $data43=(($38+8)&4294967295);
+              var $data43=$38+8;
               var $39=HEAP[$data43];
-              var $arrayidx44=(($39+$add)&4294967295);
+              var $arrayidx44=$39+$add;
               var $40=HEAP[$arrayidx44];
               var $conv45=((($40))&255);
               var $and46=($conv45) & 128;
@@ -12711,15 +12708,15 @@ var _rslist;
               else if (__label__ == 22) {
   
                 var $41=$i;
-                var $mul50=((($41) * 2)&4294967295);
-                var $add51=((($mul50) + 1)&4294967295);
+                var $mul50=($41) * 2;
+                var $add51=($mul50) + 1;
                 var $42=$entry_addr;
-                var $data52=(($42+8)&4294967295);
+                var $data52=$42+8;
                 var $43=HEAP[$data52];
-                var $arrayidx53=(($43+$add51)&4294967295);
+                var $arrayidx53=$43+$add51;
                 var $44=HEAP[$arrayidx53];
                 var $conv54=((($44))&255);
-                var $arrayidx55=((_QRinput_anTable+$conv54)&4294967295);
+                var $arrayidx55=_QRinput_anTable+$conv54;
                 var $45=HEAP[$arrayidx55];
                 var $conv56=(tempInt=(($45)),(tempInt>=128?tempInt-256:tempInt));
                 __lastLabel__ = 22; ;
@@ -12727,10 +12724,10 @@ var _rslist;
   
               var $cond58=__lastLabel__ == 21 ? -1 : ($conv56);
               var $46=$val;
-              var $add59=((($46) + ($cond58))&4294967295);
+              var $add59=($46) + ($cond58);
               $val=$add59;
               var $47=$entry_addr;
-              var $bstream60=(($47+12)&4294967295);
+              var $bstream60=$47+12;
               var $48=HEAP[$bstream60];
               var $49=$val;
               var $call61=_BitStream_appendNum($48, 11, $49);
@@ -12742,14 +12739,14 @@ var _rslist;
               ;
   
               var $51=$i;
-              var $inc=((($51) + 1)&4294967295);
+              var $inc=($51) + 1;
               $i=$inc;
               __label__ = 16;continue ;
             }
             if (__label__ == 27) {
   
               var $52=$entry_addr;
-              var $size66=(($52+4)&4294967295);
+              var $size66=$52+4;
               var $53=HEAP[$size66];
               var $and67=($53) & 1;
               var $tobool68=((($and67))|0)!=0;
@@ -12757,11 +12754,11 @@ var _rslist;
               if (__label__ == 28) {
   
                 var $54=$words;
-                var $mul70=((($54) * 2)&4294967295);
+                var $mul70=($54) * 2;
                 var $55=$entry_addr;
-                var $data71=(($55+8)&4294967295);
+                var $data71=$55+8;
                 var $56=HEAP[$data71];
-                var $arrayidx72=(($56+$mul70)&4294967295);
+                var $arrayidx72=$56+$mul70;
                 var $57=HEAP[$arrayidx72];
                 var $conv73=((($57))&255);
                 var $and74=($conv73) & 128;
@@ -12774,14 +12771,14 @@ var _rslist;
                 else if (__label__ == 30) {
   
                   var $58=$words;
-                  var $mul78=((($58) * 2)&4294967295);
+                  var $mul78=($58) * 2;
                   var $59=$entry_addr;
-                  var $data79=(($59+8)&4294967295);
+                  var $data79=$59+8;
                   var $60=HEAP[$data79];
-                  var $arrayidx80=(($60+$mul78)&4294967295);
+                  var $arrayidx80=$60+$mul78;
                   var $61=HEAP[$arrayidx80];
                   var $conv81=((($61))&255);
-                  var $arrayidx82=((_QRinput_anTable+$conv81)&4294967295);
+                  var $arrayidx82=_QRinput_anTable+$conv81;
                   var $62=HEAP[$arrayidx82];
                   var $conv83=(tempInt=(($62)),(tempInt>=128?tempInt-256:tempInt));
                   __lastLabel__ = 30; ;
@@ -12790,7 +12787,7 @@ var _rslist;
                 var $cond85=__lastLabel__ == 29 ? -1 : ($conv83);
                 $val=$cond85;
                 var $63=$entry_addr;
-                var $bstream86=(($63+12)&4294967295);
+                var $bstream86=$63+12;
                 var $64=HEAP[$bstream86];
                 var $65=$val;
                 var $call87=_BitStream_appendNum($64, 6, $65);
@@ -12819,11 +12816,11 @@ var _rslist;
         } while(0);
   
         var $67=$entry_addr;
-        var $bstream93=(($67+12)&4294967295);
+        var $bstream93=$67+12;
         var $68=HEAP[$bstream93];
         _BitStream_free($68);
         var $69=$entry_addr;
-        var $bstream94=(($69+12)&4294967295);
+        var $bstream94=$69+12;
         HEAP[$bstream94]=0;
         $retval=-1;
         ;
@@ -12851,10 +12848,10 @@ var _rslist;
     $mqr_addr=$mqr;
     var $call=_BitStream_new();
     var $0=$entry_addr;
-    var $bstream=(($0+12)&4294967295);
+    var $bstream=$0+12;
     HEAP[$bstream]=$call;
     var $1=$entry_addr;
-    var $bstream2=(($1+12)&4294967295);
+    var $bstream2=$1+12;
     var $2=HEAP[$bstream2];
     var $cmp=((($2))|0)==0;
     if ($cmp) { __label__ = 1;; } else { __label__ = 2;; }
@@ -12884,10 +12881,10 @@ var _rslist;
             else if (__label__ == 5) {
   
               var $5=$entry_addr;
-              var $bstream8=(($5+12)&4294967295);
+              var $bstream8=$5+12;
               var $6=HEAP[$bstream8];
               var $7=$version_addr;
-              var $sub=((($7) - 1)&4294967295);
+              var $sub=($7) - 1;
               var $call9=_BitStream_appendNum($6, $sub, 2);
               $ret=$call9;
               var $8=$ret;
@@ -12900,12 +12897,12 @@ var _rslist;
               else if (__label__ == 7) {
   
                 var $9=$entry_addr;
-                var $bstream13=(($9+12)&4294967295);
+                var $bstream13=$9+12;
                 var $10=HEAP[$bstream13];
                 var $11=$version_addr;
                 var $call14=_MQRspec_lengthIndicator(2, $11);
                 var $12=$entry_addr;
-                var $size=(($12+4)&4294967295);
+                var $size=$12+4;
                 var $13=HEAP[$size];
                 var $call15=_BitStream_appendNum($10, $call14, $13);
                 $ret=$call15;
@@ -12926,7 +12923,7 @@ var _rslist;
           else if (__label__ == 10) {
   
             var $15=$entry_addr;
-            var $bstream19=(($15+12)&4294967295);
+            var $bstream19=$15+12;
             var $16=HEAP[$bstream19];
             var $call20=_BitStream_appendNum($16, 4, 4);
             $ret=$call20;
@@ -12940,12 +12937,12 @@ var _rslist;
             else if (__label__ == 12) {
   
               var $18=$entry_addr;
-              var $bstream24=(($18+12)&4294967295);
+              var $bstream24=$18+12;
               var $19=HEAP[$bstream24];
               var $20=$version_addr;
               var $call25=_QRspec_lengthIndicator(2, $20);
               var $21=$entry_addr;
-              var $size26=(($21+4)&4294967295);
+              var $size26=$21+4;
               var $22=HEAP[$size26];
               var $call27=_BitStream_appendNum($19, $call25, $22);
               $ret=$call27;
@@ -12966,13 +12963,13 @@ var _rslist;
         if (__label__ == 15) {
   
           var $24=$entry_addr;
-          var $bstream32=(($24+12)&4294967295);
+          var $bstream32=$24+12;
           var $25=HEAP[$bstream32];
           var $26=$entry_addr;
-          var $size33=(($26+4)&4294967295);
+          var $size33=$26+4;
           var $27=HEAP[$size33];
           var $28=$entry_addr;
-          var $data=(($28+8)&4294967295);
+          var $data=$28+8;
           var $29=HEAP[$data];
           var $call34=_BitStream_appendBytes($25, $27, $29);
           $ret=$call34;
@@ -12991,11 +12988,11 @@ var _rslist;
         }
   
         var $31=$entry_addr;
-        var $bstream38=(($31+12)&4294967295);
+        var $bstream38=$31+12;
         var $32=HEAP[$bstream38];
         _BitStream_free($32);
         var $33=$entry_addr;
-        var $bstream39=(($33+12)&4294967295);
+        var $bstream39=$33+12;
         HEAP[$bstream39]=0;
         $retval=-1;
         ;
@@ -13026,10 +13023,10 @@ var _rslist;
     $mqr_addr=$mqr;
     var $call=_BitStream_new();
     var $0=$entry_addr;
-    var $bstream=(($0+12)&4294967295);
+    var $bstream=$0+12;
     HEAP[$bstream]=$call;
     var $1=$entry_addr;
-    var $bstream2=(($1+12)&4294967295);
+    var $bstream2=$1+12;
     var $2=HEAP[$bstream2];
     var $cmp=((($2))|0)==0;
     if ($cmp) { __label__ = 1;; } else { __label__ = 2;; }
@@ -13059,10 +13056,10 @@ var _rslist;
             else if (__label__ == 5) {
   
               var $5=$entry_addr;
-              var $bstream8=(($5+12)&4294967295);
+              var $bstream8=$5+12;
               var $6=HEAP[$bstream8];
               var $7=$version_addr;
-              var $sub=((($7) - 1)&4294967295);
+              var $sub=($7) - 1;
               var $call9=_BitStream_appendNum($6, $sub, 3);
               $ret=$call9;
               var $8=$ret;
@@ -13075,12 +13072,12 @@ var _rslist;
               else if (__label__ == 7) {
   
                 var $9=$entry_addr;
-                var $bstream13=(($9+12)&4294967295);
+                var $bstream13=$9+12;
                 var $10=HEAP[$bstream13];
                 var $11=$version_addr;
                 var $call14=_MQRspec_lengthIndicator(3, $11);
                 var $12=$entry_addr;
-                var $size=(($12+4)&4294967295);
+                var $size=$12+4;
                 var $13=HEAP[$size];
                 var $div=((((($13))|0)/2)|0);
                 var $call15=_BitStream_appendNum($10, $call14, $div);
@@ -13102,7 +13099,7 @@ var _rslist;
           else if (__label__ == 10) {
   
             var $15=$entry_addr;
-            var $bstream19=(($15+12)&4294967295);
+            var $bstream19=$15+12;
             var $16=HEAP[$bstream19];
             var $call20=_BitStream_appendNum($16, 4, 8);
             $ret=$call20;
@@ -13116,12 +13113,12 @@ var _rslist;
             else if (__label__ == 12) {
   
               var $18=$entry_addr;
-              var $bstream24=(($18+12)&4294967295);
+              var $bstream24=$18+12;
               var $19=HEAP[$bstream24];
               var $20=$version_addr;
               var $call25=_QRspec_lengthIndicator(3, $20);
               var $21=$entry_addr;
-              var $size26=(($21+4)&4294967295);
+              var $size26=$21+4;
               var $22=HEAP[$size26];
               var $div27=((((($22))|0)/2)|0);
               var $call28=_BitStream_appendNum($19, $call25, $div27);
@@ -13148,25 +13145,25 @@ var _rslist;
   
             var $24=$i;
             var $25=$entry_addr;
-            var $size33=(($25+4)&4294967295);
+            var $size33=$25+4;
             var $26=HEAP[$size33];
             var $cmp34=((($24))|0) < ((($26))|0);
             if (!($cmp34)) { __label__ = 24;break ; }
   
             var $27=$i;
             var $28=$entry_addr;
-            var $data=(($28+8)&4294967295);
+            var $data=$28+8;
             var $29=HEAP[$data];
-            var $arrayidx=(($29+$27)&4294967295);
+            var $arrayidx=$29+$27;
             var $30=HEAP[$arrayidx];
             var $conv=((($30))&255);
             var $shl=($conv) << 8;
             var $31=$i;
-            var $add=((($31) + 1)&4294967295);
+            var $add=($31) + 1;
             var $32=$entry_addr;
-            var $data35=(($32+8)&4294967295);
+            var $data35=$32+8;
             var $33=HEAP[$data35];
-            var $arrayidx36=(($33+$add)&4294967295);
+            var $arrayidx36=$33+$add;
             var $34=HEAP[$arrayidx36];
             var $conv37=((($34))&255);
             var $or=($shl) | ($conv37);
@@ -13177,29 +13174,29 @@ var _rslist;
             if (__label__ == 18) {
   
               var $36=$val;
-              var $sub41=((($36) - 33088)&4294967295);
+              var $sub41=($36) - 33088;
               $val=$sub41;
               ;
             }
             else if (__label__ == 19) {
   
               var $37=$val;
-              var $sub43=((($37) - 49472)&4294967295);
+              var $sub43=($37) - 49472;
               $val=$sub43;
               ;
             }
   
             var $38=$val;
             var $shr=($38) >>> 8;
-            var $mul=((($shr) * 192)&4294967295);
+            var $mul=($shr) * 192;
             $h=$mul;
             var $39=$val;
             var $and=($39) & 255;
             var $40=$h;
-            var $add45=((($and) + ($40))&4294967295);
+            var $add45=($and) + ($40);
             $val=$add45;
             var $41=$entry_addr;
-            var $bstream46=(($41+12)&4294967295);
+            var $bstream46=$41+12;
             var $42=HEAP[$bstream46];
             var $43=$val;
             var $call47=_BitStream_appendNum($42, 13, $43);
@@ -13211,7 +13208,7 @@ var _rslist;
             ;
   
             var $45=$i;
-            var $add52=((($45) + 2)&4294967295);
+            var $add52=($45) + 2;
             $i=$add52;
             __label__ = 16;continue ;
           }
@@ -13227,11 +13224,11 @@ var _rslist;
         }
   
         var $46=$entry_addr;
-        var $bstream53=(($46+12)&4294967295);
+        var $bstream53=$46+12;
         var $47=HEAP[$bstream53];
         _BitStream_free($47);
         var $48=$entry_addr;
-        var $bstream54=(($48+12)&4294967295);
+        var $bstream54=$48+12;
         HEAP[$bstream54]=0;
         $retval=-1;
         ;
@@ -13270,10 +13267,10 @@ var _rslist;
   
         var $call2=_BitStream_new();
         var $1=$entry_addr;
-        var $bstream=(($1+12)&4294967295);
+        var $bstream=$1+12;
         HEAP[$bstream]=$call2;
         var $2=$entry_addr;
-        var $bstream3=(($2+12)&4294967295);
+        var $bstream3=$2+12;
         var $3=HEAP[$bstream3];
         var $cmp=((($3))|0)==0;
         if ($cmp) { __label__ = 3;; } else { __label__ = 4;; }
@@ -13285,7 +13282,7 @@ var _rslist;
         else if (__label__ == 4) {
   
           var $4=$entry_addr;
-          var $bstream6=(($4+12)&4294967295);
+          var $bstream6=$4+12;
           var $5=HEAP[$bstream6];
           var $call7=_BitStream_appendNum($5, 4, 3);
           $ret=$call7;
@@ -13299,15 +13296,15 @@ var _rslist;
           else if (__label__ == 6) {
   
             var $7=$entry_addr;
-            var $bstream11=(($7+12)&4294967295);
+            var $bstream11=$7+12;
             var $8=HEAP[$bstream11];
             var $9=$entry_addr;
-            var $data=(($9+8)&4294967295);
+            var $data=$9+8;
             var $10=HEAP[$data];
-            var $arrayidx=(($10+1)&4294967295);
+            var $arrayidx=$10+1;
             var $11=HEAP[$arrayidx];
             var $conv=((($11))&255);
-            var $sub=((($conv) - 1)&4294967295);
+            var $sub=($conv) - 1;
             var $call12=_BitStream_appendNum($8, 4, $sub);
             $ret=$call12;
             var $12=$ret;
@@ -13320,15 +13317,15 @@ var _rslist;
             else if (__label__ == 8) {
   
               var $13=$entry_addr;
-              var $bstream17=(($13+12)&4294967295);
+              var $bstream17=$13+12;
               var $14=HEAP[$bstream17];
               var $15=$entry_addr;
-              var $data18=(($15+8)&4294967295);
+              var $data18=$15+8;
               var $16=HEAP[$data18];
-              var $arrayidx19=(($16)&4294967295);
+              var $arrayidx19=$16;
               var $17=HEAP[$arrayidx19];
               var $conv20=((($17))&255);
-              var $sub21=((($conv20) - 1)&4294967295);
+              var $sub21=($conv20) - 1;
               var $call22=_BitStream_appendNum($14, 4, $sub21);
               $ret=$call22;
               var $18=$ret;
@@ -13341,12 +13338,12 @@ var _rslist;
               else if (__label__ == 10) {
   
                 var $19=$entry_addr;
-                var $bstream27=(($19+12)&4294967295);
+                var $bstream27=$19+12;
                 var $20=HEAP[$bstream27];
                 var $21=$entry_addr;
-                var $data28=(($21+8)&4294967295);
+                var $data28=$21+8;
                 var $22=HEAP[$data28];
-                var $arrayidx29=(($22+2)&4294967295);
+                var $arrayidx29=$22+2;
                 var $23=HEAP[$arrayidx29];
                 var $conv30=((($23))&255);
                 var $call31=_BitStream_appendNum($20, 8, $conv30);
@@ -13368,11 +13365,11 @@ var _rslist;
           }
   
           var $25=$entry_addr;
-          var $bstream36=(($25+12)&4294967295);
+          var $bstream36=$25+12;
           var $26=HEAP[$bstream36];
           _BitStream_free($26);
           var $27=$entry_addr;
-          var $bstream37=(($27+12)&4294967295);
+          var $bstream37=$27+12;
           HEAP[$bstream37]=0;
           $retval=-1;
           ;
@@ -13402,10 +13399,10 @@ var _rslist;
     $version_addr=$version;
     var $call=_BitStream_new();
     var $0=$entry_addr;
-    var $bstream=(($0+12)&4294967295);
+    var $bstream=$0+12;
     HEAP[$bstream]=$call;
     var $1=$entry_addr;
-    var $bstream2=(($1+12)&4294967295);
+    var $bstream2=$1+12;
     var $2=HEAP[$bstream2];
     var $cmp=((($2))|0)==0;
     if ($cmp) { __label__ = 1;; } else { __label__ = 2;; }
@@ -13418,7 +13415,7 @@ var _rslist;
       else if (__label__ == 2) {
   
         var $3=$entry_addr;
-        var $data=(($3+8)&4294967295);
+        var $data=$3+8;
         var $4=HEAP[$data];
         var $call3=_QRinput_decodeECIfromByteArray($4);
         $ecinum=$call3;
@@ -13441,7 +13438,7 @@ var _rslist;
   
             $words=2;
             var $8=$ecinum;
-            var $add=((32768 + ($8))&4294967295);
+            var $add=32768 + ($8);
             $code=$add;
             ;
           }
@@ -13449,7 +13446,7 @@ var _rslist;
   
             $words=3;
             var $9=$ecinum;
-            var $add9=((786432 + ($9))&4294967295);
+            var $add9=786432 + ($9);
             $code=$add9;
             ;
           }
@@ -13458,7 +13455,7 @@ var _rslist;
         }
   
         var $10=$entry_addr;
-        var $bstream12=(($10+12)&4294967295);
+        var $bstream12=$10+12;
         var $11=HEAP[$bstream12];
         var $call13=_BitStream_appendNum($11, 4, 7);
         $ret=$call13;
@@ -13472,10 +13469,10 @@ var _rslist;
         else if (__label__ == 10) {
   
           var $13=$entry_addr;
-          var $bstream17=(($13+12)&4294967295);
+          var $bstream17=$13+12;
           var $14=HEAP[$bstream17];
           var $15=$words;
-          var $mul=((($15) * 8)&4294967295);
+          var $mul=($15) * 8;
           var $16=$code;
           var $call18=_BitStream_appendNum($14, $mul, $16);
           $ret=$call18;
@@ -13494,11 +13491,11 @@ var _rslist;
         }
   
         var $18=$entry_addr;
-        var $bstream22=(($18+12)&4294967295);
+        var $bstream22=$18+12;
         var $19=HEAP[$bstream22];
         _BitStream_free($19);
         var $20=$entry_addr;
-        var $bstream23=(($20+12)&4294967295);
+        var $bstream23=$20+12;
         HEAP[$bstream23]=0;
         $retval=-1;
         ;
@@ -13524,10 +13521,10 @@ var _rslist;
     $version_addr=$version;
     var $call=_BitStream_new();
     var $0=$entry_addr;
-    var $bstream=(($0+12)&4294967295);
+    var $bstream=$0+12;
     HEAP[$bstream]=$call;
     var $1=$entry_addr;
-    var $bstream2=(($1+12)&4294967295);
+    var $bstream2=$1+12;
     var $2=HEAP[$bstream2];
     var $cmp=((($2))|0)==0;
     if ($cmp) { __label__ = 1;; } else { __label__ = 2;; }
@@ -13540,7 +13537,7 @@ var _rslist;
       else if (__label__ == 2) {
   
         var $3=$entry_addr;
-        var $bstream3=(($3+12)&4294967295);
+        var $bstream3=$3+12;
         var $4=HEAP[$bstream3];
         var $call4=_BitStream_appendNum($4, 4, 9);
         $ret=$call4;
@@ -13554,10 +13551,10 @@ var _rslist;
         else if (__label__ == 4) {
   
           var $6=$entry_addr;
-          var $bstream8=(($6+12)&4294967295);
+          var $bstream8=$6+12;
           var $7=HEAP[$bstream8];
           var $8=$entry_addr;
-          var $data=(($8+8)&4294967295);
+          var $data=$8+8;
           var $9=HEAP[$data];
           var $call9=_BitStream_appendBytes($7, 1, $9);
           $ret=$call9;
@@ -13576,11 +13573,11 @@ var _rslist;
         }
   
         var $11=$entry_addr;
-        var $bstream13=(($11+12)&4294967295);
+        var $bstream13=$11+12;
         var $12=HEAP[$bstream13];
         _BitStream_free($12);
         var $13=$entry_addr;
-        var $bstream14=(($13+12)&4294967295);
+        var $bstream14=$13+12;
         HEAP[$bstream14]=0;
         $retval=-1;
         ;
@@ -13605,7 +13602,7 @@ var _rslist;
     var $ret;
     $input_addr=$input;
     var $0=$input_addr;
-    var $mqr=(($0+16)&4294967295);
+    var $mqr=$0+16;
     var $1=HEAP[$mqr];
     var $tobool=((($1))|0)!=0;
     if ($tobool) { __label__ = 1;; } else { __label__ = 4;; }
@@ -13629,7 +13626,7 @@ var _rslist;
       else if (__label__ == 4) {
   
         var $3=$input_addr;
-        var $fnc1=(($3+20)&4294967295);
+        var $fnc1=$3+20;
         var $4=HEAP[$fnc1];
         var $tobool2=((($4))|0)!=0;
         if ($tobool2) { __label__ = 5;; } else { __label__ = 8;; }
@@ -13680,7 +13677,7 @@ var _rslist;
       else if (__label__ == 13) {
   
         var $8=$input_addr;
-        var $head=(($8+8)&4294967295);
+        var $head=$8+8;
         var $9=HEAP[$head];
         $list=$9;
         ;
@@ -13692,7 +13689,7 @@ var _rslist;
   
           var $11=$bstream;
           var $12=$list;
-          var $bstream19=(($12+12)&4294967295);
+          var $bstream19=$12+12;
           var $13=HEAP[$bstream19];
           var $call20=_BitStream_append($11, $13);
           $ret=$call20;
@@ -13701,7 +13698,7 @@ var _rslist;
           if ($cmp21) { __label__ = 16;break ; }
   
           var $16=$list;
-          var $next=(($16+16)&4294967295);
+          var $next=$16+16;
           var $17=HEAP[$next];
           $list=$17;
           __label__ = 14;continue ;
@@ -13750,14 +13747,14 @@ var _rslist;
     $input_addr=$input;
     $padding=0;
     var $0=$bstream_addr;
-    var $length=(($0)&4294967295);
+    var $length=$0;
     var $1=HEAP[$length];
     $bits=$1;
     var $2=$input_addr;
-    var $version=(($2)&4294967295);
+    var $version=$2;
     var $3=HEAP[$version];
     var $4=$input_addr;
-    var $level=(($4+4)&4294967295);
+    var $level=$4+4;
     var $5=HEAP[$level];
     var $call=_MQRspec_getDataLengthBit($3, $5);
     $maxbits=$call;
@@ -13790,14 +13787,14 @@ var _rslist;
         else if (__label__ == 4) {
   
           var $11=$input_addr;
-          var $version5=(($11)&4294967295);
+          var $version5=$11;
           var $12=HEAP[$version5];
-          var $mul=((($12) * 2)&4294967295);
-          var $add=((($mul) + 1)&4294967295);
+          var $mul=($12) * 2;
+          var $add=($mul) + 1;
           $termbits=$add;
           var $13=$maxbits;
           var $14=$bits;
-          var $sub=((($13) - ($14))&4294967295);
+          var $sub=($13) - ($14);
           var $15=$termbits;
           var $cmp6=((($sub))|0) <= ((($15))|0);
           if ($cmp6) { __label__ = 5;; } else { __label__ = 6;; }
@@ -13807,7 +13804,7 @@ var _rslist;
               var $16=$bstream_addr;
               var $17=$maxbits;
               var $18=$bits;
-              var $sub8=((($17) - ($18))&4294967295);
+              var $sub8=($17) - ($18);
               var $call9=_BitStream_appendNum($16, $sub8, 0);
               $ret=$call9;
               ;
@@ -13816,26 +13813,26 @@ var _rslist;
   
               var $19=$termbits;
               var $20=$bits;
-              var $add11=((($20) + ($19))&4294967295);
+              var $add11=($20) + ($19);
               $bits=$add11;
               var $21=$bits;
-              var $add12=((($21) + 7)&4294967295);
+              var $add12=($21) + 7;
               var $div13=((((($add12))|0)/8)|0);
               $words=$div13;
               var $22=$maxbits;
               var $23=$words;
-              var $mul14=((($23) * 8)&4294967295);
-              var $sub15=((($22) - ($mul14))&4294967295);
+              var $mul14=($23) * 8;
+              var $sub15=($22) - ($mul14);
               var $cmp16=((($sub15))|0) > 0;
               if ($cmp16) { __label__ = 7;; } else { __label__ = 10;; }
               if (__label__ == 7) {
   
                 var $24=$words;
-                var $mul18=((($24) * 8)&4294967295);
+                var $mul18=($24) * 8;
                 var $25=$bits;
-                var $sub19=((($mul18) - ($25))&4294967295);
+                var $sub19=($mul18) - ($25);
                 var $26=$termbits;
-                var $add20=((($26) + ($sub19))&4294967295);
+                var $add20=($26) + ($sub19);
                 $termbits=$add20;
                 var $27=$words;
                 var $28=$maxwords;
@@ -13845,10 +13842,10 @@ var _rslist;
   
                   var $29=$maxbits;
                   var $30=$words;
-                  var $mul23=((($30) * 8)&4294967295);
-                  var $sub24=((($29) - ($mul23))&4294967295);
+                  var $mul23=($30) * 8;
+                  var $sub24=($29) - ($mul23);
                   var $31=$termbits;
-                  var $add25=((($31) + ($sub24))&4294967295);
+                  var $add25=($31) + ($sub24);
                   $termbits=$add25;
                   ;
                 }
@@ -13858,11 +13855,11 @@ var _rslist;
               else if (__label__ == 10) {
   
                 var $32=$words;
-                var $mul27=((($32) * 8)&4294967295);
+                var $mul27=($32) * 8;
                 var $33=$bits;
-                var $sub28=((($mul27) - ($33))&4294967295);
+                var $sub28=($mul27) - ($33);
                 var $34=$termbits;
-                var $add29=((($34) + ($sub28))&4294967295);
+                var $add29=($34) + ($sub28);
                 $termbits=$add29;
                 ;
               }
@@ -13894,7 +13891,7 @@ var _rslist;
   
                   var $39=$maxwords;
                   var $40=$words;
-                  var $sub39=((($39) - ($40))&4294967295);
+                  var $sub39=($39) - ($40);
                   $padlen=$sub39;
                   var $41=$padlen;
                   var $cmp40=((($41))|0) > 0;
@@ -13930,12 +13927,12 @@ var _rslist;
                         var $conv=((($cond)) & 255);
                         var $47=$i;
                         var $48=$padbuf;
-                        var $arrayidx=(($48+$47)&4294967295);
+                        var $arrayidx=$48+$47;
                         HEAP[$arrayidx]=$conv;
                         ;
   
                         var $49=$i;
-                        var $inc=((($49) + 1)&4294967295);
+                        var $inc=($49) + 1;
                         $i=$inc;
                         __label__ = 19;continue ;
                       }
@@ -13958,8 +13955,8 @@ var _rslist;
   
                         var $55=$maxbits;
                         var $56=$maxwords;
-                        var $mul52=((($56) * 8)&4294967295);
-                        var $sub53=((($55) - ($mul52))&4294967295);
+                        var $mul52=($56) * 8;
+                        var $sub53=($55) - ($mul52);
                         $termbits=$sub53;
                         var $57=$termbits;
                         var $cmp54=((($57))|0) > 0;
@@ -14034,19 +14031,19 @@ var _rslist;
     $input_addr=$input;
     $padding=0;
     var $0=$bstream_addr;
-    var $length=(($0)&4294967295);
+    var $length=$0;
     var $1=HEAP[$length];
     $bits=$1;
     var $2=$input_addr;
-    var $version=(($2)&4294967295);
+    var $version=$2;
     var $3=HEAP[$version];
     var $4=$input_addr;
-    var $level=(($4+4)&4294967295);
+    var $level=$4+4;
     var $5=HEAP[$level];
     var $call=_QRspec_getDataLength($3, $5);
     $maxwords=$call;
     var $6=$maxwords;
-    var $mul=((($6) * 8)&4294967295);
+    var $mul=($6) * 8;
     $maxbits=$mul;
     var $7=$maxbits;
     var $8=$bits;
@@ -14075,7 +14072,7 @@ var _rslist;
   
           var $11=$maxbits;
           var $12=$bits;
-          var $sub=((($11) - ($12))&4294967295);
+          var $sub=($11) - ($12);
           var $cmp5=((($sub))|0) <= 4;
           if ($cmp5) { __label__ = 5;; } else { __label__ = 6;; }
           $if_then6$$if_end9$8: do { 
@@ -14084,7 +14081,7 @@ var _rslist;
               var $13=$bstream_addr;
               var $14=$maxbits;
               var $15=$bits;
-              var $sub7=((($14) - ($15))&4294967295);
+              var $sub7=($14) - ($15);
               var $call8=_BitStream_appendNum($13, $sub7, 0);
               $ret=$call8;
               ;
@@ -14092,8 +14089,8 @@ var _rslist;
             else if (__label__ == 6) {
   
               var $16=$bits;
-              var $add=((($16) + 4)&4294967295);
-              var $add10=((($add) + 7)&4294967295);
+              var $add=($16) + 4;
+              var $add10=($add) + 7;
               var $div=((((($add10))|0)/8)|0);
               $words=$div;
               var $call11=_BitStream_new();
@@ -14110,9 +14107,9 @@ var _rslist;
   
                 var $18=$padding;
                 var $19=$words;
-                var $mul15=((($19) * 8)&4294967295);
+                var $mul15=($19) * 8;
                 var $20=$bits;
-                var $sub16=((($mul15) - ($20))&4294967295);
+                var $sub16=($mul15) - ($20);
                 var $call17=_BitStream_appendNum($18, $sub16, 0);
                 $ret=$call17;
                 var $21=$ret;
@@ -14126,7 +14123,7 @@ var _rslist;
   
                   var $22=$maxwords;
                   var $23=$words;
-                  var $sub21=((($22) - ($23))&4294967295);
+                  var $sub21=($22) - ($23);
                   $padlen=$sub21;
                   var $24=$padlen;
                   var $cmp22=((($24))|0) > 0;
@@ -14162,12 +14159,12 @@ var _rslist;
                         var $conv=((($cond)) & 255);
                         var $30=$i;
                         var $31=$padbuf;
-                        var $arrayidx=(($31+$30)&4294967295);
+                        var $arrayidx=$31+$30;
                         HEAP[$arrayidx]=$conv;
                         ;
   
                         var $32=$i;
-                        var $inc=((($32) + 1)&4294967295);
+                        var $inc=($32) + 1;
                         $i=$inc;
                         __label__ = 14;continue ;
                       }
@@ -14231,7 +14228,7 @@ var _rslist;
     $input_addr=$input;
     $total=0;
     var $0=$input_addr;
-    var $head=(($0+8)&4294967295);
+    var $head=$0+8;
     var $1=HEAP[$head];
     $list=$1;
     ;
@@ -14243,10 +14240,10 @@ var _rslist;
   
       var $3=$list;
       var $4=$input_addr;
-      var $version=(($4)&4294967295);
+      var $version=$4;
       var $5=HEAP[$version];
       var $6=$input_addr;
-      var $mqr=(($6+16)&4294967295);
+      var $mqr=$6+16;
       var $7=HEAP[$mqr];
       var $call=_QRinput_encodeBitStream($3, $5, $7);
       $bits=$call;
@@ -14256,10 +14253,10 @@ var _rslist;
   
       var $9=$bits;
       var $10=$total;
-      var $add=((($10) + ($9))&4294967295);
+      var $add=($10) + ($9);
       $total=$add;
       var $11=$list;
-      var $next=(($11+16)&4294967295);
+      var $next=$11+16;
       var $12=HEAP[$next];
       $list=$12;
       __label__ = 1;continue ;
@@ -14293,7 +14290,7 @@ var _rslist;
     $input_addr=$input;
     $entry1=0;
     var $0=$input_addr;
-    var $fnc1=(($0+20)&4294967295);
+    var $fnc1=$0+20;
     var $1=HEAP[$fnc1];
     var $cmp=((($1))|0)==1;
     if ($cmp) { __label__ = 1;; } else { __label__ = 2;; }
@@ -14306,14 +14303,14 @@ var _rslist;
     else if (__label__ == 2) {
   
       var $2=$input_addr;
-      var $fnc12=(($2+20)&4294967295);
+      var $fnc12=$2+20;
       var $3=HEAP[$fnc12];
       var $cmp3=((($3))|0)==2;
       if ($cmp3) { __label__ = 3;; } else { __label__ = 4;; }
       if (__label__ == 3) {
   
         var $4=$input_addr;
-        var $appid=(($4+24)&4294967295);
+        var $appid=$4+24;
         var $call5=_QRinput_List_newEntry(7, 1, $appid);
         $entry1=$call5;
         ;
@@ -14333,9 +14330,9 @@ var _rslist;
     else if (__label__ == 7) {
   
       var $6=$input_addr;
-      var $head=(($6+8)&4294967295);
+      var $head=$6+8;
       var $7=HEAP[$head];
-      var $mode=(($7)&4294967295);
+      var $mode=$7;
       var $8=HEAP[$mode];
       var $cmp10=((($8))|0)!=4;
       if ($cmp10) { __label__ = 9;; } else { __label__ = 8;; }
@@ -14343,26 +14340,26 @@ var _rslist;
         if (__label__ == 8) {
   
           var $9=$input_addr;
-          var $head11=(($9+8)&4294967295);
+          var $head11=$9+8;
           var $10=HEAP[$head11];
-          var $mode12=(($10)&4294967295);
+          var $mode12=$10;
           var $11=HEAP[$mode12];
           var $cmp13=((($11))|0)!=5;
           if ($cmp13) { __label__ = 9;break $if_then14$$lor_lhs_false$12; }
   
           var $17=$input_addr;
-          var $head18=(($17+8)&4294967295);
+          var $head18=$17+8;
           var $18=HEAP[$head18];
-          var $next19=(($18+16)&4294967295);
+          var $next19=$18+16;
           var $19=HEAP[$next19];
           var $20=$entry1;
-          var $next20=(($20+16)&4294967295);
+          var $next20=$20+16;
           HEAP[$next20]=$19;
           var $21=$entry1;
           var $22=$input_addr;
-          var $head21=(($22+8)&4294967295);
+          var $head21=$22+8;
           var $23=HEAP[$head21];
-          var $next22=(($23+16)&4294967295);
+          var $next22=$23+16;
           HEAP[$next22]=$21;
           __label__ = 11;break $if_then14$$lor_lhs_false$12;
         }
@@ -14370,14 +14367,14 @@ var _rslist;
       if (__label__ == 9) {
   
         var $12=$input_addr;
-        var $head15=(($12+8)&4294967295);
+        var $head15=$12+8;
         var $13=HEAP[$head15];
         var $14=$entry1;
-        var $next=(($14+16)&4294967295);
+        var $next=$14+16;
         HEAP[$next]=$13;
         var $15=$entry1;
         var $16=$input_addr;
-        var $head16=(($16+8)&4294967295);
+        var $head16=$16+8;
         HEAP[$head16]=$15;
         ;
       }
@@ -14429,10 +14426,10 @@ var _rslist;
       if ($cmp4) { __label__ = 4;break ; }
   
       var $7=$bits;
-      var $add=((($7) + 7)&4294967295);
+      var $add=($7) + 7;
       var $div=((((($add))|0)/8)|0);
       var $8=$input_addr;
-      var $level=(($8+4)&4294967295);
+      var $level=$8+4;
       var $9=HEAP[$level];
       var $call7=_QRspec_getMinimumVersion($div, $9);
       $ver=$call7;
@@ -14503,10 +14500,10 @@ var _rslist;
       var $call=_QRinput_estimateBitStreamSize($1, $2);
       $bits=$call;
       var $3=$bits;
-      var $add=((($3) + 7)&4294967295);
+      var $add=($3) + 7;
       var $div=((((($add))|0)/8)|0);
       var $4=$input_addr;
-      var $level=(($4+4)&4294967295);
+      var $level=$4+4;
       var $5=HEAP[$level];
       var $call1=_QRspec_getMinimumVersion($div, $5);
       $version=$call1;
@@ -14552,7 +14549,7 @@ var _rslist;
     $version_addr=$version;
     $bits=0;
     var $0=$input_addr;
-    var $head=(($0+8)&4294967295);
+    var $head=$0+8;
     var $1=HEAP[$head];
     $list=$1;
     ;
@@ -14565,14 +14562,14 @@ var _rslist;
       var $3=$list;
       var $4=$version_addr;
       var $5=$input_addr;
-      var $mqr=(($5+16)&4294967295);
+      var $mqr=$5+16;
       var $6=HEAP[$mqr];
       var $call=_QRinput_estimateBitStreamSizeOfEntry($3, $4, $6);
       var $7=$bits;
-      var $add=((($7) + ($call))&4294967295);
+      var $add=($7) + ($call);
       $bits=$add;
       var $8=$list;
-      var $next=(($8+16)&4294967295);
+      var $next=$8+16;
       var $9=HEAP[$next];
       $list=$9;
       __label__ = 1;continue ;
@@ -14594,16 +14591,16 @@ var _rslist;
     $version_addr=$version;
     $level_addr=$level;
     var $0=$version_addr;
-    var $arrayidx=((_qrspecCapacity+$0*28)&4294967295);
-    var $words=(($arrayidx+4)&4294967295);
+    var $arrayidx=_qrspecCapacity+$0*28;
+    var $words=$arrayidx+4;
     var $1=HEAP[$words];
     var $2=$level_addr;
     var $3=$version_addr;
-    var $arrayidx1=((_qrspecCapacity+$3*28)&4294967295);
-    var $ec=(($arrayidx1+12)&4294967295);
-    var $arrayidx2=(($ec+$2*4)&4294967295);
+    var $arrayidx1=_qrspecCapacity+$3*28;
+    var $ec=$arrayidx1+12;
+    var $arrayidx2=$ec+$2*4;
     var $4=HEAP[$arrayidx2];
-    var $sub=((($1) - ($4))&4294967295);
+    var $sub=($1) - ($4);
     ;
     return $sub;
     return null;
@@ -14620,9 +14617,9 @@ var _rslist;
     $level_addr=$level;
     var $0=$level_addr;
     var $1=$version_addr;
-    var $arrayidx=((_qrspecCapacity+$1*28)&4294967295);
-    var $ec=(($arrayidx+12)&4294967295);
-    var $arrayidx1=(($ec+$0*4)&4294967295);
+    var $arrayidx=_qrspecCapacity+$1*28;
+    var $ec=$arrayidx+12;
+    var $arrayidx1=$ec+$0*4;
     var $2=HEAP[$arrayidx1];
     ;
     return $2;
@@ -14650,16 +14647,16 @@ var _rslist;
       if (!($cmp)) { __label__ = 6;break ; }
   
       var $1=$i;
-      var $arrayidx=((_qrspecCapacity+$1*28)&4294967295);
-      var $words1=(($arrayidx+4)&4294967295);
+      var $arrayidx=_qrspecCapacity+$1*28;
+      var $words1=$arrayidx+4;
       var $2=HEAP[$words1];
       var $3=$level_addr;
       var $4=$i;
-      var $arrayidx2=((_qrspecCapacity+$4*28)&4294967295);
-      var $ec=(($arrayidx2+12)&4294967295);
-      var $arrayidx3=(($ec+$3*4)&4294967295);
+      var $arrayidx2=_qrspecCapacity+$4*28;
+      var $ec=$arrayidx2+12;
+      var $arrayidx3=$ec+$3*4;
       var $5=HEAP[$arrayidx3];
-      var $sub=((($2) - ($5))&4294967295);
+      var $sub=($2) - ($5);
       $words=$sub;
       var $6=$words;
       var $7=$size_addr;
@@ -14669,7 +14666,7 @@ var _rslist;
       ;
   
       var $9=$i;
-      var $inc=((($9) + 1)&4294967295);
+      var $inc=($9) + 1;
       $i=$inc;
       __label__ = 1;continue ;
     }
@@ -14699,8 +14696,8 @@ var _rslist;
     var $version_addr;
     $version_addr=$version;
     var $0=$version_addr;
-    var $arrayidx=((_qrspecCapacity+$0*28)&4294967295);
-    var $width=(($arrayidx)&4294967295);
+    var $arrayidx=_qrspecCapacity+$0*28;
+    var $width=$arrayidx;
     var $1=HEAP[$width];
     ;
     return $1;
@@ -14715,8 +14712,8 @@ var _rslist;
     var $version_addr;
     $version_addr=$version;
     var $0=$version_addr;
-    var $arrayidx=((_qrspecCapacity+$0*28)&4294967295);
-    var $remainder=(($arrayidx+8)&4294967295);
+    var $arrayidx=_qrspecCapacity+$0*28;
+    var $remainder=$arrayidx+8;
     var $1=HEAP[$remainder];
     ;
     return $1;
@@ -14769,8 +14766,8 @@ var _rslist;
   
       var $3=$l;
       var $4=$mode_addr;
-      var $arrayidx=((_lengthTableBits28+$4*12)&4294967295);
-      var $arrayidx7=(($arrayidx+$3*4)&4294967295);
+      var $arrayidx=_lengthTableBits28+$4*12;
+      var $arrayidx7=$arrayidx+$3*4;
       var $5=HEAP[$arrayidx7];
       $retval=$5;
       ;
@@ -14835,13 +14832,13 @@ var _rslist;
   
       var $3=$l;
       var $4=$mode_addr;
-      var $arrayidx=((_lengthTableBits28+$4*12)&4294967295);
-      var $arrayidx7=(($arrayidx+$3*4)&4294967295);
+      var $arrayidx=_lengthTableBits28+$4*12;
+      var $arrayidx7=$arrayidx+$3*4;
       var $5=HEAP[$arrayidx7];
       $bits=$5;
       var $6=$bits;
       var $shl=1 << ($6);
-      var $sub=((($shl) - 1)&4294967295);
+      var $sub=($shl) - 1;
       $words=$sub;
       var $7=$mode_addr;
       var $cmp8=((($7))|0)==3;
@@ -14849,7 +14846,7 @@ var _rslist;
       if (__label__ == 9) {
   
         var $8=$words;
-        var $mul=((($8) * 2)&4294967295);
+        var $mul=($8) * 2;
         $words=$mul;
         ;
       }
@@ -14887,16 +14884,16 @@ var _rslist;
     $spec_addr=$spec;
     var $0=$level_addr;
     var $1=$version_addr;
-    var $arrayidx=((_eccTable+$1*32)&4294967295);
-    var $arrayidx1=(($arrayidx+$0*8)&4294967295);
-    var $arrayidx2=(($arrayidx1)&4294967295);
+    var $arrayidx=_eccTable+$1*32;
+    var $arrayidx1=$arrayidx+$0*8;
+    var $arrayidx2=$arrayidx1;
     var $2=HEAP[$arrayidx2];
     $b1=$2;
     var $3=$level_addr;
     var $4=$version_addr;
-    var $arrayidx3=((_eccTable+$4*32)&4294967295);
-    var $arrayidx4=(($arrayidx3+$3*8)&4294967295);
-    var $arrayidx5=(($arrayidx4+4)&4294967295);
+    var $arrayidx3=_eccTable+$4*32;
+    var $arrayidx4=$arrayidx3+$3*8;
+    var $arrayidx5=$arrayidx4+4;
     var $5=HEAP[$arrayidx5];
     $b2=$5;
     var $6=$version_addr;
@@ -14914,25 +14911,25 @@ var _rslist;
   
       var $11=$b1;
       var $12=$spec_addr;
-      var $arrayidx7=(($12)&4294967295);
+      var $arrayidx7=$12;
       HEAP[$arrayidx7]=$11;
       var $13=$data;
       var $14=$b1;
       var $div=((((($13))|0)/((($14))|0))|0);
       var $15=$spec_addr;
-      var $arrayidx8=(($15+4)&4294967295);
+      var $arrayidx8=$15+4;
       HEAP[$arrayidx8]=$div;
       var $16=$ecc;
       var $17=$b1;
       var $div9=((((($16))|0)/((($17))|0))|0);
       var $18=$spec_addr;
-      var $arrayidx10=(($18+8)&4294967295);
+      var $arrayidx10=$18+8;
       HEAP[$arrayidx10]=$div9;
       var $19=$spec_addr;
-      var $arrayidx11=(($19+16)&4294967295);
+      var $arrayidx11=$19+16;
       HEAP[$arrayidx11]=0;
       var $20=$spec_addr;
-      var $arrayidx12=(($20+12)&4294967295);
+      var $arrayidx12=$20+12;
       HEAP[$arrayidx12]=0;
       ;
     }
@@ -14940,34 +14937,34 @@ var _rslist;
   
       var $21=$b1;
       var $22=$spec_addr;
-      var $arrayidx13=(($22)&4294967295);
+      var $arrayidx13=$22;
       HEAP[$arrayidx13]=$21;
       var $23=$data;
       var $24=$b1;
       var $25=$b2;
-      var $add=((($24) + ($25))&4294967295);
+      var $add=($24) + ($25);
       var $div14=((((($23))|0)/((($add))|0))|0);
       var $26=$spec_addr;
-      var $arrayidx15=(($26+4)&4294967295);
+      var $arrayidx15=$26+4;
       HEAP[$arrayidx15]=$div14;
       var $27=$ecc;
       var $28=$b1;
       var $29=$b2;
-      var $add16=((($28) + ($29))&4294967295);
+      var $add16=($28) + ($29);
       var $div17=((((($27))|0)/((($add16))|0))|0);
       var $30=$spec_addr;
-      var $arrayidx18=(($30+8)&4294967295);
+      var $arrayidx18=$30+8;
       HEAP[$arrayidx18]=$div17;
       var $31=$b2;
       var $32=$spec_addr;
-      var $arrayidx19=(($32+12)&4294967295);
+      var $arrayidx19=$32+12;
       HEAP[$arrayidx19]=$31;
       var $33=$spec_addr;
-      var $arrayidx20=(($33+4)&4294967295);
+      var $arrayidx20=$33+4;
       var $34=HEAP[$arrayidx20];
-      var $add21=((($34) + 1)&4294967295);
+      var $add21=($34) + 1;
       var $35=$spec_addr;
-      var $arrayidx22=(($35+16)&4294967295);
+      var $arrayidx22=$35+16;
       HEAP[$arrayidx22]=$add21;
       ;
     }
@@ -14996,8 +14993,8 @@ var _rslist;
         if ($cmp1) { __label__ = 2;break $if_then$$lor_lhs_false$2; }
   
         var $2=$version_addr;
-        var $sub=((($2) - 7)&4294967295);
-        var $arrayidx=((_versionPattern+$sub*4)&4294967295);
+        var $sub=($2) - 7;
+        var $arrayidx=_versionPattern+$sub*4;
         var $3=HEAP[$arrayidx];
         $retval=$3;
         __label__ = 4;break $if_then$$lor_lhs_false$2;
@@ -15037,8 +15034,8 @@ var _rslist;
   
         var $2=$mask_addr;
         var $3=$level_addr;
-        var $arrayidx=((_formatInfo29+$3*32)&4294967295);
-        var $arrayidx2=(($arrayidx+$2*4)&4294967295);
+        var $arrayidx=_formatInfo29+$3*32;
+        var $arrayidx2=$arrayidx+$2*4;
         var $4=HEAP[$arrayidx2];
         $retval=$4;
         __label__ = 4;break $if_then$$lor_lhs_false$2;
@@ -15077,7 +15074,7 @@ var _rslist;
         if ($cmp1) { __label__ = 2;break $if_then$$lor_lhs_false$2; }
   
         var $2=$version_addr;
-        var $arrayidx=((_frames30+$2*4)&4294967295);
+        var $arrayidx=_frames30+$2*4;
         var $3=HEAP[$arrayidx];
         var $cmp2=((($3))|0)==0;
         if ($cmp2) { __label__ = 4;; } else { __label__ = 5;; }
@@ -15086,13 +15083,13 @@ var _rslist;
           var $4=$version_addr;
           var $call=_QRspec_createFrame($4);
           var $5=$version_addr;
-          var $arrayidx4=((_frames30+$5*4)&4294967295);
+          var $arrayidx4=_frames30+$5*4;
           HEAP[$arrayidx4]=$call;
           ;
         }
   
         var $6=$version_addr;
-        var $arrayidx6=((_frames30+$6*4)&4294967295);
+        var $arrayidx6=_frames30+$6*4;
         var $7=HEAP[$arrayidx6];
         var $cmp7=((($7))|0)==0;
         if ($cmp7) { __label__ = 6;; } else { __label__ = 7;; }
@@ -15104,13 +15101,13 @@ var _rslist;
         else if (__label__ == 7) {
   
           var $8=$version_addr;
-          var $arrayidx10=((_qrspecCapacity+$8*28)&4294967295);
-          var $width11=(($arrayidx10)&4294967295);
+          var $arrayidx10=_qrspecCapacity+$8*28;
+          var $width11=$arrayidx10;
           var $9=HEAP[$width11];
           $width=$9;
           var $10=$width;
           var $11=$width;
-          var $mul=((($10) * ($11))&4294967295);
+          var $mul=($10) * ($11);
           var $call12=_malloc($mul);
           $frame=$call12;
           var $12=$frame;
@@ -15125,11 +15122,11 @@ var _rslist;
   
             var $13=$frame;
             var $14=$version_addr;
-            var $arrayidx16=((_frames30+$14*4)&4294967295);
+            var $arrayidx16=_frames30+$14*4;
             var $15=HEAP[$arrayidx16];
             var $16=$width;
             var $17=$width;
-            var $mul17=((($16) * ($17))&4294967295);
+            var $mul17=($16) * ($17);
             assert($mul17 % 1 === 0, 'memcpy given ' + $mul17 + ' bytes to copy. Problem with 4=1 corrections perhaps?');for (var $mcpi$ = 0; $mcpi$ < $mul17; $mcpi$++) {
             HEAP[$13+$mcpi$]=HEAP[$15+$mcpi$]; 
             };
@@ -15169,13 +15166,13 @@ var _rslist;
     var $v;
     $version_addr=$version;
     var $0=$version_addr;
-    var $arrayidx=((_qrspecCapacity+$0*28)&4294967295);
-    var $width1=(($arrayidx)&4294967295);
+    var $arrayidx=_qrspecCapacity+$0*28;
+    var $width1=$arrayidx;
     var $1=HEAP[$width1];
     $width=$1;
     var $2=$width;
     var $3=$width;
-    var $mul=((($2) * ($3))&4294967295);
+    var $mul=($2) * ($3);
     var $call=_malloc($mul);
     $frame=$call;
     var $4=$frame;
@@ -15191,7 +15188,7 @@ var _rslist;
       var $5=$frame;
       var $6=$width;
       var $7=$width;
-      var $mul2=((($6) * ($7))&4294967295);
+      var $mul2=($6) * ($7);
       for (var $mspi$ = 0; $mspi$ < $mul2; $mspi$++) {
       HEAP[$5+$mspi$]=0;
       };
@@ -15201,21 +15198,21 @@ var _rslist;
       var $10=$frame;
       var $11=$width;
       var $12=$width;
-      var $sub=((($12) - 7)&4294967295);
+      var $sub=($12) - 7;
       _putFinderPattern52($10, $11, $sub, 0);
       var $13=$frame;
       var $14=$width;
       var $15=$width;
-      var $sub3=((($15) - 7)&4294967295);
+      var $sub3=($15) - 7;
       _putFinderPattern52($13, $14, 0, $sub3);
       var $16=$frame;
       $p=$16;
       var $17=$frame;
       var $18=$width;
       var $19=$width;
-      var $sub4=((($19) - 7)&4294967295);
-      var $mul5=((($18) * ($sub4))&4294967295);
-      var $add_ptr=(($17+$mul5)&4294967295);
+      var $sub4=($19) - 7;
+      var $mul5=($18) * ($sub4);
+      var $add_ptr=$17+$mul5;
       $q=$add_ptr;
       $y=0;
       ;
@@ -15226,73 +15223,73 @@ var _rslist;
         if (!($cmp6)) { __label__ = 6;break $for_cond$5; }
   
         var $21=$p;
-        var $arrayidx7=(($21+7)&4294967295);
+        var $arrayidx7=$21+7;
         HEAP[$arrayidx7]=-64;
         var $22=$width;
-        var $sub8=((($22) - 8)&4294967295);
+        var $sub8=($22) - 8;
         var $23=$p;
-        var $arrayidx9=(($23+$sub8)&4294967295);
+        var $arrayidx9=$23+$sub8;
         HEAP[$arrayidx9]=-64;
         var $24=$q;
-        var $arrayidx10=(($24+7)&4294967295);
+        var $arrayidx10=$24+7;
         HEAP[$arrayidx10]=-64;
         var $25=$width;
         var $26=$p;
-        var $add_ptr11=(($26+$25)&4294967295);
+        var $add_ptr11=$26+$25;
         $p=$add_ptr11;
         var $27=$width;
         var $28=$q;
-        var $add_ptr12=(($28+$27)&4294967295);
+        var $add_ptr12=$28+$27;
         $q=$add_ptr12;
         ;
   
         var $29=$y;
-        var $inc=((($29) + 1)&4294967295);
+        var $inc=($29) + 1;
         $y=$inc;
         __label__ = 3;continue $for_cond$5;
       }
   
       var $30=$frame;
       var $31=$width;
-      var $mul13=((($31) * 7)&4294967295);
-      var $add_ptr14=(($30+$mul13)&4294967295);
+      var $mul13=($31) * 7;
+      var $add_ptr14=$30+$mul13;
       for (var $mspi$ = 0; $mspi$ < 8; $mspi$++) {
       HEAP[$add_ptr14+$mspi$]=-64;
       };
       var $32=$frame;
       var $33=$width;
-      var $mul15=((($33) * 8)&4294967295);
-      var $add_ptr16=(($32+$mul15)&4294967295);
-      var $add_ptr17=(($add_ptr16+-8)&4294967295);
+      var $mul15=($33) * 8;
+      var $add_ptr16=$32+$mul15;
+      var $add_ptr17=$add_ptr16+-8;
       for (var $mspi$ = 0; $mspi$ < 8; $mspi$++) {
       HEAP[$add_ptr17+$mspi$]=-64;
       };
       var $34=$frame;
       var $35=$width;
       var $36=$width;
-      var $sub18=((($36) - 8)&4294967295);
-      var $mul19=((($35) * ($sub18))&4294967295);
-      var $add_ptr20=(($34+$mul19)&4294967295);
+      var $sub18=($36) - 8;
+      var $mul19=($35) * ($sub18);
+      var $add_ptr20=$34+$mul19;
       for (var $mspi$ = 0; $mspi$ < 8; $mspi$++) {
       HEAP[$add_ptr20+$mspi$]=-64;
       };
       var $37=$frame;
       var $38=$width;
-      var $mul21=((($38) * 8)&4294967295);
-      var $add_ptr22=(($37+$mul21)&4294967295);
+      var $mul21=($38) * 8;
+      var $add_ptr22=$37+$mul21;
       for (var $mspi$ = 0; $mspi$ < 9; $mspi$++) {
       HEAP[$add_ptr22+$mspi$]=-124;
       };
       var $39=$frame;
       var $40=$width;
-      var $mul23=((($40) * 9)&4294967295);
-      var $add_ptr24=(($39+$mul23)&4294967295);
-      var $add_ptr25=(($add_ptr24+-8)&4294967295);
+      var $mul23=($40) * 9;
+      var $add_ptr24=$39+$mul23;
+      var $add_ptr25=$add_ptr24+-8;
       for (var $mspi$ = 0; $mspi$ < 8; $mspi$++) {
       HEAP[$add_ptr25+$mspi$]=-124;
       };
       var $41=$frame;
-      var $add_ptr26=(($41+8)&4294967295);
+      var $add_ptr26=$41+8;
       $p=$add_ptr26;
       $y=0;
       ;
@@ -15306,12 +15303,12 @@ var _rslist;
         HEAP[$43]=-124;
         var $44=$width;
         var $45=$p;
-        var $add_ptr30=(($45+$44)&4294967295);
+        var $add_ptr30=$45+$44;
         $p=$add_ptr30;
         ;
   
         var $46=$y;
-        var $inc32=((($46) + 1)&4294967295);
+        var $inc32=($46) + 1;
         $y=$inc32;
         __label__ = 7;continue $for_cond27$10;
       }
@@ -15319,10 +15316,10 @@ var _rslist;
       var $47=$frame;
       var $48=$width;
       var $49=$width;
-      var $sub34=((($49) - 7)&4294967295);
-      var $mul35=((($48) * ($sub34))&4294967295);
-      var $add_ptr36=(($47+$mul35)&4294967295);
-      var $add_ptr37=(($add_ptr36+8)&4294967295);
+      var $sub34=($49) - 7;
+      var $mul35=($48) * ($sub34);
+      var $add_ptr36=$47+$mul35;
+      var $add_ptr37=$add_ptr36+8;
       $p=$add_ptr37;
       $y=0;
       ;
@@ -15336,27 +15333,27 @@ var _rslist;
         HEAP[$51]=-124;
         var $52=$width;
         var $53=$p;
-        var $add_ptr41=(($53+$52)&4294967295);
+        var $add_ptr41=$53+$52;
         $p=$add_ptr41;
         ;
   
         var $54=$y;
-        var $inc43=((($54) + 1)&4294967295);
+        var $inc43=($54) + 1;
         $y=$inc43;
         __label__ = 11;continue $for_cond38$15;
       }
   
       var $55=$frame;
       var $56=$width;
-      var $mul45=((($56) * 6)&4294967295);
-      var $add_ptr46=(($55+$mul45)&4294967295);
-      var $add_ptr47=(($add_ptr46+8)&4294967295);
+      var $mul45=($56) * 6;
+      var $add_ptr46=$55+$mul45;
+      var $add_ptr47=$add_ptr46+8;
       $p=$add_ptr47;
       var $57=$frame;
       var $58=$width;
-      var $mul48=((($58) * 8)&4294967295);
-      var $add_ptr49=(($57+$mul48)&4294967295);
-      var $add_ptr50=(($add_ptr49+6)&4294967295);
+      var $mul48=($58) * 8;
+      var $add_ptr49=$57+$mul48;
+      var $add_ptr50=$add_ptr49+6;
       $q=$add_ptr50;
       $x=1;
       ;
@@ -15364,7 +15361,7 @@ var _rslist;
   
         var $59=$x;
         var $60=$width;
-        var $sub52=((($60) - 15)&4294967295);
+        var $sub52=($60) - 15;
         var $cmp53=((($59))|0) < ((($sub52))|0);
         if (!($cmp53)) { __label__ = 18;break $for_cond51$20; }
   
@@ -15381,16 +15378,16 @@ var _rslist;
         var $64=$q;
         HEAP[$64]=$conv57;
         var $65=$p;
-        var $incdec_ptr=(($65+1)&4294967295);
+        var $incdec_ptr=$65+1;
         $p=$incdec_ptr;
         var $66=$width;
         var $67=$q;
-        var $add_ptr58=(($67+$66)&4294967295);
+        var $add_ptr58=$67+$66;
         $q=$add_ptr58;
         ;
   
         var $68=$x;
-        var $inc60=((($68) + 1)&4294967295);
+        var $inc60=($68) + 1;
         $x=$inc60;
         __label__ = 15;continue $for_cond51$20;
       }
@@ -15410,9 +15407,9 @@ var _rslist;
         var $74=$frame;
         var $75=$width;
         var $76=$width;
-        var $sub66=((($76) - 11)&4294967295);
-        var $mul67=((($75) * ($sub66))&4294967295);
-        var $add_ptr68=(($74+$mul67)&4294967295);
+        var $sub66=($76) - 11;
+        var $mul67=($75) * ($sub66);
+        var $add_ptr68=$74+$mul67;
         $p=$add_ptr68;
         var $77=$verinfo;
         $v=$77;
@@ -15438,11 +15435,11 @@ var _rslist;
             var $conv79=((($or78)) & 255);
             var $81=$width;
             var $82=$y;
-            var $mul80=((($81) * ($82))&4294967295);
+            var $mul80=($81) * ($82);
             var $83=$x;
-            var $add=((($mul80) + ($83))&4294967295);
+            var $add=($mul80) + ($83);
             var $84=$p;
-            var $arrayidx81=(($84+$add)&4294967295);
+            var $arrayidx81=$84+$add;
             HEAP[$arrayidx81]=$conv79;
             var $85=$v;
             var $shr=($85) >>> 1;
@@ -15450,7 +15447,7 @@ var _rslist;
             ;
   
             var $86=$y;
-            var $inc83=((($86) + 1)&4294967295);
+            var $inc83=($86) + 1;
             $y=$inc83;
             __label__ = 22;continue ;
           }
@@ -15458,15 +15455,15 @@ var _rslist;
           ;
   
           var $87=$x;
-          var $inc86=((($87) + 1)&4294967295);
+          var $inc86=($87) + 1;
           $x=$inc86;
           __label__ = 20;continue $for_cond69$27;
         }
   
         var $88=$frame;
         var $89=$width;
-        var $add_ptr88=(($88+$89)&4294967295);
-        var $add_ptr89=(($add_ptr88+-11)&4294967295);
+        var $add_ptr88=$88+$89;
+        var $add_ptr89=$add_ptr88+-11;
         $p=$add_ptr89;
         var $90=$verinfo;
         $v=$90;
@@ -15492,7 +15489,7 @@ var _rslist;
             var $conv100=((($or99)) & 255);
             var $94=$x;
             var $95=$p;
-            var $arrayidx101=(($95+$94)&4294967295);
+            var $arrayidx101=$95+$94;
             HEAP[$arrayidx101]=$conv100;
             var $96=$v;
             var $shr102=($96) >>> 1;
@@ -15500,19 +15497,19 @@ var _rslist;
             ;
   
             var $97=$x;
-            var $inc104=((($97) + 1)&4294967295);
+            var $inc104=($97) + 1;
             $x=$inc104;
             __label__ = 30;continue ;
           }
   
           var $98=$width;
           var $99=$p;
-          var $add_ptr106=(($99+$98)&4294967295);
+          var $add_ptr106=$99+$98;
           $p=$add_ptr106;
           ;
   
           var $100=$y;
-          var $inc108=((($100) + 1)&4294967295);
+          var $inc108=($100) + 1;
           $y=$inc108;
           __label__ = 28;continue $for_cond90$37;
         }
@@ -15522,11 +15519,11 @@ var _rslist;
   
       var $101=$width;
       var $102=$width;
-      var $sub111=((($102) - 8)&4294967295);
-      var $mul112=((($101) * ($sub111))&4294967295);
-      var $add113=((($mul112) + 8)&4294967295);
+      var $sub111=($102) - 8;
+      var $mul112=($101) * ($sub111);
+      var $add113=($mul112) + 8;
       var $103=$frame;
-      var $arrayidx114=(($103+$add113)&4294967295);
+      var $arrayidx114=$103+$add113;
       HEAP[$arrayidx114]=-127;
       var $104=$frame;
       $retval=$104;
@@ -15554,16 +15551,16 @@ var _rslist;
       if (!($cmp)) { __label__ = 4;break ; }
   
       var $1=$i;
-      var $arrayidx=((_frames30+$1*4)&4294967295);
+      var $arrayidx=_frames30+$1*4;
       var $2=HEAP[$arrayidx];
       ;
       var $3=$i;
-      var $arrayidx1=((_frames30+$3*4)&4294967295);
+      var $arrayidx1=_frames30+$3*4;
       HEAP[$arrayidx1]=0;
       ;
   
       var $4=$i;
-      var $inc=((($4) + 1)&4294967295);
+      var $inc=($4) + 1;
       $i=$inc;
       __label__ = 1;continue ;
     }
@@ -15591,13 +15588,13 @@ var _rslist;
     $oy_addr=$oy;
     var $0=$oy_addr;
     var $1=$width_addr;
-    var $mul=((($0) * ($1))&4294967295);
+    var $mul=($0) * ($1);
     var $2=$ox_addr;
-    var $add=((($mul) + ($2))&4294967295);
+    var $add=($mul) + ($2);
     var $3=$frame_addr;
-    var $add_ptr=(($3+$add)&4294967295);
+    var $add_ptr=$3+$add;
     $frame_addr=$add_ptr;
-    $s=((_putFinderPattern_finder31)&4294967295);
+    $s=_putFinderPattern_finder31;
     $y=0;
     ;
     $for_cond$2: while(1) { 
@@ -15616,31 +15613,31 @@ var _rslist;
   
         var $6=$x;
         var $7=$s;
-        var $arrayidx=(($7+$6)&4294967295);
+        var $arrayidx=$7+$6;
         var $8=HEAP[$arrayidx];
         var $9=$x;
         var $10=$frame_addr;
-        var $arrayidx4=(($10+$9)&4294967295);
+        var $arrayidx4=$10+$9;
         HEAP[$arrayidx4]=$8;
         ;
   
         var $11=$x;
-        var $inc=((($11) + 1)&4294967295);
+        var $inc=($11) + 1;
         $x=$inc;
         __label__ = 3;continue ;
       }
   
       var $12=$width_addr;
       var $13=$frame_addr;
-      var $add_ptr5=(($13+$12)&4294967295);
+      var $add_ptr5=$13+$12;
       $frame_addr=$add_ptr5;
       var $14=$s;
-      var $add_ptr6=(($14+7)&4294967295);
+      var $add_ptr6=$14+7;
       $s=$add_ptr6;
       ;
   
       var $15=$y;
-      var $inc8=((($15) + 1)&4294967295);
+      var $inc8=($15) + 1;
       $y=$inc8;
       __label__ = 1;continue $for_cond$2;
     }
@@ -15678,14 +15675,14 @@ var _rslist;
       else if (__label__ == 2) {
   
         var $1=$version_addr;
-        var $arrayidx=((_alignmentPattern+$1*8)&4294967295);
-        var $arrayidx1=(($arrayidx+4)&4294967295);
+        var $arrayidx=_alignmentPattern+$1*8;
+        var $arrayidx1=$arrayidx+4;
         var $2=HEAP[$arrayidx1];
         var $3=$version_addr;
-        var $arrayidx2=((_alignmentPattern+$3*8)&4294967295);
-        var $arrayidx3=(($arrayidx2)&4294967295);
+        var $arrayidx2=_alignmentPattern+$3*8;
+        var $arrayidx3=$arrayidx2;
         var $4=HEAP[$arrayidx3];
-        var $sub=((($2) - ($4))&4294967295);
+        var $sub=($2) - ($4);
         $d=$sub;
         var $5=$d;
         var $cmp4=((($5))|0) < 0;
@@ -15699,33 +15696,33 @@ var _rslist;
   
           var $6=$width_addr;
           var $7=$version_addr;
-          var $arrayidx6=((_alignmentPattern+$7*8)&4294967295);
-          var $arrayidx7=(($arrayidx6)&4294967295);
+          var $arrayidx6=_alignmentPattern+$7*8;
+          var $arrayidx7=$arrayidx6;
           var $8=HEAP[$arrayidx7];
-          var $sub8=((($6) - ($8))&4294967295);
+          var $sub8=($6) - ($8);
           var $9=$d;
           var $div=((((($sub8))|0)/((($9))|0))|0);
-          var $add=((($div) + 2)&4294967295);
+          var $add=($div) + 2;
           $w=$add;
           ;
         }
   
         var $10=$w;
         var $11=$w;
-        var $mul=((($10) * ($11))&4294967295);
-        var $sub10=((($mul) - 3)&4294967295);
+        var $mul=($10) * ($11);
+        var $sub10=($mul) - 3;
         var $cmp11=((($sub10))|0)==1;
         if ($cmp11) { __label__ = 6;; } else { __label__ = 7;; }
         if (__label__ == 6) {
   
           var $12=$version_addr;
-          var $arrayidx13=((_alignmentPattern+$12*8)&4294967295);
-          var $arrayidx14=(($arrayidx13)&4294967295);
+          var $arrayidx13=_alignmentPattern+$12*8;
+          var $arrayidx14=$arrayidx13;
           var $13=HEAP[$arrayidx14];
           $x=$13;
           var $14=$version_addr;
-          var $arrayidx15=((_alignmentPattern+$14*8)&4294967295);
-          var $arrayidx16=(($arrayidx15)&4294967295);
+          var $arrayidx15=_alignmentPattern+$14*8;
+          var $arrayidx16=$arrayidx15;
           var $15=HEAP[$arrayidx16];
           $y=$15;
           var $16=$frame_addr;
@@ -15738,8 +15735,8 @@ var _rslist;
         else if (__label__ == 7) {
   
           var $20=$version_addr;
-          var $arrayidx18=((_alignmentPattern+$20*8)&4294967295);
-          var $arrayidx19=(($arrayidx18)&4294967295);
+          var $arrayidx18=_alignmentPattern+$20*8;
+          var $arrayidx19=$arrayidx18;
           var $21=HEAP[$arrayidx19];
           $cx=$21;
           $x=1;
@@ -15748,7 +15745,7 @@ var _rslist;
   
             var $22=$x;
             var $23=$w;
-            var $sub20=((($23) - 1)&4294967295);
+            var $sub20=($23) - 1;
             var $cmp21=((($22))|0) < ((($sub20))|0);
             if (!($cmp21)) { __label__ = 11;break $for_cond$12; }
   
@@ -15762,19 +15759,19 @@ var _rslist;
             _QRspec_putAlignmentMarker($27, $28, $29, 6);
             var $30=$d;
             var $31=$cx;
-            var $add22=((($31) + ($30))&4294967295);
+            var $add22=($31) + ($30);
             $cx=$add22;
             ;
   
             var $32=$x;
-            var $inc=((($32) + 1)&4294967295);
+            var $inc=($32) + 1;
             $x=$inc;
             __label__ = 8;continue $for_cond$12;
           }
   
           var $33=$version_addr;
-          var $arrayidx23=((_alignmentPattern+$33*8)&4294967295);
-          var $arrayidx24=(($arrayidx23)&4294967295);
+          var $arrayidx23=_alignmentPattern+$33*8;
+          var $arrayidx24=$arrayidx23;
           var $34=HEAP[$arrayidx24];
           $cy=$34;
           $y=0;
@@ -15783,13 +15780,13 @@ var _rslist;
   
             var $35=$y;
             var $36=$w;
-            var $sub26=((($36) - 1)&4294967295);
+            var $sub26=($36) - 1;
             var $cmp27=((($35))|0) < ((($sub26))|0);
             if (!($cmp27)) { __label__ = 19;break $if_then$$if_end$2; }
   
             var $37=$version_addr;
-            var $arrayidx29=((_alignmentPattern+$37*8)&4294967295);
-            var $arrayidx30=(($arrayidx29)&4294967295);
+            var $arrayidx29=_alignmentPattern+$37*8;
+            var $arrayidx30=$arrayidx29;
             var $38=HEAP[$arrayidx30];
             $cx=$38;
             $x=0;
@@ -15798,7 +15795,7 @@ var _rslist;
   
               var $39=$x;
               var $40=$w;
-              var $sub32=((($40) - 1)&4294967295);
+              var $sub32=($40) - 1;
               var $cmp33=((($39))|0) < ((($sub32))|0);
               if (!($cmp33)) { __label__ = 17;break ; }
   
@@ -15809,24 +15806,24 @@ var _rslist;
               _QRspec_putAlignmentMarker($41, $42, $43, $44);
               var $45=$d;
               var $46=$cx;
-              var $add35=((($46) + ($45))&4294967295);
+              var $add35=($46) + ($45);
               $cx=$add35;
               ;
   
               var $47=$x;
-              var $inc37=((($47) + 1)&4294967295);
+              var $inc37=($47) + 1;
               $x=$inc37;
               __label__ = 14;continue ;
             }
   
             var $48=$d;
             var $49=$cy;
-            var $add39=((($49) + ($48))&4294967295);
+            var $add39=($49) + ($48);
             $cy=$add39;
             ;
   
             var $50=$y;
-            var $inc41=((($50) + 1)&4294967295);
+            var $inc41=($50) + 1;
             $y=$inc41;
             __label__ = 12;continue $for_cond25$17;
           }
@@ -15856,16 +15853,16 @@ var _rslist;
     $ox_addr=$ox;
     $oy_addr=$oy;
     var $0=$oy_addr;
-    var $sub=((($0) - 2)&4294967295);
+    var $sub=($0) - 2;
     var $1=$width_addr;
-    var $mul=((($sub) * ($1))&4294967295);
+    var $mul=($sub) * ($1);
     var $2=$ox_addr;
-    var $add=((($mul) + ($2))&4294967295);
-    var $sub1=((($add) - 2)&4294967295);
+    var $add=($mul) + ($2);
+    var $sub1=($add) - 2;
     var $3=$frame_addr;
-    var $add_ptr=(($3+$sub1)&4294967295);
+    var $add_ptr=$3+$sub1;
     $frame_addr=$add_ptr;
-    $s=((_QRspec_putAlignmentMarker_finder)&4294967295);
+    $s=_QRspec_putAlignmentMarker_finder;
     $y=0;
     ;
     $for_cond$2: while(1) { 
@@ -15884,31 +15881,31 @@ var _rslist;
   
         var $6=$x;
         var $7=$s;
-        var $arrayidx=(($7+$6)&4294967295);
+        var $arrayidx=$7+$6;
         var $8=HEAP[$arrayidx];
         var $9=$x;
         var $10=$frame_addr;
-        var $arrayidx5=(($10+$9)&4294967295);
+        var $arrayidx5=$10+$9;
         HEAP[$arrayidx5]=$8;
         ;
   
         var $11=$x;
-        var $inc=((($11) + 1)&4294967295);
+        var $inc=($11) + 1;
         $x=$inc;
         __label__ = 3;continue ;
       }
   
       var $12=$width_addr;
       var $13=$frame_addr;
-      var $add_ptr6=(($13+$12)&4294967295);
+      var $add_ptr6=$13+$12;
       $frame_addr=$add_ptr6;
       var $14=$s;
-      var $add_ptr7=(($14+5)&4294967295);
+      var $add_ptr7=$14+5;
       $s=$add_ptr7;
       ;
   
       var $15=$y;
-      var $inc9=((($15) + 1)&4294967295);
+      var $inc9=($15) + 1;
       $y=$inc9;
       __label__ = 1;continue $for_cond$2;
     }
@@ -15946,7 +15943,7 @@ var _rslist;
       if (!($cmp)) { __label__ = 16;break ; }
   
       var $2=$rs;
-      var $pad1=(($2+36)&4294967295);
+      var $pad1=$2+36;
       var $3=HEAP[$pad1];
       var $4=$pad_addr;
       var $cmp2=((($3))|0)!=((($4))|0);
@@ -15958,7 +15955,7 @@ var _rslist;
       else if (__label__ == 4) {
   
         var $5=$rs;
-        var $nroots3=(($5+20)&4294967295);
+        var $nroots3=$5+20;
         var $6=HEAP[$nroots3];
         var $7=$nroots_addr;
         var $cmp4=((($6))|0)!=((($7))|0);
@@ -15970,7 +15967,7 @@ var _rslist;
         else if (__label__ == 6) {
   
           var $8=$rs;
-          var $mm=(($8)&4294967295);
+          var $mm=$8;
           var $9=HEAP[$mm];
           var $10=$symsize_addr;
           var $cmp7=((($9))|0)!=((($10))|0);
@@ -15982,7 +15979,7 @@ var _rslist;
           else if (__label__ == 8) {
   
             var $11=$rs;
-            var $gfpoly10=(($11+40)&4294967295);
+            var $gfpoly10=$11+40;
             var $12=HEAP[$gfpoly10];
             var $13=$gfpoly_addr;
             var $cmp11=((($12))|0)!=((($13))|0);
@@ -15994,7 +15991,7 @@ var _rslist;
             else if (__label__ == 10) {
   
               var $14=$rs;
-              var $fcr14=(($14+24)&4294967295);
+              var $fcr14=$14+24;
               var $15=HEAP[$fcr14];
               var $16=$fcr_addr;
               var $cmp15=((($15))|0)!=((($16))|0);
@@ -16006,7 +16003,7 @@ var _rslist;
               else if (__label__ == 12) {
   
                 var $17=$rs;
-                var $prim18=(($17+28)&4294967295);
+                var $prim18=$17+28;
                 var $18=HEAP[$prim18];
                 var $19=$prim_addr;
                 var $cmp19=((($18))|0)!=((($19))|0);
@@ -16020,7 +16017,7 @@ var _rslist;
       }
   
       var $20=$rs;
-      var $next=(($20+44)&4294967295);
+      var $next=$20+44;
       var $21=HEAP[$next];
       $rs=$21;
       __label__ = 1;continue ;
@@ -16046,7 +16043,7 @@ var _rslist;
   
         var $29=HEAP[_rslist];
         var $30=$rs;
-        var $next25=(($30+44)&4294967295);
+        var $next25=$30+44;
         HEAP[$next25]=$29;
         var $31=$rs;
         HEAP[_rslist]=$31;
@@ -16143,9 +16140,9 @@ var _rslist;
                         var $12=$pad_addr;
                         var $13=$symsize_addr;
                         var $shl21=1 << ($13);
-                        var $sub=((($shl21) - 1)&4294967295);
+                        var $sub=($shl21) - 1;
                         var $14=$nroots_addr;
-                        var $sub22=((($sub) - ($14))&4294967295);
+                        var $sub22=($sub) - ($14);
                         var $cmp23=((($12))|0) >= ((($sub22))|0);
                         if ($cmp23) { __label__ = 14;break $if_then24$$lor_lhs_false20$14; }
   
@@ -16163,29 +16160,29 @@ var _rslist;
   
                           var $17=$symsize_addr;
                           var $18=$rs;
-                          var $mm=(($18)&4294967295);
+                          var $mm=$18;
                           HEAP[$mm]=$17;
                           var $19=$symsize_addr;
                           var $shl29=1 << ($19);
-                          var $sub30=((($shl29) - 1)&4294967295);
+                          var $sub30=($shl29) - 1;
                           var $20=$rs;
-                          var $nn=(($20+4)&4294967295);
+                          var $nn=$20+4;
                           HEAP[$nn]=$sub30;
                           var $21=$pad_addr;
                           var $22=$rs;
-                          var $pad31=(($22+36)&4294967295);
+                          var $pad31=$22+36;
                           HEAP[$pad31]=$21;
                           var $23=$rs;
-                          var $nn32=(($23+4)&4294967295);
+                          var $nn32=$23+4;
                           var $24=HEAP[$nn32];
-                          var $add=((($24) + 1)&4294967295);
-                          var $mul=((1 * ($add))&4294967295);
+                          var $add=($24) + 1;
+                          var $mul=1 * ($add);
                           var $call33=_malloc($mul);
                           var $25=$rs;
-                          var $alpha_to=(($25+8)&4294967295);
+                          var $alpha_to=$25+8;
                           HEAP[$alpha_to]=$call33;
                           var $26=$rs;
-                          var $alpha_to34=(($26+8)&4294967295);
+                          var $alpha_to34=$26+8;
                           var $27=HEAP[$alpha_to34];
                           var $cmp35=((($27))|0)==0;
                           if ($cmp35) { __label__ = 18;; } else { __label__ = 19;; }
@@ -16200,23 +16197,23 @@ var _rslist;
                           else if (__label__ == 19) {
   
                             var $30=$rs;
-                            var $nn38=(($30+4)&4294967295);
+                            var $nn38=$30+4;
                             var $31=HEAP[$nn38];
-                            var $add39=((($31) + 1)&4294967295);
-                            var $mul40=((1 * ($add39))&4294967295);
+                            var $add39=($31) + 1;
+                            var $mul40=1 * ($add39);
                             var $call41=_malloc($mul40);
                             var $32=$rs;
-                            var $index_of=(($32+12)&4294967295);
+                            var $index_of=$32+12;
                             HEAP[$index_of]=$call41;
                             var $33=$rs;
-                            var $index_of42=(($33+12)&4294967295);
+                            var $index_of42=$33+12;
                             var $34=HEAP[$index_of42];
                             var $cmp43=((($34))|0)==0;
                             if ($cmp43) { __label__ = 20;; } else { __label__ = 21;; }
                             if (__label__ == 20) {
   
                               var $35=$rs;
-                              var $alpha_to45=(($35+8)&4294967295);
+                              var $alpha_to45=$35+8;
                               var $36=HEAP[$alpha_to45];
                               ;
                               var $37=$rs;
@@ -16228,21 +16225,21 @@ var _rslist;
                             else if (__label__ == 21) {
   
                               var $39=$rs;
-                              var $nn47=(($39+4)&4294967295);
+                              var $nn47=$39+4;
                               var $40=HEAP[$nn47];
                               var $conv=((($40)) & 255);
                               var $41=$rs;
-                              var $index_of48=(($41+12)&4294967295);
+                              var $index_of48=$41+12;
                               var $42=HEAP[$index_of48];
-                              var $arrayidx=(($42)&4294967295);
+                              var $arrayidx=$42;
                               HEAP[$arrayidx]=$conv;
                               var $43=$rs;
-                              var $nn49=(($43+4)&4294967295);
+                              var $nn49=$43+4;
                               var $44=HEAP[$nn49];
                               var $45=$rs;
-                              var $alpha_to50=(($45+8)&4294967295);
+                              var $alpha_to50=$45+8;
                               var $46=HEAP[$alpha_to50];
-                              var $arrayidx51=(($46+$44)&4294967295);
+                              var $arrayidx51=$46+$44;
                               HEAP[$arrayidx51]=0;
                               $sr=1;
                               $i=0;
@@ -16251,7 +16248,7 @@ var _rslist;
   
                                 var $47=$i;
                                 var $48=$rs;
-                                var $nn52=(($48+4)&4294967295);
+                                var $nn52=$48+4;
                                 var $49=HEAP[$nn52];
                                 var $cmp53=((($47))|0) < ((($49))|0);
                                 if (!($cmp53)) { __label__ = 27;break $for_cond$26; }
@@ -16260,17 +16257,17 @@ var _rslist;
                                 var $conv55=((($50)) & 255);
                                 var $51=$sr;
                                 var $52=$rs;
-                                var $index_of56=(($52+12)&4294967295);
+                                var $index_of56=$52+12;
                                 var $53=HEAP[$index_of56];
-                                var $arrayidx57=(($53+$51)&4294967295);
+                                var $arrayidx57=$53+$51;
                                 HEAP[$arrayidx57]=$conv55;
                                 var $54=$sr;
                                 var $conv58=((($54)) & 255);
                                 var $55=$i;
                                 var $56=$rs;
-                                var $alpha_to59=(($56+8)&4294967295);
+                                var $alpha_to59=$56+8;
                                 var $57=HEAP[$alpha_to59];
-                                var $arrayidx60=(($57+$55)&4294967295);
+                                var $arrayidx60=$57+$55;
                                 HEAP[$arrayidx60]=$conv58;
                                 var $58=$sr;
                                 var $shl61=($58) << 1;
@@ -16291,7 +16288,7 @@ var _rslist;
                                 }
   
                                 var $63=$rs;
-                                var $nn65=(($63+4)&4294967295);
+                                var $nn65=$63+4;
                                 var $64=HEAP[$nn65];
                                 var $65=$sr;
                                 var $and66=($65) & ($64);
@@ -16299,7 +16296,7 @@ var _rslist;
                                 ;
   
                                 var $66=$i;
-                                var $inc=((($66) + 1)&4294967295);
+                                var $inc=($66) + 1;
                                 $i=$inc;
                                 __label__ = 22;continue $for_cond$26;
                               }
@@ -16310,11 +16307,11 @@ var _rslist;
                               if (__label__ == 28) {
   
                                 var $68=$rs;
-                                var $alpha_to70=(($68+8)&4294967295);
+                                var $alpha_to70=$68+8;
                                 var $69=HEAP[$alpha_to70];
                                 ;
                                 var $70=$rs;
-                                var $index_of71=(($70+12)&4294967295);
+                                var $index_of71=$70+12;
                                 var $71=HEAP[$index_of71];
                                 ;
                                 var $72=$rs;
@@ -16326,25 +16323,25 @@ var _rslist;
                               else if (__label__ == 29) {
   
                                 var $74=$nroots_addr;
-                                var $add73=((($74) + 1)&4294967295);
-                                var $mul74=((1 * ($add73))&4294967295);
+                                var $add73=($74) + 1;
+                                var $mul74=1 * ($add73);
                                 var $call75=_malloc($mul74);
                                 var $75=$rs;
-                                var $genpoly=(($75+16)&4294967295);
+                                var $genpoly=$75+16;
                                 HEAP[$genpoly]=$call75;
                                 var $76=$rs;
-                                var $genpoly76=(($76+16)&4294967295);
+                                var $genpoly76=$76+16;
                                 var $77=HEAP[$genpoly76];
                                 var $cmp77=((($77))|0)==0;
                                 if ($cmp77) { __label__ = 30;; } else { __label__ = 31;; }
                                 if (__label__ == 30) {
   
                                   var $78=$rs;
-                                  var $alpha_to80=(($78+8)&4294967295);
+                                  var $alpha_to80=$78+8;
                                   var $79=HEAP[$alpha_to80];
                                   ;
                                   var $80=$rs;
-                                  var $index_of81=(($80+12)&4294967295);
+                                  var $index_of81=$80+12;
                                   var $81=HEAP[$index_of81];
                                   ;
                                   var $82=$rs;
@@ -16357,19 +16354,19 @@ var _rslist;
   
                                   var $84=$fcr_addr;
                                   var $85=$rs;
-                                  var $fcr83=(($85+24)&4294967295);
+                                  var $fcr83=$85+24;
                                   HEAP[$fcr83]=$84;
                                   var $86=$prim_addr;
                                   var $87=$rs;
-                                  var $prim84=(($87+28)&4294967295);
+                                  var $prim84=$87+28;
                                   HEAP[$prim84]=$86;
                                   var $88=$nroots_addr;
                                   var $89=$rs;
-                                  var $nroots85=(($89+20)&4294967295);
+                                  var $nroots85=$89+20;
                                   HEAP[$nroots85]=$88;
                                   var $90=$gfpoly_addr;
                                   var $91=$rs;
-                                  var $gfpoly86=(($91+40)&4294967295);
+                                  var $gfpoly86=$91+40;
                                   HEAP[$gfpoly86]=$90;
                                   $iprim=1;
                                   ;
@@ -16384,10 +16381,10 @@ var _rslist;
                                     ;
   
                                     var $94=$rs;
-                                    var $nn92=(($94+4)&4294967295);
+                                    var $nn92=$94+4;
                                     var $95=HEAP[$nn92];
                                     var $96=$iprim;
-                                    var $add93=((($96) + ($95))&4294967295);
+                                    var $add93=($96) + ($95);
                                     $iprim=$add93;
                                     __label__ = 32;continue $for_cond87$40;
                                   }
@@ -16396,17 +16393,17 @@ var _rslist;
                                   var $98=$prim_addr;
                                   var $div=((((($97))|0)/((($98))|0))|0);
                                   var $99=$rs;
-                                  var $iprim95=(($99+32)&4294967295);
+                                  var $iprim95=$99+32;
                                   HEAP[$iprim95]=$div;
                                   var $100=$rs;
-                                  var $genpoly96=(($100+16)&4294967295);
+                                  var $genpoly96=$100+16;
                                   var $101=HEAP[$genpoly96];
-                                  var $arrayidx97=(($101)&4294967295);
+                                  var $arrayidx97=$101;
                                   HEAP[$arrayidx97]=1;
                                   $i=0;
                                   var $102=$fcr_addr;
                                   var $103=$prim_addr;
-                                  var $mul98=((($102) * ($103))&4294967295);
+                                  var $mul98=($102) * ($103);
                                   $root=$mul98;
                                   ;
                                   $for_cond99$45: while(1) { 
@@ -16417,11 +16414,11 @@ var _rslist;
                                     if (!($cmp100)) { __label__ = 46;break $for_cond99$45; }
   
                                     var $106=$i;
-                                    var $add103=((($106) + 1)&4294967295);
+                                    var $add103=($106) + 1;
                                     var $107=$rs;
-                                    var $genpoly104=(($107+16)&4294967295);
+                                    var $genpoly104=$107+16;
                                     var $108=HEAP[$genpoly104];
-                                    var $arrayidx105=(($108+$add103)&4294967295);
+                                    var $arrayidx105=$108+$add103;
                                     HEAP[$arrayidx105]=1;
                                     var $109=$i;
                                     $j=$109;
@@ -16434,9 +16431,9 @@ var _rslist;
   
                                       var $111=$j;
                                       var $112=$rs;
-                                      var $genpoly110=(($112+16)&4294967295);
+                                      var $genpoly110=$112+16;
                                       var $113=HEAP[$genpoly110];
-                                      var $arrayidx111=(($113+$111)&4294967295);
+                                      var $arrayidx111=$113+$111;
                                       var $114=HEAP[$arrayidx111];
                                       var $conv112=((($114))&255);
                                       var $cmp113=((($conv112))|0)!=0;
@@ -16444,60 +16441,60 @@ var _rslist;
                                       if (__label__ == 40) {
   
                                         var $115=$j;
-                                        var $sub116=((($115) - 1)&4294967295);
+                                        var $sub116=($115) - 1;
                                         var $116=$rs;
-                                        var $genpoly117=(($116+16)&4294967295);
+                                        var $genpoly117=$116+16;
                                         var $117=HEAP[$genpoly117];
-                                        var $arrayidx118=(($117+$sub116)&4294967295);
+                                        var $arrayidx118=$117+$sub116;
                                         var $118=HEAP[$arrayidx118];
                                         var $conv119=((($118))&255);
                                         var $119=$rs;
                                         var $120=$j;
                                         var $121=$rs;
-                                        var $genpoly120=(($121+16)&4294967295);
+                                        var $genpoly120=$121+16;
                                         var $122=HEAP[$genpoly120];
-                                        var $arrayidx121=(($122+$120)&4294967295);
+                                        var $arrayidx121=$122+$120;
                                         var $123=HEAP[$arrayidx121];
                                         var $idxprom=((($123))&255);
                                         var $124=$rs;
-                                        var $index_of122=(($124+12)&4294967295);
+                                        var $index_of122=$124+12;
                                         var $125=HEAP[$index_of122];
-                                        var $arrayidx123=(($125+$idxprom)&4294967295);
+                                        var $arrayidx123=$125+$idxprom;
                                         var $126=HEAP[$arrayidx123];
                                         var $conv124=((($126))&255);
                                         var $127=$root;
-                                        var $add125=((($conv124) + ($127))&4294967295);
+                                        var $add125=($conv124) + ($127);
                                         var $call126=_modnn($119, $add125);
                                         var $128=$rs;
-                                        var $alpha_to127=(($128+8)&4294967295);
+                                        var $alpha_to127=$128+8;
                                         var $129=HEAP[$alpha_to127];
-                                        var $arrayidx128=(($129+$call126)&4294967295);
+                                        var $arrayidx128=$129+$call126;
                                         var $130=HEAP[$arrayidx128];
                                         var $conv129=((($130))&255);
                                         var $xor130=($conv119) ^ ($conv129);
                                         var $conv131=((($xor130)) & 255);
                                         var $131=$j;
                                         var $132=$rs;
-                                        var $genpoly132=(($132+16)&4294967295);
+                                        var $genpoly132=$132+16;
                                         var $133=HEAP[$genpoly132];
-                                        var $arrayidx133=(($133+$131)&4294967295);
+                                        var $arrayidx133=$133+$131;
                                         HEAP[$arrayidx133]=$conv131;
                                         ;
                                       }
                                       else if (__label__ == 41) {
   
                                         var $134=$j;
-                                        var $sub134=((($134) - 1)&4294967295);
+                                        var $sub134=($134) - 1;
                                         var $135=$rs;
-                                        var $genpoly135=(($135+16)&4294967295);
+                                        var $genpoly135=$135+16;
                                         var $136=HEAP[$genpoly135];
-                                        var $arrayidx136=(($136+$sub134)&4294967295);
+                                        var $arrayidx136=$136+$sub134;
                                         var $137=HEAP[$arrayidx136];
                                         var $138=$j;
                                         var $139=$rs;
-                                        var $genpoly137=(($139+16)&4294967295);
+                                        var $genpoly137=$139+16;
                                         var $140=HEAP[$genpoly137];
-                                        var $arrayidx138=(($140+$138)&4294967295);
+                                        var $arrayidx138=$140+$138;
                                         HEAP[$arrayidx138]=$137;
                                         ;
                                       }
@@ -16505,45 +16502,45 @@ var _rslist;
                                       ;
   
                                       var $141=$j;
-                                      var $dec=((($141) + -1)&4294967295);
+                                      var $dec=($141) + -1;
                                       $j=$dec;
                                       __label__ = 38;continue ;
                                     }
   
                                     var $142=$rs;
                                     var $143=$rs;
-                                    var $genpoly142=(($143+16)&4294967295);
+                                    var $genpoly142=$143+16;
                                     var $144=HEAP[$genpoly142];
-                                    var $arrayidx143=(($144)&4294967295);
+                                    var $arrayidx143=$144;
                                     var $145=HEAP[$arrayidx143];
                                     var $idxprom144=((($145))&255);
                                     var $146=$rs;
-                                    var $index_of145=(($146+12)&4294967295);
+                                    var $index_of145=$146+12;
                                     var $147=HEAP[$index_of145];
-                                    var $arrayidx146=(($147+$idxprom144)&4294967295);
+                                    var $arrayidx146=$147+$idxprom144;
                                     var $148=HEAP[$arrayidx146];
                                     var $conv147=((($148))&255);
                                     var $149=$root;
-                                    var $add148=((($conv147) + ($149))&4294967295);
+                                    var $add148=($conv147) + ($149);
                                     var $call149=_modnn($142, $add148);
                                     var $150=$rs;
-                                    var $alpha_to150=(($150+8)&4294967295);
+                                    var $alpha_to150=$150+8;
                                     var $151=HEAP[$alpha_to150];
-                                    var $arrayidx151=(($151+$call149)&4294967295);
+                                    var $arrayidx151=$151+$call149;
                                     var $152=HEAP[$arrayidx151];
                                     var $153=$rs;
-                                    var $genpoly152=(($153+16)&4294967295);
+                                    var $genpoly152=$153+16;
                                     var $154=HEAP[$genpoly152];
-                                    var $arrayidx153=(($154)&4294967295);
+                                    var $arrayidx153=$154;
                                     HEAP[$arrayidx153]=$152;
                                     ;
   
                                     var $155=$i;
-                                    var $inc155=((($155) + 1)&4294967295);
+                                    var $inc155=($155) + 1;
                                     $i=$inc155;
                                     var $156=$prim_addr;
                                     var $157=$root;
-                                    var $add156=((($157) + ($156))&4294967295);
+                                    var $add156=($157) + ($156);
                                     $root=$add156;
                                     __label__ = 36;continue $for_cond99$45;
                                   }
@@ -16559,26 +16556,26 @@ var _rslist;
   
                                     var $160=$i;
                                     var $161=$rs;
-                                    var $genpoly162=(($161+16)&4294967295);
+                                    var $genpoly162=$161+16;
                                     var $162=HEAP[$genpoly162];
-                                    var $arrayidx163=(($162+$160)&4294967295);
+                                    var $arrayidx163=$162+$160;
                                     var $163=HEAP[$arrayidx163];
                                     var $idxprom164=((($163))&255);
                                     var $164=$rs;
-                                    var $index_of165=(($164+12)&4294967295);
+                                    var $index_of165=$164+12;
                                     var $165=HEAP[$index_of165];
-                                    var $arrayidx166=(($165+$idxprom164)&4294967295);
+                                    var $arrayidx166=$165+$idxprom164;
                                     var $166=HEAP[$arrayidx166];
                                     var $167=$i;
                                     var $168=$rs;
-                                    var $genpoly167=(($168+16)&4294967295);
+                                    var $genpoly167=$168+16;
                                     var $169=HEAP[$genpoly167];
-                                    var $arrayidx168=(($169+$167)&4294967295);
+                                    var $arrayidx168=$169+$167;
                                     HEAP[$arrayidx168]=$166;
                                     ;
   
                                     var $170=$i;
-                                    var $inc170=((($170) + 1)&4294967295);
+                                    var $inc170=($170) + 1;
                                     $i=$inc170;
                                     __label__ = 47;continue ;
                                   }
@@ -16626,15 +16623,15 @@ var _rslist;
     var $rs_addr;
     $rs_addr=$rs;
     var $0=$rs_addr;
-    var $alpha_to=(($0+8)&4294967295);
+    var $alpha_to=$0+8;
     var $1=HEAP[$alpha_to];
     ;
     var $2=$rs_addr;
-    var $index_of=(($2+12)&4294967295);
+    var $index_of=$2+12;
     var $3=HEAP[$index_of];
     ;
     var $4=$rs_addr;
-    var $genpoly=(($4+16)&4294967295);
+    var $genpoly=$4+16;
     var $5=HEAP[$genpoly];
     ;
     var $6=$rs_addr;
@@ -16662,7 +16659,7 @@ var _rslist;
       if (!($cmp)) { __label__ = 3;break ; }
   
       var $2=$rs;
-      var $next1=(($2+44)&4294967295);
+      var $next1=$2+44;
       var $3=HEAP[$next1];
       $next=$3;
       var $4=$rs;
@@ -16694,9 +16691,9 @@ var _rslist;
     $parity_addr=$parity;
     var $0=$parity_addr;
     var $1=$rs_addr;
-    var $nroots=(($1+20)&4294967295);
+    var $nroots=$1+20;
     var $2=HEAP[$nroots];
-    var $mul=((($2) * 1)&4294967295);
+    var $mul=($2) * 1;
     for (var $mspi$ = 0; $mspi$ < $mul; $mspi$++) {
     HEAP[$0+$mspi$]=0;
     };
@@ -16706,39 +16703,39 @@ var _rslist;
   
       var $3=$i;
       var $4=$rs_addr;
-      var $nn=(($4+4)&4294967295);
+      var $nn=$4+4;
       var $5=HEAP[$nn];
       var $6=$rs_addr;
-      var $nroots1=(($6+20)&4294967295);
+      var $nroots1=$6+20;
       var $7=HEAP[$nroots1];
-      var $sub=((($5) - ($7))&4294967295);
+      var $sub=($5) - ($7);
       var $8=$rs_addr;
-      var $pad=(($8+36)&4294967295);
+      var $pad=$8+36;
       var $9=HEAP[$pad];
-      var $sub2=((($sub) - ($9))&4294967295);
+      var $sub2=($sub) - ($9);
       var $cmp=((($3))|0) < ((($sub2))|0);
       if (!($cmp)) { __label__ = 13;break $for_cond$2; }
   
       var $10=$i;
       var $11=$data_addr;
-      var $arrayidx=(($11+$10)&4294967295);
+      var $arrayidx=$11+$10;
       var $12=HEAP[$arrayidx];
       var $conv=((($12))&255);
       var $13=$parity_addr;
-      var $arrayidx3=(($13)&4294967295);
+      var $arrayidx3=$13;
       var $14=HEAP[$arrayidx3];
       var $conv4=((($14))&255);
       var $xor=($conv) ^ ($conv4);
       var $15=$rs_addr;
-      var $index_of=(($15+12)&4294967295);
+      var $index_of=$15+12;
       var $16=HEAP[$index_of];
-      var $arrayidx5=(($16+$xor)&4294967295);
+      var $arrayidx5=$16+$xor;
       var $17=HEAP[$arrayidx5];
       $feedback=$17;
       var $18=$feedback;
       var $conv6=((($18))&255);
       var $19=$rs_addr;
-      var $nn7=(($19+4)&4294967295);
+      var $nn7=$19+4;
       var $20=HEAP[$nn7];
       var $cmp8=((($conv6))|0)!=((($20))|0);
       if ($cmp8) { __label__ = 3;; } else { __label__ = 8;; }
@@ -16750,7 +16747,7 @@ var _rslist;
   
           var $21=$j;
           var $22=$rs_addr;
-          var $nroots11=(($22+20)&4294967295);
+          var $nroots11=$22+20;
           var $23=HEAP[$nroots11];
           var $cmp12=((($21))|0) < ((($23))|0);
           if (!($cmp12)) { __label__ = 7;break ; }
@@ -16759,27 +16756,27 @@ var _rslist;
           var $25=$feedback;
           var $conv15=((($25))&255);
           var $26=$rs_addr;
-          var $nroots16=(($26+20)&4294967295);
+          var $nroots16=$26+20;
           var $27=HEAP[$nroots16];
           var $28=$j;
-          var $sub17=((($27) - ($28))&4294967295);
+          var $sub17=($27) - ($28);
           var $29=$rs_addr;
-          var $genpoly=(($29+16)&4294967295);
+          var $genpoly=$29+16;
           var $30=HEAP[$genpoly];
-          var $arrayidx18=(($30+$sub17)&4294967295);
+          var $arrayidx18=$30+$sub17;
           var $31=HEAP[$arrayidx18];
           var $conv19=((($31))&255);
-          var $add=((($conv15) + ($conv19))&4294967295);
+          var $add=($conv15) + ($conv19);
           var $call=_modnn($24, $add);
           var $32=$rs_addr;
-          var $alpha_to=(($32+8)&4294967295);
+          var $alpha_to=$32+8;
           var $33=HEAP[$alpha_to];
-          var $arrayidx20=(($33+$call)&4294967295);
+          var $arrayidx20=$33+$call;
           var $34=HEAP[$arrayidx20];
           var $conv21=((($34))&255);
           var $35=$j;
           var $36=$parity_addr;
-          var $arrayidx22=(($36+$35)&4294967295);
+          var $arrayidx22=$36+$35;
           var $37=HEAP[$arrayidx22];
           var $conv23=((($37))&255);
           var $xor24=($conv23) ^ ($conv21);
@@ -16788,7 +16785,7 @@ var _rslist;
           ;
   
           var $38=$j;
-          var $inc=((($38) + 1)&4294967295);
+          var $inc=($38) + 1;
           $j=$inc;
           __label__ = 4;continue ;
         }
@@ -16797,19 +16794,19 @@ var _rslist;
       }
   
       var $39=$parity_addr;
-      var $arrayidx26=(($39)&4294967295);
+      var $arrayidx26=$39;
       var $40=$parity_addr;
-      var $arrayidx27=(($40+1)&4294967295);
+      var $arrayidx27=$40+1;
       var $41=$rs_addr;
-      var $nroots28=(($41+20)&4294967295);
+      var $nroots28=$41+20;
       var $42=HEAP[$nroots28];
-      var $sub29=((($42) - 1)&4294967295);
-      var $mul30=((1 * ($sub29))&4294967295);
+      var $sub29=($42) - 1;
+      var $mul30=1 * ($sub29);
       _llvm_memmove_p0i8_p0i8_i32($arrayidx26, $arrayidx27, $mul30, 1, 0);
       var $43=$feedback;
       var $conv31=((($43))&255);
       var $44=$rs_addr;
-      var $nn32=(($44+4)&4294967295);
+      var $nn32=$44+4;
       var $45=HEAP[$nn32];
       var $cmp33=((($conv31))|0)!=((($45))|0);
       if ($cmp33) { __label__ = 9;; } else { __label__ = 10;; }
@@ -16819,35 +16816,35 @@ var _rslist;
         var $47=$feedback;
         var $conv36=((($47))&255);
         var $48=$rs_addr;
-        var $genpoly37=(($48+16)&4294967295);
+        var $genpoly37=$48+16;
         var $49=HEAP[$genpoly37];
-        var $arrayidx38=(($49)&4294967295);
+        var $arrayidx38=$49;
         var $50=HEAP[$arrayidx38];
         var $conv39=((($50))&255);
-        var $add40=((($conv36) + ($conv39))&4294967295);
+        var $add40=($conv36) + ($conv39);
         var $call41=_modnn($46, $add40);
         var $51=$rs_addr;
-        var $alpha_to42=(($51+8)&4294967295);
+        var $alpha_to42=$51+8;
         var $52=HEAP[$alpha_to42];
-        var $arrayidx43=(($52+$call41)&4294967295);
+        var $arrayidx43=$52+$call41;
         var $53=HEAP[$arrayidx43];
         var $54=$rs_addr;
-        var $nroots44=(($54+20)&4294967295);
+        var $nroots44=$54+20;
         var $55=HEAP[$nroots44];
-        var $sub45=((($55) - 1)&4294967295);
+        var $sub45=($55) - 1;
         var $56=$parity_addr;
-        var $arrayidx46=(($56+$sub45)&4294967295);
+        var $arrayidx46=$56+$sub45;
         HEAP[$arrayidx46]=$53;
         ;
       }
       else if (__label__ == 10) {
   
         var $57=$rs_addr;
-        var $nroots47=(($57+20)&4294967295);
+        var $nroots47=$57+20;
         var $58=HEAP[$nroots47];
-        var $sub48=((($58) - 1)&4294967295);
+        var $sub48=($58) - 1;
         var $59=$parity_addr;
-        var $arrayidx49=(($59+$sub48)&4294967295);
+        var $arrayidx49=$59+$sub48;
         HEAP[$arrayidx49]=0;
         ;
       }
@@ -16855,7 +16852,7 @@ var _rslist;
       ;
   
       var $60=$i;
-      var $inc52=((($60) + 1)&4294967295);
+      var $inc52=($60) + 1;
       $i=$inc52;
       __label__ = 1;continue $for_cond$2;
     }
@@ -16879,28 +16876,28 @@ var _rslist;
   
       var $0=$x_addr;
       var $1=$rs_addr;
-      var $nn=(($1+4)&4294967295);
+      var $nn=$1+4;
       var $2=HEAP[$nn];
       var $cmp=((($0))|0) >= ((($2))|0);
       if (!($cmp)) { __label__ = 3;break ; }
   
       var $3=$rs_addr;
-      var $nn1=(($3+4)&4294967295);
+      var $nn1=$3+4;
       var $4=HEAP[$nn1];
       var $5=$x_addr;
-      var $sub=((($5) - ($4))&4294967295);
+      var $sub=($5) - ($4);
       $x_addr=$sub;
       var $6=$x_addr;
       var $7=$rs_addr;
-      var $mm=(($7)&4294967295);
+      var $mm=$7;
       var $8=HEAP[$mm];
       var $shr=($6) >> ((($8))|0);
       var $9=$x_addr;
       var $10=$rs_addr;
-      var $nn2=(($10+4)&4294967295);
+      var $nn2=$10+4;
       var $11=HEAP[$nn2];
       var $and=($9) & ($11);
-      var $add=((($shr) + ($and))&4294967295);
+      var $add=($shr) + ($and);
       $x_addr=$add;
       __label__ = 1;continue ;
     }
@@ -17044,7 +17041,7 @@ var _rslist;
         if (__label__ == 5) {
   
           var $8=$p;
-          var $add_ptr=(($8+2)&4294967295);
+          var $add_ptr=$8+2;
           $p=$add_ptr;
           ;
         }
@@ -17067,7 +17064,7 @@ var _rslist;
               var $13=$p;
               var $14=HEAP[$13];
               var $conv14=(tempInt=(($14)),(tempInt>=128?tempInt-256:tempInt));
-              var $sub=((($conv14) - 32)&4294967295);
+              var $sub=($conv14) - 32;
               var $conv15=((($sub)) & 255);
               var $15=$p;
               HEAP[$15]=$conv15;
@@ -17076,7 +17073,7 @@ var _rslist;
           } while(0);
   
           var $16=$p;
-          var $incdec_ptr=(($16+1)&4294967295);
+          var $incdec_ptr=$16+1;
           $p=$incdec_ptr;
           ;
         }
@@ -17209,7 +17206,7 @@ var _rslist;
   
           var $22=$length;
           var $23=$string_addr;
-          var $arrayidx=(($23+$22)&4294967295);
+          var $arrayidx=$23+$22;
           var $24=$input_addr;
           var $25=$hint_addr;
           var $call30=_Split_splitString($arrayidx, $24, $25);
@@ -17240,7 +17237,7 @@ var _rslist;
     $string_addr=$string;
     $hint_addr=$hint;
     var $0=$string_addr;
-    var $arrayidx=(($0)&4294967295);
+    var $arrayidx=$0;
     var $1=HEAP[$arrayidx];
     $c=$1;
     var $2=$c;
@@ -17257,7 +17254,7 @@ var _rslist;
   
         var $3=$c;
         var $conv2=(tempInt=(($3)),(tempInt>=128?tempInt-256:tempInt));
-        var $sub=((($conv2) - 48)&4294967295);
+        var $sub=($conv2) - 48;
         var $conv3=((($sub)) & 255);
         var $conv4=((($conv3))&255);
         var $cmp5=((($conv4))|0) < 10;
@@ -17282,7 +17279,7 @@ var _rslist;
   
             var $5=$c;
             var $conv9=((($5))&255);
-            var $arrayidx10=((_QRinput_anTable+$conv9)&4294967295);
+            var $arrayidx10=_QRinput_anTable+$conv9;
             var $6=HEAP[$arrayidx10];
             var $conv11=(tempInt=(($6)),(tempInt>=128?tempInt-256:tempInt));
             __lastLabel__ = 6; ;
@@ -17304,7 +17301,7 @@ var _rslist;
             if (__label__ == 10) {
   
               var $8=$string_addr;
-              var $arrayidx19=(($8+1)&4294967295);
+              var $arrayidx19=$8+1;
               var $9=HEAP[$arrayidx19];
               $d=$9;
               var $10=$d;
@@ -17393,7 +17390,7 @@ var _rslist;
     $input_addr=$input;
     $hint_addr=$hint;
     var $0=$input_addr;
-    var $version=(($0)&4294967295);
+    var $version=$0;
     var $1=HEAP[$version];
     var $call=_QRspec_lengthIndicator(0, $1);
     $ln=$call;
@@ -17405,14 +17402,14 @@ var _rslist;
       var $3=$p;
       var $4=HEAP[$3];
       var $conv=(tempInt=(($4)),(tempInt>=128?tempInt-256:tempInt));
-      var $sub=((($conv) - 48)&4294967295);
+      var $sub=($conv) - 48;
       var $conv1=((($sub)) & 255);
       var $conv2=((($conv1))&255);
       var $cmp=((($conv2))|0) < 10;
       if (!($cmp)) { __label__ = 3;break $while_cond$2; }
   
       var $5=$p;
-      var $incdec_ptr=(($5+1)&4294967295);
+      var $incdec_ptr=$5+1;
       $p=$incdec_ptr;
       __label__ = 1;continue $while_cond$2;
     }
@@ -17421,7 +17418,7 @@ var _rslist;
     var $7=$string_addr;
     var $sub_ptr_lhs_cast=($6);
     var $sub_ptr_rhs_cast=($7);
-    var $sub_ptr_sub=((($sub_ptr_lhs_cast) - ($sub_ptr_rhs_cast))&4294967295);
+    var $sub_ptr_sub=($sub_ptr_lhs_cast) - ($sub_ptr_rhs_cast);
     $run=$sub_ptr_sub;
     var $8=$p;
     var $9=$hint_addr;
@@ -17435,15 +17432,15 @@ var _rslist;
   
         var $11=$run;
         var $call7=_QRinput_estimateBitsModeNum($11);
-        var $add=((($call7) + 4)&4294967295);
+        var $add=($call7) + 4;
         var $12=$ln;
-        var $add8=((($add) + ($12))&4294967295);
+        var $add8=($add) + ($12);
         var $call9=_QRinput_estimateBitsMode8(1);
-        var $add10=((($add8) + ($call9))&4294967295);
+        var $add10=($add8) + ($call9);
         var $13=$run;
-        var $add11=((($13) + 1)&4294967295);
+        var $add11=($13) + 1;
         var $call12=_QRinput_estimateBitsMode8($add11);
-        var $sub13=((($add10) - ($call12))&4294967295);
+        var $sub13=($add10) - ($call12);
         $dif=$sub13;
         var $14=$dif;
         var $cmp14=((($14))|0) > 0;
@@ -17473,15 +17470,15 @@ var _rslist;
   
           var $19=$run;
           var $call22=_QRinput_estimateBitsModeNum($19);
-          var $add23=((($call22) + 4)&4294967295);
+          var $add23=($call22) + 4;
           var $20=$ln;
-          var $add24=((($add23) + ($20))&4294967295);
+          var $add24=($add23) + ($20);
           var $call25=_QRinput_estimateBitsModeAn(1);
-          var $add26=((($add24) + ($call25))&4294967295);
+          var $add26=($add24) + ($call25);
           var $21=$run;
-          var $add27=((($21) + 1)&4294967295);
+          var $add27=($21) + 1;
           var $call28=_QRinput_estimateBitsModeAn($add27);
-          var $sub29=((($add26) - ($call28))&4294967295);
+          var $sub29=($add26) - ($call28);
           $dif=$sub29;
           var $22=$dif;
           var $cmp30=((($22))|0) > 0;
@@ -17550,12 +17547,12 @@ var _rslist;
     $input_addr=$input;
     $hint_addr=$hint;
     var $0=$input_addr;
-    var $version=(($0)&4294967295);
+    var $version=$0;
     var $1=HEAP[$version];
     var $call=_QRspec_lengthIndicator(1, $1);
     $la=$call;
     var $2=$input_addr;
-    var $version1=(($2)&4294967295);
+    var $version1=$2;
     var $3=HEAP[$version1];
     var $call2=_QRspec_lengthIndicator(0, $3);
     $ln=$call2;
@@ -17579,7 +17576,7 @@ var _rslist;
         var $7=$p;
         var $8=HEAP[$7];
         var $conv3=(tempInt=(($8)),(tempInt>=128?tempInt-256:tempInt));
-        var $arrayidx=((_QRinput_anTable+$conv3)&4294967295);
+        var $arrayidx=_QRinput_anTable+$conv3;
         var $9=HEAP[$arrayidx];
         var $conv4=(tempInt=(($9)),(tempInt>=128?tempInt-256:tempInt));
         __lastLabel__ = 3; ;
@@ -17592,7 +17589,7 @@ var _rslist;
       var $10=$p;
       var $11=HEAP[$10];
       var $conv6=(tempInt=(($11)),(tempInt>=128?tempInt-256:tempInt));
-      var $sub=((($conv6) - 48)&4294967295);
+      var $sub=($conv6) - 48;
       var $conv7=((($sub)) & 255);
       var $conv8=((($conv7))&255);
       var $cmp9=((($conv8))|0) < 10;
@@ -17607,14 +17604,14 @@ var _rslist;
           var $13=$q;
           var $14=HEAP[$13];
           var $conv12=(tempInt=(($14)),(tempInt>=128?tempInt-256:tempInt));
-          var $sub13=((($conv12) - 48)&4294967295);
+          var $sub13=($conv12) - 48;
           var $conv14=((($sub13)) & 255);
           var $conv15=((($conv14))&255);
           var $cmp16=((($conv15))|0) < 10;
           if (!($cmp16)) { __label__ = 9;break ; }
   
           var $15=$q;
-          var $incdec_ptr=(($15+1)&4294967295);
+          var $incdec_ptr=$15+1;
           $q=$incdec_ptr;
           __label__ = 7;continue ;
         }
@@ -17623,25 +17620,25 @@ var _rslist;
         var $17=$string_addr;
         var $sub_ptr_lhs_cast=($16);
         var $sub_ptr_rhs_cast=($17);
-        var $sub_ptr_sub=((($sub_ptr_lhs_cast) - ($sub_ptr_rhs_cast))&4294967295);
+        var $sub_ptr_sub=($sub_ptr_lhs_cast) - ($sub_ptr_rhs_cast);
         var $call19=_QRinput_estimateBitsModeAn($sub_ptr_sub);
         var $18=$q;
         var $19=$p;
         var $sub_ptr_lhs_cast20=($18);
         var $sub_ptr_rhs_cast21=($19);
-        var $sub_ptr_sub22=((($sub_ptr_lhs_cast20) - ($sub_ptr_rhs_cast21))&4294967295);
+        var $sub_ptr_sub22=($sub_ptr_lhs_cast20) - ($sub_ptr_rhs_cast21);
         var $call23=_QRinput_estimateBitsModeNum($sub_ptr_sub22);
-        var $add=((($call19) + ($call23))&4294967295);
-        var $add24=((($add) + 4)&4294967295);
+        var $add=($call19) + ($call23);
+        var $add24=($add) + 4;
         var $20=$ln;
-        var $add25=((($add24) + ($20))&4294967295);
+        var $add25=($add24) + ($20);
         var $21=$q;
         var $22=$string_addr;
         var $sub_ptr_lhs_cast26=($21);
         var $sub_ptr_rhs_cast27=($22);
-        var $sub_ptr_sub28=((($sub_ptr_lhs_cast26) - ($sub_ptr_rhs_cast27))&4294967295);
+        var $sub_ptr_sub28=($sub_ptr_lhs_cast26) - ($sub_ptr_rhs_cast27);
         var $call29=_QRinput_estimateBitsModeAn($sub_ptr_sub28);
-        var $sub30=((($add25) - ($call29))&4294967295);
+        var $sub30=($add25) - ($call29);
         $dif=$sub30;
         var $23=$dif;
         var $cmp31=((($23))|0) < 0;
@@ -17656,7 +17653,7 @@ var _rslist;
       else if (__label__ == 13) {
   
         var $25=$p;
-        var $incdec_ptr35=(($25+1)&4294967295);
+        var $incdec_ptr35=$25+1;
         $p=$incdec_ptr35;
         ;
       }
@@ -17672,7 +17669,7 @@ var _rslist;
     var $27=$string_addr;
     var $sub_ptr_lhs_cast38=($26);
     var $sub_ptr_rhs_cast39=($27);
-    var $sub_ptr_sub40=((($sub_ptr_lhs_cast38) - ($sub_ptr_rhs_cast39))&4294967295);
+    var $sub_ptr_sub40=($sub_ptr_lhs_cast38) - ($sub_ptr_rhs_cast39);
     $run=$sub_ptr_sub40;
     var $28=$p;
     var $29=HEAP[$28];
@@ -17697,7 +17694,7 @@ var _rslist;
           var $32=$p;
           var $33=HEAP[$32];
           var $conv48=(tempInt=(($33)),(tempInt>=128?tempInt-256:tempInt));
-          var $arrayidx49=((_QRinput_anTable+$conv48)&4294967295);
+          var $arrayidx49=_QRinput_anTable+$conv48;
           var $34=HEAP[$arrayidx49];
           var $conv50=(tempInt=(($34)),(tempInt>=128?tempInt-256:tempInt));
           __lastLabel__ = 18; ;
@@ -17709,15 +17706,15 @@ var _rslist;
   
         var $35=$run;
         var $call56=_QRinput_estimateBitsModeAn($35);
-        var $add57=((($call56) + 4)&4294967295);
+        var $add57=($call56) + 4;
         var $36=$la;
-        var $add58=((($add57) + ($36))&4294967295);
+        var $add58=($add57) + ($36);
         var $call59=_QRinput_estimateBitsMode8(1);
-        var $add60=((($add58) + ($call59))&4294967295);
+        var $add60=($add58) + ($call59);
         var $37=$run;
-        var $add61=((($37) + 1)&4294967295);
+        var $add61=($37) + 1;
         var $call62=_QRinput_estimateBitsMode8($add61);
-        var $sub63=((($add60) - ($call62))&4294967295);
+        var $sub63=($add60) - ($call62);
         $dif=$sub63;
         var $38=$dif;
         var $cmp64=((($38))|0) > 0;
@@ -17793,7 +17790,7 @@ var _rslist;
       if (!($cmp)) { __label__ = 3;break ; }
   
       var $3=$p;
-      var $add_ptr=(($3+2)&4294967295);
+      var $add_ptr=$3+2;
       $p=$add_ptr;
       __label__ = 1;continue ;
     }
@@ -17802,7 +17799,7 @@ var _rslist;
     var $5=$string_addr;
     var $sub_ptr_lhs_cast=($4);
     var $sub_ptr_rhs_cast=($5);
-    var $sub_ptr_sub=((($sub_ptr_lhs_cast) - ($sub_ptr_rhs_cast))&4294967295);
+    var $sub_ptr_sub=($sub_ptr_lhs_cast) - ($sub_ptr_rhs_cast);
     $run=$sub_ptr_sub;
     var $6=$input_addr;
     var $7=$run;
@@ -17852,17 +17849,17 @@ var _rslist;
     $input_addr=$input;
     $hint_addr=$hint;
     var $0=$input_addr;
-    var $version=(($0)&4294967295);
+    var $version=$0;
     var $1=HEAP[$version];
     var $call=_QRspec_lengthIndicator(1, $1);
     $la=$call;
     var $2=$input_addr;
-    var $version1=(($2)&4294967295);
+    var $version1=$2;
     var $3=HEAP[$version1];
     var $call2=_QRspec_lengthIndicator(0, $3);
     $ln=$call2;
     var $4=$string_addr;
-    var $add_ptr=(($4+1)&4294967295);
+    var $add_ptr=$4+1;
     $p=$add_ptr;
     ;
     $while_cond$2: while(1) { 
@@ -17894,14 +17891,14 @@ var _rslist;
           var $12=$q;
           var $13=HEAP[$12];
           var $conv11=(tempInt=(($13)),(tempInt>=128?tempInt-256:tempInt));
-          var $sub=((($conv11) - 48)&4294967295);
+          var $sub=($conv11) - 48;
           var $conv12=((($sub)) & 255);
           var $conv13=((($conv12))&255);
           var $cmp14=((($conv13))|0) < 10;
           if (!($cmp14)) { __label__ = 8;break ; }
   
           var $14=$q;
-          var $incdec_ptr=(($14+1)&4294967295);
+          var $incdec_ptr=$14+1;
           $q=$incdec_ptr;
           __label__ = 6;continue ;
         }
@@ -17910,25 +17907,25 @@ var _rslist;
         var $16=$string_addr;
         var $sub_ptr_lhs_cast=($15);
         var $sub_ptr_rhs_cast=($16);
-        var $sub_ptr_sub=((($sub_ptr_lhs_cast) - ($sub_ptr_rhs_cast))&4294967295);
+        var $sub_ptr_sub=($sub_ptr_lhs_cast) - ($sub_ptr_rhs_cast);
         var $call17=_QRinput_estimateBitsMode8($sub_ptr_sub);
         var $17=$q;
         var $18=$p;
         var $sub_ptr_lhs_cast18=($17);
         var $sub_ptr_rhs_cast19=($18);
-        var $sub_ptr_sub20=((($sub_ptr_lhs_cast18) - ($sub_ptr_rhs_cast19))&4294967295);
+        var $sub_ptr_sub20=($sub_ptr_lhs_cast18) - ($sub_ptr_rhs_cast19);
         var $call21=_QRinput_estimateBitsModeNum($sub_ptr_sub20);
-        var $add=((($call17) + ($call21))&4294967295);
-        var $add22=((($add) + 4)&4294967295);
+        var $add=($call17) + ($call21);
+        var $add22=($add) + 4;
         var $19=$ln;
-        var $add23=((($add22) + ($19))&4294967295);
+        var $add23=($add22) + ($19);
         var $20=$q;
         var $21=$string_addr;
         var $sub_ptr_lhs_cast24=($20);
         var $sub_ptr_rhs_cast25=($21);
-        var $sub_ptr_sub26=((($sub_ptr_lhs_cast24) - ($sub_ptr_rhs_cast25))&4294967295);
+        var $sub_ptr_sub26=($sub_ptr_lhs_cast24) - ($sub_ptr_rhs_cast25);
         var $call27=_QRinput_estimateBitsMode8($sub_ptr_sub26);
-        var $sub28=((($add23) - ($call27))&4294967295);
+        var $sub28=($add23) - ($call27);
         $dif=$sub28;
         var $22=$dif;
         var $cmp29=((($22))|0) < 0;
@@ -17967,7 +17964,7 @@ var _rslist;
               var $28=$q;
               var $29=HEAP[$28];
               var $conv39=(tempInt=(($29)),(tempInt>=128?tempInt-256:tempInt));
-              var $arrayidx=((_QRinput_anTable+$conv39)&4294967295);
+              var $arrayidx=_QRinput_anTable+$conv39;
               var $30=HEAP[$arrayidx];
               var $conv40=(tempInt=(($30)),(tempInt>=128?tempInt-256:tempInt));
               __lastLabel__ = 16; ;
@@ -17978,7 +17975,7 @@ var _rslist;
             if (!($cmp41)) { __label__ = 19;break ; }
   
             var $31=$q;
-            var $incdec_ptr44=(($31+1)&4294967295);
+            var $incdec_ptr44=$31+1;
             $q=$incdec_ptr44;
             __label__ = 14;continue ;
           }
@@ -17987,25 +17984,25 @@ var _rslist;
           var $33=$string_addr;
           var $sub_ptr_lhs_cast46=($32);
           var $sub_ptr_rhs_cast47=($33);
-          var $sub_ptr_sub48=((($sub_ptr_lhs_cast46) - ($sub_ptr_rhs_cast47))&4294967295);
+          var $sub_ptr_sub48=($sub_ptr_lhs_cast46) - ($sub_ptr_rhs_cast47);
           var $call49=_QRinput_estimateBitsMode8($sub_ptr_sub48);
           var $34=$q;
           var $35=$p;
           var $sub_ptr_lhs_cast50=($34);
           var $sub_ptr_rhs_cast51=($35);
-          var $sub_ptr_sub52=((($sub_ptr_lhs_cast50) - ($sub_ptr_rhs_cast51))&4294967295);
+          var $sub_ptr_sub52=($sub_ptr_lhs_cast50) - ($sub_ptr_rhs_cast51);
           var $call53=_QRinput_estimateBitsModeAn($sub_ptr_sub52);
-          var $add54=((($call49) + ($call53))&4294967295);
-          var $add55=((($add54) + 4)&4294967295);
+          var $add54=($call49) + ($call53);
+          var $add55=($add54) + 4;
           var $36=$la;
-          var $add56=((($add55) + ($36))&4294967295);
+          var $add56=($add55) + ($36);
           var $37=$q;
           var $38=$string_addr;
           var $sub_ptr_lhs_cast57=($37);
           var $sub_ptr_rhs_cast58=($38);
-          var $sub_ptr_sub59=((($sub_ptr_lhs_cast57) - ($sub_ptr_rhs_cast58))&4294967295);
+          var $sub_ptr_sub59=($sub_ptr_lhs_cast57) - ($sub_ptr_rhs_cast58);
           var $call60=_QRinput_estimateBitsMode8($sub_ptr_sub59);
-          var $sub61=((($add56) - ($call60))&4294967295);
+          var $sub61=($add56) - ($call60);
           $dif=$sub61;
           var $39=$dif;
           var $cmp62=((($39))|0) < 0;
@@ -18020,7 +18017,7 @@ var _rslist;
         else if (__label__ == 23) {
   
           var $41=$p;
-          var $incdec_ptr68=(($41+1)&4294967295);
+          var $incdec_ptr68=$41+1;
           $p=$incdec_ptr68;
           ;
         }
@@ -18047,7 +18044,7 @@ var _rslist;
     var $43=$string_addr;
     var $sub_ptr_lhs_cast72=($42);
     var $sub_ptr_rhs_cast73=($43);
-    var $sub_ptr_sub74=((($sub_ptr_lhs_cast72) - ($sub_ptr_rhs_cast73))&4294967295);
+    var $sub_ptr_sub74=($sub_ptr_lhs_cast72) - ($sub_ptr_rhs_cast73);
     $run=$sub_ptr_sub74;
     var $44=$input_addr;
     var $45=$run;
