@@ -65,7 +65,7 @@ def makeLib():
     print 'ok'
 
     showState('compiling to JavaScript')
-    jsPipe = subprocess.Popen(emscriptenPath + ' -s INVOKE_RUN=0 -s OPTIMIZE=1 -s RELOOP=1 -s FAST_MEMORY=1 -s CORRECT_OVERFLOWS=0 -s CORRECT_ROUNDINGS=0 libqrencode-js.bc', 
+    jsPipe = subprocess.Popen(emscriptenPath + ' -s INVOKE_RUN=0 -s OPTIMIZE=1 -s RELOOP=1 -s FAST_MEMORY=1 -s CORRECT_OVERFLOWS=0 -s CORRECT_ROUNDINGS=0 -s QUANTUM_SIZE=1 libqrencode-js.bc', 
         shell=True, stdout=subprocess.PIPE).stdout
     print 'ok'
 
