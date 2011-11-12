@@ -68,7 +68,46 @@ var test_encodeString = [
                     qrencode.QR_MODE_8, true)),
                 "[[11111110100111010000101111111][10000010011101010101101000001][10111010011000001100101011101][10111010110001101001001011101][10111010010110011110101011101][10000010001000101010101000001][11111110101010101010101111111][00000000011111010000000000000][00101110110000110000110001001][10011000011001101101110011010][11100011100101100001101001100][00101001011001100110101011101][00100110101011000011110110001][00000001111001000110111111010][01110011100110010101001001100][01001100011001100110000101101][10101110001000101001001111101][00111100111101011111000100111][10000010101010100110001111010][01000101110000110111001101001][10110110110110101010111110110][00000000111010010101100011011][11111110011001100101101011010][10000010100010110101100010100][10111010101010101001111110001][10111010011010101110011100110][10111010111010101000101000001][10000010000110000101001010110][11111110001010011001000010111]]");
         })
+    , new testCase("encodeString: long string (2938)",
+        function() {
+            var s = "";
+            for ( var i = 0; i < 2938; i++ ) s += 'a';
+            unitTest.assertEqual("correctness",
+                qrencode.encodeString(s, 0, 
+                    qrencode.QR_ECLEVEL_L,
+                    qrencode.QR_MODE_8, true).length.toString(),
+                    "177")
+        })
 ];
 
-var allTests = [].concat(test_JSLibEncodeStr, test_encodeString);
+var test_exceptions = [
+      new testCase("exception: invalid input object",
+        function() {
+            unitTest.assertException("exception",
+                function() {
+                    qrencode.encodeString("str", 0, 
+                        qrencode.QR_ECLEVEL_L,
+                        99, true);
+                },
+                function(a) {return a.type == "EINVAL";});
+        })
+    , new testCase("exception: input data is too large",
+        function() {
+            var s = "";
+            for ( var i = 0; i < 10000; i++ ) s += 'aaaaaaaaaa';
+            unitTest.assertException("exception",
+                function() {
+                    qrencode.encodeString(s, 0, 
+                        qrencode.QR_ECLEVEL_L,
+                        qrencode.QR_MODE_8, true);
+                },
+                function(a) {return a.type == "ERANGE";});
+        })
+    ];
+
+var allTests = [].concat(
+      test_JSLibEncodeStr
+    , test_encodeString
+    , test_exceptions
+    );
 

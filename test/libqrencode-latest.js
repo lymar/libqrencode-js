@@ -1,1 +1,1 @@
-../release/libqrencode-3.9.0_2.js
+../release/libqrencode-3.9.0_3.js
