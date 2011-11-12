@@ -4,7 +4,7 @@ import os
 import sys
 import subprocess
 
-JS_VER = 2
+JS_VER = 3
 
 exec(open(os.path.expanduser('~/.emscripten'), 'r').read())
 toolPath = os.path.join(EMSCRIPTEN_ROOT, 'tools')
@@ -65,7 +65,7 @@ def makeLib():
     print 'ok'
 
     showState('compiling to JavaScript')
-    jsPipe = subprocess.Popen(emscriptenPath + ' -s INVOKE_RUN=0 -s OPTIMIZE=1 -s RELOOP=1 -s FAST_MEMORY=1 libqrencode-js.bc', 
+    jsPipe = subprocess.Popen(emscriptenPath + ' -s INVOKE_RUN=0 -s OPTIMIZE=1 -s RELOOP=1 -s FAST_MEMORY=1 -s CORRECT_OVERFLOWS=0 -s CORRECT_ROUNDINGS=0 libqrencode-js.bc', 
         shell=True, stdout=subprocess.PIPE).stdout
     print 'ok'
 
