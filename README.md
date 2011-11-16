@@ -58,6 +58,7 @@ http://lymar.github.com/libqrencode-js/
                         {'type': 'ENOMEM', 'msg': 'unable to allocate memory for input objects'}
                         {'type': 'ERANGE', 'msg': 'input data is too large'}
                         {'type': 'unknown', 'msg': 'unknown error'}
+                        exception type: qrencode.libqrException
 
 ### Example
 
