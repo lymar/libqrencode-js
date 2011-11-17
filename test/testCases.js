@@ -2,27 +2,6 @@ var strHelloEn = "hello";
 var strHelloRu = "привет";
 var strHelloJp = "こんにちは";
 
-var test_JSLibEncodeStr = [
-      new testCase("_JSLibEncodeStr: en",
-        function() {
-            unitTest.assertEqual("correctness",
-                qrencode._JSLibEncodeStr(strHelloEn),
-                "68656c6c6f");
-        })
-    , new testCase("_JSLibEncodeStr: ru",
-        function() {
-            unitTest.assertEqual("correctness",
-                qrencode._JSLibEncodeStr(strHelloRu),
-                "d0bfd180d0b8d0b2d0b5d182");
-        })
-    , new testCase("_JSLibEncodeStr: jp",
-        function() {
-            unitTest.assertEqual("correctness",
-                qrencode._JSLibEncodeStr(strHelloJp),
-                "e38193e38293e381abe381a1e381af");
-        })
-];
-
 var array2dToStr = function(a) {
     var r = "[";
     for ( var j = 0; j < a.length; j++ ) {
@@ -101,13 +80,15 @@ var test_exceptions = [
                         qrencode.QR_ECLEVEL_L,
                         qrencode.QR_MODE_8, true);
                 },
-                function(a) {return a.type == "ERANGE";});
+                function(a) {
+                    return (a instanceof qrencode.libqrException) && 
+                           (a.type == "ERANGE");
+                });
         })
     ];
 
 var allTests = [].concat(
-      test_JSLibEncodeStr
-    , test_encodeString
+      test_encodeString
     , test_exceptions
     );
 

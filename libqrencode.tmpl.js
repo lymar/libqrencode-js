@@ -7,7 +7,43 @@
  *
  * Licensed under GNU Lesser General Public License.
  */
-{{varName}} = (function(Module, args) {
+{{varName}} = (function() {
+    var libqrException = (function() {
+        function libqrException(type, msg) {
+            this.type = type;
+            this.msg = msg;
+        }
+        
+        libqrException.prototype.toString = function() {
+            return "libqrencode exception [" + this.type + "]: " + this.msg;
+        };
+
+        return libqrException;
+    })();
+
+    return {
+        // QRencodeMode
+        QR_MODE_NUM:            0,  // Numeric mode
+        QR_MODE_AN:             1,  // Alphabet-numeric mode
+        QR_MODE_8:              2,  // 8-bit data mode
+        QR_MODE_KANJI:          3,  // Kanji (shift-jis) mode
+        QR_MODE_ECI:            5,  // ECI mode
+        QR_MODE_FNC1FIRST:      6,  // FNC1, first position
+        QR_MODE_FNC1SECOND:     7,  // FNC1, second position
+        // QRecLevel
+        QR_ECLEVEL_L:           0,  // lowest
+        QR_ECLEVEL_M:           1,
+        QR_ECLEVEL_Q:           2,
+        QR_ECLEVEL_H:           3,  // highest
+        
+        "libqrException":       libqrException,
+        
+        encodeString:
+    
+function(str, version, level, mode, caseSensitive) {
+
+var locQre = 
+(function(Module, args) {
     Module = Module || {};
     Module.arguments = args || [];
     
@@ -40,34 +76,6 @@
         return rst;
     };
     
-    // QRencodeMode
-    Module.QR_MODE_NUM          = 0;    // Numeric mode
-    Module.QR_MODE_AN           = 1;    // Alphabet-numeric mode
-    Module.QR_MODE_8            = 2;    // 8-bit data mode
-    Module.QR_MODE_KANJI        = 3;    // Kanji (shift-jis) mode
-    Module.QR_MODE_ECI          = 5;    // ECI mode
-    Module.QR_MODE_FNC1FIRST    = 6;    // FNC1, first position
-    Module.QR_MODE_FNC1SECOND   = 7;    // FNC1, second position
-
-    // QRecLevel
-    Module.QR_ECLEVEL_L = 0;    // lowest
-    Module.QR_ECLEVEL_M = 1;
-    Module.QR_ECLEVEL_Q = 2;
-    Module.QR_ECLEVEL_H = 3;    // highest
-
-    Module.libqrException = (function() {
-        function libqrException(type, msg) {
-            this.type = type;
-            this.msg = msg;
-        }
-        
-        libqrException.prototype.toString = function() {
-            return "libqrencode exception [" + this.type + "]: " + this.msg;
-        };
-
-        return libqrException;
-    })();
-
     Module.encodeString = function(str, version, level, mode, caseSensitive) {
         var r = Module._libmain(["encodeString", 
             Module._JSLibEncodeStr(str), version.toString(), level.toString(), 
@@ -86,13 +94,14 @@
         }
         else {
             if ( r[0] == "error" )
-                throw new Module.libqrException(r[1], r[2]);
-            throw new Module.libqrException("unknown", r.toString());
+                throw new libqrException(r[1], r[2]);
+            throw new libqrException("unknown", r.toString());
         }
     };
 
     return Module;
 }).call(this);
-
-delete this["Module"];
-
+    
+    return locQre.encodeString(str, version, level, mode, caseSensitive);
+    }
+}})();
