@@ -20,6 +20,8 @@
 
         return libqrException;
     })();
+    
+    var print = function(m) {};
 
     return {
         // QRencodeMode
