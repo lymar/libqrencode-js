@@ -1,3 +1,5 @@
+**This library has been deprecated in favour of [nayuki/QR-Code-generator](https://github.com/nayuki/QR-Code-generator)**
+
 # libqrencode-js: QR Code encoding library
 
 This library is a port of [libqrencode](https://github.com/fukuchi/libqrencode) to JavaScript.
